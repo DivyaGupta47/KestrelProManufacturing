@@ -1,17 +1,20 @@
-name: 🧪 Run KestrelPro Tests
+name: 🧪 KestrelPro CI Report with PDF
 
 on:
   push:
     branches: [main]
   pull_request:
     branches: [main]
+  workflow_dispatch:  # Manual trigger
+  schedule:
+    - cron: '30 4 * * *'  # Daily at 4:30 AM UTC
 
 jobs:
-  build-and-test:
+  kestrelpro-ci:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 Checkout Repository
+      - name: 📥 Checkout code
         uses: actions/checkout@v4
 
       - name: ☕ Set up Java 17
@@ -20,15 +23,79 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: 📦 Set up Maven Dependencies
-        run: mvn install -DskipTests
+      - name: 🧰 Install Maven
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y maven
 
-      - name: 🧪 Run Tests
-        run: mvn test
+      - name: 🧪 Build & Run Tests
+        run: mvn clean test
 
-      - name: 📤 Upload ExtentReports
-        if: always()
+      - name: 🌐 Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: 📦 Install Puppeteer
+        run: npm install puppeteer
+
+      - name: 📄 Generate Extent PDF Reports (Tests + Dashboard)
+        run: |
+          echo "const puppeteer = require('puppeteer');
+          const path = require('path');
+          const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+          (async () => {
+            const browser = await puppeteer.launch({
+              headless: 'new',
+              args: ['--no-sandbox', '--disable-setuid-sandbox']
+            });
+
+            const page = await browser.newPage();
+            const filePath = path.resolve(__dirname, 'test-output', 'ExtentReport.html');
+            await page.goto(\`file://\${filePath}\`, { waitUntil: 'networkidle0' });
+            await delay(3000);
+
+            // Expand all test nodes including skipped ones
+            await page.evaluate(() => {
+              document.querySelectorAll('.node-collapse').forEach(btn => btn.click());
+            });
+
+            await delay(2000);
+
+            // Save Tests tab
+            await page.pdf({
+              path: 'test-output/ExtentReport_Tests.pdf',
+              format: 'A4',
+              printBackground: true
+            });
+
+            // Click Dashboard tab
+            const dashboardIcon = await page.$('i.fa.fa-bar-chart');
+            if (dashboardIcon) {
+              await dashboardIcon.click();
+              await delay(3000);
+              await page.pdf({
+                path: 'test-output/ExtentReport_Dashboard.pdf',
+                format: 'A4',
+                printBackground: true
+              });
+            }
+
+            await browser.close();
+          })();" > generate-pdf.js
+
+          node generate-pdf.js
+
+      - name: 🧷 Install PDF merge tool
+        run: sudo apt-get install -y poppler-utils
+
+      - name: 🔗 Merge Tests + Dashboard into Final Report
+        run: |
+          pdfunite test-output/ExtentReport_Tests.pdf test-output/ExtentReport_Dashboard.pdf test-output/KestrelReport.pdf
+
+      - name: 📤 Upload Final PDF Report
         uses: actions/upload-artifact@v4
         with:
-          name: extent-reports
-          path: test-output/
+          name: KestrelReport
+          path: test-output/KestrelReport.pdf
