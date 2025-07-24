@@ -7,11 +7,11 @@ on:
     branches: [main]
 
 jobs:
-  kestrelpro-ci:
+  build-and-test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 Checkout code
+      - name: 📥 Checkout Repository
         uses: actions/checkout@v4
 
       - name: ☕ Set up Java 17
@@ -20,58 +20,70 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: 📦 Install Maven
+      - name: 📦 Set up Maven Dependencies
         run: mvn install -DskipTests
 
-      - name: 🧪 Build & Run Tests
-        run: mvn clean test
-        continue-on-error: true
+      - name: 🧪 Run Tests
+        run: mvn test
 
-      - name: 🌐 Set up Node.js
-        if: always()
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: 📦 Install Puppeteer
+      - name: 📄 Generate PDF from ExtentReport
         if: always()
         run: |
+          if [ ! -f test-output/ExtentReports.html ]; then
+            echo "❌ ExtentReports.html not found! Skipping PDF generation."
+            exit 0
+          fi
+
+          # Install Node.js and Puppeteer
+          sudo apt-get install -y npm
           npm install puppeteer
 
-      - name: 📄 Generate Extent PDF Reports (Tests + Dashboard)
-        if: always()
-        run: |
+          # Generate PDF using Puppeteer
           node <<'EOF'
           const puppeteer = require('puppeteer');
           const fs = require('fs');
+          const path = require('path');
 
           (async () => {
+            const htmlPath = path.resolve('test-output/ExtentReports.html');
+            if (!fs.existsSync(htmlPath)) {
+              console.error('❌ ExtentReports.html not found. Skipping.');
+              process.exit(0);
+            }
+
             const browser = await puppeteer.launch({
               headless: true,
               args: ['--no-sandbox', '--disable-setuid-sandbox']
             });
+
             const page = await browser.newPage();
+            await page.goto('file://' + htmlPath, { waitUntil: 'networkidle0' });
 
-            await page.goto('file://' + process.cwd() + '/test-output/ExtentReports.html', {waitUntil: 'networkidle0'});
+            // Expand skipped/failed nodes if needed
+            await page.evaluate(() => {
+              document.querySelectorAll('.node-toggle').forEach(el => el.click());
+            });
 
-            // Expand all skipped/failure/test cases (modify selector if needed)
-            try {
-              await page.evaluate(() => {
-                document.querySelectorAll('.node-toggle').forEach(el => el.click());
-              });
-            } catch (e) {
-              console.log('❗ Could not expand test nodes. Continuing...');
-            }
-
-            await page.pdf({ path: 'test-output/KestrelReport.pdf', format: 'A4' });
+            await page.pdf({
+              path: 'test-output/KestrelPro_Report.pdf',
+              format: 'A4',
+              printBackground: true
+            });
 
             await browser.close();
           })();
           EOF
 
+      - name: 📤 Upload ExtentReports Folder
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: extent-reports
+          path: test-output/
+
       - name: 📤 Upload Final PDF Report
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: KestrelReport
-          path: test-output/KestrelReport.pdf
+          name: kestrelpro-report
+          path: test-output/KestrelPro_Report.pdf
