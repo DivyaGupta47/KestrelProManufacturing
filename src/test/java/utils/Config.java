@@ -34,16 +34,29 @@ public class Config {
 	 * }
 	 */
 	
-	    //private static String sessionToken;
-	    private static final ThreadLocal<String> sessionToken = new ThreadLocal<>();
+	  // --- Thread-safe sessionToken storage ---
 
-	    public static void setSessionToken(String token) {
-	        //sessionToken = token;
-	    	sessionToken.set(token);
-	    }
+    /**
+     * Thread-local variable to hold session token per thread. 
+     * Useful in parallel test execution to avoid token leakage across threads.
+     */
+    private static final ThreadLocal<String> sessionToken = new ThreadLocal<>();
 
-	    public static String getSessionToken() {
-	        //return sessionToken;
-	    	 return sessionToken.get();
-	    }
+    /**
+     * Sets the session token for the current thread.
+     *
+     * @param token The session token to associate with the current thread.
+     */
+    public static void setSessionToken(String token) {
+        sessionToken.set(token);
+    }
+
+    /**
+     * Retrieves the session token associated with the current thread.
+     *
+     * @return The current thread's session token, or null if not set.
+     */
+    public static String getSessionToken() {
+        return sessionToken.get();
+    }
 }

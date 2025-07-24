@@ -26,7 +26,19 @@ import io.restassured.response.Response;
  */
 public class LoginUtil {
 
-
+    /**
+     * Performs login using Ory Kratos public API and retrieves the session token.
+     *
+     * Steps involved:
+     * 1. Initiates the login flow to obtain a `flowId`.
+     * 2. Submits the user's email and password to the login endpoint with the flowId.
+     * 3. Extracts the `session_token` from the successful response.
+     *
+     * @param email    The user's email or identifier used for login.
+     * @param password The user's password.
+     * @return A valid session token (JWT or opaque) from Ory Kratos.
+     * @throws RuntimeException if login fails or if session token is missing in the response.
+     */
     public static String performLogin(String email, String password) {
         // Step 1: Start login flow
         Response flowResponse = RestAssured
@@ -36,13 +48,14 @@ public class LoginUtil {
 
         String flowId = flowResponse.jsonPath().getString("id");
 
-        // Step 2: Login
+        // Step 2: Prepare login request payload
         String loginPayload = "{"
                 + "\"method\": \"password\","
                 + "\"identifier\": \"" + email + "\","
                 + "\"password\": \"" + password + "\""
                 + "}";
 
+        // Step 3: Submit login request with credentials and flow ID
         Response loginResponse = RestAssured
                 .given()
                 .baseUri(Config.BASE_URI)
@@ -52,11 +65,12 @@ public class LoginUtil {
                 .body(loginPayload)
                 .post("/.ory/kratos/public/self-service/login");
 
+        // Step 4: Handle login failure
         if (loginResponse.getStatusCode() != 200) {
             throw new RuntimeException("Login failed: " + loginResponse.asPrettyString());
         }
 
-        //  Extract token from response body
+        // Step 5: Extract token from response body
         String sessionToken = loginResponse.jsonPath().getString("session_token");
 
         if (sessionToken == null || sessionToken.isEmpty()) {
