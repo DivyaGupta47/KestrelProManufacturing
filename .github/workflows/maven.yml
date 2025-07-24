@@ -27,52 +27,13 @@ jobs:
         run: mvn test
 
       - name: 📄 Generate PDF from ExtentReport
-        if: always()
         run: |
-          if [ ! -f test-output/ExtentReports.html ]; then
-            echo "❌ ExtentReports.html not found! Skipping PDF generation."
-            exit 0
+          sudo apt-get install -y wkhtmltopdf
+          if [ -f test-output/ExtentReport.html ]; then
+            wkhtmltopdf test-output/ExtentReport.html test-output/KestrelPro_Report.pdf
+          else
+            echo "❌ ExtentReport.html not found! Skipping PDF generation."
           fi
-
-          # Install Node.js and Puppeteer
-          sudo apt-get install -y npm
-          npm install puppeteer
-
-          # Generate PDF using Puppeteer
-          node <<'EOF'
-          const puppeteer = require('puppeteer');
-          const fs = require('fs');
-          const path = require('path');
-
-          (async () => {
-            const htmlPath = path.resolve('test-output/ExtentReports.html');
-            if (!fs.existsSync(htmlPath)) {
-              console.error('❌ ExtentReports.html not found. Skipping.');
-              process.exit(0);
-            }
-
-            const browser = await puppeteer.launch({
-              headless: true,
-              args: ['--no-sandbox', '--disable-setuid-sandbox']
-            });
-
-            const page = await browser.newPage();
-            await page.goto('file://' + htmlPath, { waitUntil: 'networkidle0' });
-
-            // Expand skipped/failed nodes if needed
-            await page.evaluate(() => {
-              document.querySelectorAll('.node-toggle').forEach(el => el.click());
-            });
-
-            await page.pdf({
-              path: 'test-output/KestrelPro_Report.pdf',
-              format: 'A4',
-              printBackground: true
-            });
-
-            await browser.close();
-          })();
-          EOF
 
       - name: 📤 Upload ExtentReports Folder
         if: always()
@@ -85,5 +46,5 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: kestrelpro-report
+          name: kestrelpro-report-pdf
           path: test-output/KestrelPro_Report.pdf
