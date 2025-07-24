@@ -1,0 +1,27 @@
+<suite name="Parallel Admin Assignee Results" parallel="tests" thread-count="4" verbose="1" preserve-order="false">
+
+    <test name="Admin Flow">
+        <classes>
+            <class name="tests.AdminOrderFlowTest" />
+        </classes>
+    </test>
+
+    <test name="Admin-Assignee Flow">
+        <classes>
+            <class name="tests.AdminAssigneeOrderFlowTest" />
+        </classes>
+    </test>
+
+    <test name="API - Admin Order with Split Flow">
+		<classes>
+			<class name="tests.AdminSplitOrderFlowTest" />
+		</classes>
+	</test>
+	
+	<test name="UI - Report Validation">
+		<classes>
+			<class name="tests.ReportValidationTest" />
+		</classes>
+	</test>
+
+</suite>

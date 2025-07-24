@@ -1,0 +1,17 @@
+<suite name="Admin Order Suite" verbose="1" preserve-order="true" parallel="false">
+	<listeners>
+		<listener class-name="listeners.ExtentTestNGListener" />
+	</listeners>
+	<test name="End-to-End Admin Order Flow With Split Order">
+		<classes>
+			<class name="tests.OrderCreationTest" />
+			<class name="tests.SplittedOrderTest" />
+			<class name="tests.StageUpdateTest" />
+			<class name="tests.UserAssignmentTest" />
+			<class name="tests.RemarkAndAttachmentTest" />
+			<class name="tests.StageCompletionTest" />
+			<class name="tests.ReportDownloadTest" />
+			<class name="tests.UserUpdateTest" />
+		</classes>
+	</test>
+</suite>

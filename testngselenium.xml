@@ -1,0 +1,7 @@
+<suite name="Login Test Suite">
+<test name="Login Test">
+<classes>
+<class name="tests.CreateOrderTest"/>
+</classes>
+</test>
+</suite>

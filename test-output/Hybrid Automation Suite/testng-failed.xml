@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Hybrid Automation Suite]">
+  <test thread-count="5" name="API - Admin Flow(failed)">
+    <classes>
+      <class name="tests.AdminOrderFlowTest">
+        <methods>
+          <include name="updateUser"/>
+          <include name="splitOrder"/>
+          <include name="addAttachments"/>
+          <include name="addAndAssignUsers"/>
+          <include name="createOrder"/>
+          <include name="completeStages"/>
+          <include name="updateTAT"/>
+          <include name="verifyCompletion"/>
+          <include name="setupSession"/>
+          <include name="addRemarks"/>
+        </methods>
+      </class> <!-- tests.AdminOrderFlowTest -->
+    </classes>
+  </test> <!-- API - Admin Flow(failed) -->
+</suite> <!-- Failed suite [Hybrid Automation Suite] -->

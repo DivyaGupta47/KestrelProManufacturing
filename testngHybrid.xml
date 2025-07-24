@@ -1,0 +1,45 @@
+<suite name="Hybrid Automation Suite" parallel="false">
+	<test name="UI - Dashboard Before">
+		<classes>
+			<class name="tests.DashboardTest">
+				<methods>
+					<include name="testDashboardCountsBefore" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="API - Admin Flow">
+		<classes>
+			<class name="tests.AdminOrderFlowTest" />
+		</classes>
+	</test>
+
+	<test name="API - Admin Asignee Flow">
+		<classes>
+			<class name="tests.AdminAssigneeOrderFlowTest" />
+		</classes>
+	</test>
+
+	<test name="API - Admin Order with Split Flow">
+		<classes>
+			<class name="tests.AdminSplitOrderFlowTest" />
+		</classes>
+	</test>
+	
+	<test name="UI - Report Validation">
+		<classes>
+			<class name="tests.ReportValidationTest" />
+		</classes>
+	</test>
+
+	<test name="UI - Dashboard After">
+		<classes>
+			<class name="tests.DashboardTest">
+				<methods>
+					<include name="testDashboardCountsAfter" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

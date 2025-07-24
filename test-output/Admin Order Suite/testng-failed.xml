@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Admin Order Suite]">
+  <test thread-count="5" name="End-to-End Order Flow(failed)">
+    <classes>
+      <class name="tests.UserAssignmentTest">
+        <methods>
+          <include name="createUserAndAssignStages"/>
+        </methods>
+      </class> <!-- tests.UserAssignmentTest -->
+      <class name="tests.StageUpdateTest">
+        <methods>
+          <include name="updateTAT"/>
+        </methods>
+      </class> <!-- tests.StageUpdateTest -->
+      <class name="tests.SplitOrderTest">
+        <methods>
+          <include name="splitOrder"/>
+        </methods>
+      </class> <!-- tests.SplitOrderTest -->
+    </classes>
+  </test> <!-- End-to-End Order Flow(failed) -->
+</suite> <!-- Failed suite [Admin Order Suite] -->

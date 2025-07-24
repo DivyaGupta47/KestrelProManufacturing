@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Login Test Suite">
+
+	<listeners>
+		<listener class-name="listeners.ExtentTestNGListener" />
+	</listeners>
+	<test name="Multiple Order Flow Test">
+		<classes>
+			<class name="tests.AdminOrderFlowTest" />
+			<class name="tests.AdminAssigneeOrderFlowTest" />
+			<class name="tests.AdminMultipleAssigneeOrderFlowTest" />
+			<class name="tests.AdminSplitOrderFlowTest" />
+			<class name="tests.AdminOrderRejectFlowTest" />
+		</classes>
+	</test>
+</suite>
