@@ -26,63 +26,9 @@ jobs:
       - name: 🧪 Run Tests
         run: mvn test
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-
-      - name: Install Puppeteer
-        run: npm install puppeteer
-
-      - name: Generate PDF for both tabs using Puppeteer
-        run: |
-          echo "const puppeteer = require('puppeteer');
-          const path = require('path');
-          const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
-
-          (async () => {
-            const browser = await puppeteer.launch({
-              headless: 'new',
-              args: ['--no-sandbox', '--disable-setuid-sandbox']
-            });
-
-            const page = await browser.newPage();
-            const filePath = path.resolve(__dirname, 'test-output', 'ExtentReport.html');
-            await page.goto(\`file://\${filePath}\`, { waitUntil: 'networkidle0' });
-            await delay(3000);
-
-            // Save Tests tab
-            await page.pdf({
-              path: 'test-output/ExtentReport_Tests.pdf',
-              format: 'A4',
-              printBackground: true
-            });
-
-            // Click Dashboard tab icon (bar-chart icon)
-            await page.click('i.fa.fa-bar-chart');
-            await delay(3000);
-
-            // Save Dashboard tab
-            await page.pdf({
-              path: 'test-output/ExtentReport_Dashboard.pdf',
-              format: 'A4',
-              printBackground: true
-            });
-
-            await browser.close();
-          })();" > generate-pdf.js
-
-          node generate-pdf.js
-
-      - name: Install PDF merge tool
-        run: sudo apt-get install -y poppler-utils
-
-      - name: Merge PDFs into Final Report
-        run: |
-          pdfunite test-output/ExtentReport_Tests.pdf test-output/ExtentReport_Dashboard.pdf test-output/KestrelManufacturingReport.pdf
-
-      - name: 📤 Upload Final Merged PDF Report
+      - name: 📤 Upload ExtentReports
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: KestrelManufacturingReport
-          path: test-output/KestrelManufacturingReport.pdf
+          name: extent-reports
+          path: test-output/
