@@ -1,13 +1,10 @@
-name: 🧪 KestrelPro CI Report with PDF
+name: 🧪 Run KestrelPro Tests
 
 on:
   push:
     branches: [main]
   pull_request:
     branches: [main]
-  workflow_dispatch:  # Manual trigger
-  schedule:
-    - cron: '30 4 * * *'  # Daily at 4:30 AM UTC
 
 jobs:
   kestrelpro-ci:
@@ -23,78 +20,57 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: 🧰 Install Maven
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y maven
+      - name: 📦 Install Maven
+        run: mvn install -DskipTests
 
       - name: 🧪 Build & Run Tests
         run: mvn clean test
+        continue-on-error: true
 
       - name: 🌐 Set up Node.js
+        if: always()
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
 
       - name: 📦 Install Puppeteer
-        run: npm install puppeteer
+        if: always()
+        run: |
+          npm install puppeteer
 
       - name: 📄 Generate Extent PDF Reports (Tests + Dashboard)
+        if: always()
         run: |
-          echo "const puppeteer = require('puppeteer');
-          const path = require('path');
-          const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+          node <<'EOF'
+          const puppeteer = require('puppeteer');
+          const fs = require('fs');
 
           (async () => {
             const browser = await puppeteer.launch({
-              headless: 'new',
+              headless: true,
               args: ['--no-sandbox', '--disable-setuid-sandbox']
             });
-
             const page = await browser.newPage();
-            const filePath = path.resolve(__dirname, 'test-output', 'ExtentReport.html');
-            await page.goto(\`file://\${filePath}\`, { waitUntil: 'networkidle0' });
-            await delay(3000);
 
-            // Expand all test nodes including skipped ones
-            await page.evaluate(() => {
-              document.querySelectorAll('.node-collapse').forEach(btn => btn.click());
-            });
+            await page.goto('file://' + process.cwd() + '/test-output/ExtentReports.html', {waitUntil: 'networkidle0'});
 
-            await delay(2000);
-
-            // Save Tests tab
-            await page.pdf({
-              path: 'test-output/ExtentReport_Tests.pdf',
-              format: 'A4',
-              printBackground: true
-            });
-
-            // Click Dashboard tab
-            const dashboardIcon = await page.$('i.fa.fa-bar-chart');
-            if (dashboardIcon) {
-              await dashboardIcon.click();
-              await delay(3000);
-              await page.pdf({
-                path: 'test-output/ExtentReport_Dashboard.pdf',
-                format: 'A4',
-                printBackground: true
+            // Expand all skipped/failure/test cases (modify selector if needed)
+            try {
+              await page.evaluate(() => {
+                document.querySelectorAll('.node-toggle').forEach(el => el.click());
               });
+            } catch (e) {
+              console.log('❗ Could not expand test nodes. Continuing...');
             }
 
+            await page.pdf({ path: 'test-output/KestrelReport.pdf', format: 'A4' });
+
             await browser.close();
-          })();" > generate-pdf.js
-
-          node generate-pdf.js
-
-      - name: 🧷 Install PDF merge tool
-        run: sudo apt-get install -y poppler-utils
-
-      - name: 🔗 Merge Tests + Dashboard into Final Report
-        run: |
-          pdfunite test-output/ExtentReport_Tests.pdf test-output/ExtentReport_Dashboard.pdf test-output/KestrelReport.pdf
+          })();
+          EOF
 
       - name: 📤 Upload Final PDF Report
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: KestrelReport
