@@ -11,8 +11,10 @@ base\BaseTest.class
 tests\StageCompletionTest.class
 tests\AdminAssigneeOrderFlowTest.class
 apis\AssigneeAPI.class
+tests\AddUserTest.class
 utils\LoginUtil.class
 pages\LoginPageUi.class
+pages\AddUserPage.class
 pages\ProductFlowOnTimePage.class
 base\BaseFlowData.class
 tests\DashboardTest.class
@@ -33,6 +35,7 @@ tests\ProductFlowOnTimeTest.class
 tests\ReportValidationTest.class
 pages\ProductFlowCompletePage.class
 apis\RemarkAPI.class
+pages\Test.class
 pages\LoginPage.class
 pages\DashboardPage.class
 tests\ProductFlowCompleteTest.class

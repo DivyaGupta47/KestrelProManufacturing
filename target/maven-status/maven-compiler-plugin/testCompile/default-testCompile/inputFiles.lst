@@ -11,10 +11,12 @@ D:\SeleniumDemo\KestralPro\src\test\java\apis\UserAPI.java
 D:\SeleniumDemo\KestralPro\src\test\java\tests\AdminOrderFlowTest.java
 D:\SeleniumDemo\KestralPro\src\test\java\tests\LoginTest.java
 D:\SeleniumDemo\KestralPro\src\test\java\pages\CreateOrderAdminPage.java
+D:\SeleniumDemo\KestralPro\src\test\java\pages\Test.java
 D:\SeleniumDemo\KestralPro\src\test\java\utils\PayloadUtil.java
 D:\SeleniumDemo\KestralPro\src\test\java\tests\AdminAssigneeOrderFlowTest.java
 D:\SeleniumDemo\KestralPro\src\test\java\pages\CreateOrderWithLogin.java
 D:\SeleniumDemo\KestralPro\src\test\java\tests\ReportValidationTest.java
+D:\SeleniumDemo\KestralPro\src\test\java\pages\AddUserPage.java
 D:\SeleniumDemo\KestralPro\src\test\java\tests\AdminOrderFlow.java
 D:\SeleniumDemo\KestralPro\src\test\java\apis\OrderVerificationAPI.java
 D:\SeleniumDemo\KestralPro\src\test\java\utils\EmailUtil.java
@@ -33,6 +35,7 @@ D:\SeleniumDemo\KestralPro\src\test\java\tests\ProductFlowCompleteTest.java
 D:\SeleniumDemo\KestralPro\src\test\java\resource\ExtentManager.java
 D:\SeleniumDemo\KestralPro\src\test\java\apis\AttachmentAPI.java
 D:\SeleniumDemo\KestralPro\src\test\java\apis\SplitAPI.java
+D:\SeleniumDemo\KestralPro\src\test\java\tests\AddUserTest.java
 D:\SeleniumDemo\KestralPro\src\test\java\tests\DashboardTest.java
 D:\SeleniumDemo\KestralPro\src\test\java\tests\CreateOrderTest.java
 D:\SeleniumDemo\KestralPro\src\test\java\apis\StageUpdateTATAPI.java

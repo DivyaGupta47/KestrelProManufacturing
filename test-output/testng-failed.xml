@@ -1,15 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Hybrid Automation Suite]">
-  <test thread-count="5" name="UI - Report Validation(failed)">
+<suite name="Failed suite [Admin Order Suite]">
+  <listeners>
+    <listener class-name="listeners.ExtentTestNGListener"/>
+  </listeners>
+  <test thread-count="5" name="End-to-End Admin Asignee Order Flow(failed)">
     <classes>
-      <class name="tests.ReportValidationTest">
+      <class name="tests.RemarkAndAttachmentTest">
         <methods>
-          <include name="setUp"/>
-          <include name="tearDown"/>
-          <include name="compareReportUIAndExcelData"/>
+          <include name="addAttachments"/>
+          <include name="addRemarks"/>
         </methods>
-      </class> <!-- tests.ReportValidationTest -->
+      </class> <!-- tests.RemarkAndAttachmentTest -->
+      <class name="tests.UserAssignmentTest">
+        <methods>
+          <include name="createUserAndAssignStages"/>
+        </methods>
+      </class> <!-- tests.UserAssignmentTest -->
+      <class name="tests.AssigneeLogin">
+        <methods>
+          <include name="acceptTerms"/>
+          <include name="loginAssignee"/>
+        </methods>
+      </class> <!-- tests.AssigneeLogin -->
+      <class name="tests.completeStagesWithAssignee">
+        <methods>
+          <include name="completeStagesWithDetails"/>
+        </methods>
+      </class> <!-- tests.completeStagesWithAssignee -->
     </classes>
-  </test> <!-- UI - Report Validation(failed) -->
-</suite> <!-- Failed suite [Hybrid Automation Suite] -->
+  </test> <!-- End-to-End Admin Asignee Order Flow(failed) -->
+</suite> <!-- Failed suite [Admin Order Suite] -->
