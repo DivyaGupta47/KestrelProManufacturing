@@ -37,4 +37,10 @@ public class CredentialsUtil {
     public static String get(String key) {
         return props.getProperty(key);
     }
+    
+    public static String getUniqueAssigneeEmail() {
+        String template = get("assignee.email.template"); // Fetch from config
+        String timestamp = String.valueOf(System.currentTimeMillis());
+        return template.replace("{timestamp}", timestamp);
+    }
 }

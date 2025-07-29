@@ -28,7 +28,8 @@ public class BaseFlowData {
 	public static Integer stageIdToUpdate;
 	public static String customerName = CredentialsUtil.get("customer.name");
 	public static String userId;
-	public static String assigneeEmail = CredentialsUtil.get("assignee.email");
+	//public static String assigneeEmail = CredentialsUtil.get("assignee.email");
+	public static String assigneeEmail = CredentialsUtil.getUniqueAssigneeEmail();
 	public static String assigneePassword = CredentialsUtil.get("assignee.password");
 	public static String assigneeFirstName = CredentialsUtil.get("assignee.firstName");
 	public static String assigneeLastName = CredentialsUtil.get("assignee.lastName");
