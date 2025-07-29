@@ -1,22 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Hybrid Automation Suite]">
-  <test thread-count="5" name="API - Admin Flow(failed)">
+  <test thread-count="5" name="UI - Report Validation(failed)">
     <classes>
-      <class name="tests.AdminOrderFlowTest">
+      <class name="tests.ReportValidationTest">
         <methods>
-          <include name="updateUser"/>
-          <include name="splitOrder"/>
-          <include name="addAttachments"/>
-          <include name="addAndAssignUsers"/>
-          <include name="createOrder"/>
-          <include name="completeStages"/>
-          <include name="updateTAT"/>
-          <include name="verifyCompletion"/>
-          <include name="setupSession"/>
-          <include name="addRemarks"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="compareReportUIAndExcelData"/>
         </methods>
-      </class> <!-- tests.AdminOrderFlowTest -->
+      </class> <!-- tests.ReportValidationTest -->
     </classes>
-  </test> <!-- API - Admin Flow(failed) -->
+  </test> <!-- UI - Report Validation(failed) -->
 </suite> <!-- Failed suite [Hybrid Automation Suite] -->

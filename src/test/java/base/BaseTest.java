@@ -14,31 +14,28 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
-import pages.LoginPageUi;
-
 public class BaseTest {
 
     protected WebDriver driver;
 
-   /* @BeforeMethod
-    public void setUp() {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get("https://freetrial-mf.kestrelpro.ai/");
-    }*/
-    
     @BeforeMethod
     public void setUp() {
+        // Read system property (default: false)
+        boolean isHeadless = Boolean.parseBoolean(System.getProperty("headless", "false"));
 
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");  //  Required for GitHub Actions
-        options.addArguments("--no-sandbox");  //  Prevents crashing in CI
-        options.addArguments("--disable-dev-shm-usage");  //  Prevents memory issues
-        options.addArguments("--disable-gpu");  //  Optional but safe
+
+        if (isHeadless) {
+            options.addArguments("--headless=new");  // use "new" for newer Chrome
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
+            options.addArguments("--disable-gpu");
+            options.addArguments("--window-size=1920,1080"); // ensure elements are visible
+        }
+
         options.addArguments("--remote-allow-origins=*");
-        
-       driver = new ChromeDriver(options);
-        //driver = new ChromeDriver();
+
+        driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.get("https://freetrial-mf.kestrelpro.ai/");
     }

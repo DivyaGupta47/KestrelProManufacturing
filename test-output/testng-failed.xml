@@ -1,22 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Default test(failed)">
+<suite name="Failed suite [Hybrid Automation Suite]">
+  <test thread-count="5" name="UI - Report Validation(failed)">
     <classes>
-      <class name="tests.AdminAssigneeOrderFlowTest">
+      <class name="tests.ReportValidationTest">
         <methods>
-          <include name="addAttachments"/>
-          <include name="createOrder"/>
-          <include name="addAndAssignUsers"/>
-          <include name="termAndConditionAssignedUser"/>
-          <include name="setupSession"/>
-          <include name="switchToAssignedUser"/>
-          <include name="updateTAT"/>
-          <include name="completeStagesWithRemarksAndAttachments"/>
-          <include name="addRemarks"/>
-          <include name="splitOrder"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="compareReportUIAndExcelData"/>
         </methods>
-      </class> <!-- tests.AdminAssigneeOrderFlowTest -->
+      </class> <!-- tests.ReportValidationTest -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- UI - Report Validation(failed) -->
+</suite> <!-- Failed suite [Hybrid Automation Suite] -->

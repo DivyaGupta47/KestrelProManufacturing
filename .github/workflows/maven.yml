@@ -30,7 +30,7 @@ jobs:
           sudo apt-get install -y maven
 
       - name: 🧪 Run Tests
-        run: mvn clean test
+        run: mvn clean test -Dheadless=true
 
       - name: 🟦 Set up Node.js
         uses: actions/setup-node@v3

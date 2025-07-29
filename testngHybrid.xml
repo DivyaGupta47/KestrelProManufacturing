@@ -27,6 +27,12 @@
 		</classes>
 	</test>
 	
+	<test name="UI - Added New User Flow">
+		<classes>
+			<class name="tests.AddUserTest" />
+		</classes>
+	</test>
+	
 	<test name="UI - Report Validation">
 		<classes>
 			<class name="tests.ReportValidationTest" />
