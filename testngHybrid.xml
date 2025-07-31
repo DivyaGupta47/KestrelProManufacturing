@@ -14,25 +14,29 @@
 			<class name="tests.AdminOrderFlowTest" />
 		</classes>
 	</test>
-
+	<test name="API - Admin Order with Split Flow">
+		<classes>
+			<class name="tests.AdminSplitOrderFlowTest" />
+		</classes>
+	</test>
 	<test name="API - Admin Asignee Flow">
 		<classes>
 			<class name="tests.AdminAssigneeOrderFlowTest" />
 		</classes>
 	</test>
 
-	<test name="API - Admin Order with Split Flow">
+	<test name="API - Admin Multiple Assignee Flow">
 		<classes>
-			<class name="tests.AdminSplitOrderFlowTest" />
+			<class name="tests.AdminMultipleAssigneeOrderFlowTest" />
 		</classes>
 	</test>
-	
-	<test name="UI - Added New User Flow">
+
+	<test name="API - Admin Reject Flow">
 		<classes>
-			<class name="tests.AddUserTest" />
+			<class name="tests.AdminOrderRejectFlowTest" />
 		</classes>
 	</test>
-	
+
 	<test name="UI - Report Validation">
 		<classes>
 			<class name="tests.ReportValidationTest" />
