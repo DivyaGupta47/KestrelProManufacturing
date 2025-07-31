@@ -43,6 +43,12 @@
 		</classes>
 	</test>
 
+	<test name="UI - Add User via UI">
+		<classes>
+			<class name="tests.AddUserTest" />
+		</classes>
+	</test>
+
 	<test name="UI - Dashboard After">
 		<classes>
 			<class name="tests.DashboardTest">
