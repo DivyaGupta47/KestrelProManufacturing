@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Hybrid Automation Suite]">
-  <test thread-count="5" name="UI - Report Validation(failed)">
+  <test thread-count="5" name="UI - Dashboard After(failed)">
     <classes>
-      <class name="tests.ReportValidationTest">
+      <class name="tests.DashboardTest">
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="compareReportUIAndExcelData"/>
+          <include name="testDashboardCountsAfter"/>
         </methods>
-      </class> <!-- tests.ReportValidationTest -->
+      </class> <!-- tests.DashboardTest -->
     </classes>
-  </test> <!-- UI - Report Validation(failed) -->
+  </test> <!-- UI - Dashboard After(failed) -->
 </suite> <!-- Failed suite [Hybrid Automation Suite] -->

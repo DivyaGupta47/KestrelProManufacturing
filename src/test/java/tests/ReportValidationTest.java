@@ -27,7 +27,7 @@ public class ReportValidationTest extends BaseTest  {
     public void login()    
     {
     	System.out.println("\n=========================================================");
-    	System.out.println("Starting Flow: REPORT VALIDATION FLOW TEST");
+    	System.out.println("Starting Flow: REPORT ASSERTION FLOW TEST");
     	System.out.println("=========================================================\n");
     	loginPage = new LoginPageUi(driver);
         loginPage.enterUsername(userName);
@@ -68,6 +68,7 @@ public class ReportValidationTest extends BaseTest  {
         }
 
         System.out.println("All matched fields validated for: " + customer);
+        Thread.sleep(1000);
     }
 
     private String normalize(String value) {

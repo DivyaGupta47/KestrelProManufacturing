@@ -1,61 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="9" passed="9" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-29T15:24:40 IST" name="Admin Order Suite" finished-at="2025-07-29T15:24:58 IST" duration-ms="17480">
+  <suite started-at="2025-07-31T09:59:06 IST" name="Default suite" finished-at="2025-07-31T09:59:33 IST" duration-ms="26040">
     <groups>
     </groups>
-    <test started-at="2025-07-29T15:24:40 IST" name="End-to-End Admin Asignee Order Flow" finished-at="2025-07-29T15:24:58 IST" duration-ms="17480">
-      <class name="tests.StageUpdateTest">
-        <test-method signature="updateTAT()[pri:0, instance:tests.StageUpdateTest@c4d2c44]" started-at="2025-07-29T15:24:41 IST" name="updateTAT" finished-at="2025-07-29T15:24:42 IST" duration-ms="895" status="PASS">
+    <test started-at="2025-07-31T09:59:06 IST" name="Default test" finished-at="2025-07-31T09:59:33 IST" duration-ms="26040">
+      <class name="tests.ReportValidationTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.ReportValidationTest@2cf3d63b]" started-at="2025-07-31T09:59:07 IST" name="setUp" finished-at="2025-07-31T09:59:12 IST" duration-ms="5353" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- updateTAT -->
-      </class> <!-- tests.StageUpdateTest -->
-      <class name="tests.RemarkAndAttachmentTest">
-        <test-method signature="addAttachments()[pri:0, instance:tests.RemarkAndAttachmentTest@2eda2062]" started-at="2025-07-29T15:24:45 IST" name="addAttachments" finished-at="2025-07-29T15:24:46 IST" duration-ms="742" status="PASS">
+        </test-method> <!-- setUp -->
+        <test-method signature="compareReportUIAndExcelData()[pri:0, instance:tests.ReportValidationTest@2cf3d63b]" started-at="2025-07-31T09:59:12 IST" name="compareReportUIAndExcelData" finished-at="2025-07-31T09:59:32 IST" duration-ms="19754" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- addAttachments -->
-        <test-method signature="addRemarks()[pri:0, instance:tests.RemarkAndAttachmentTest@2eda2062]" started-at="2025-07-29T15:24:46 IST" name="addRemarks" finished-at="2025-07-29T15:24:47 IST" duration-ms="894" status="PASS">
+        </test-method> <!-- compareReportUIAndExcelData -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.ReportValidationTest@2cf3d63b]" started-at="2025-07-31T09:59:32 IST" name="tearDown" finished-at="2025-07-31T09:59:33 IST" duration-ms="858" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- addRemarks -->
-      </class> <!-- tests.RemarkAndAttachmentTest -->
-      <class name="tests.AssigneeLogin">
-        <test-method signature="loginAssignee()[pri:0, instance:tests.AssigneeLogin@5f6b53ed]" started-at="2025-07-29T15:24:47 IST" name="loginAssignee" finished-at="2025-07-29T15:24:47 IST" duration-ms="430" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginAssignee -->
-        <test-method signature="acceptTerms()[pri:0, instance:tests.AssigneeLogin@5f6b53ed]" started-at="2025-07-29T15:24:47 IST" name="acceptTerms" finished-at="2025-07-29T15:24:48 IST" depends-on-methods="tests.AssigneeLogin.loginAssignee" duration-ms="159" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- acceptTerms -->
-      </class> <!-- tests.AssigneeLogin -->
-      <class name="tests.completeStagesWithAssignee">
-        <test-method signature="completeStagesWithDetails()[pri:0, instance:tests.completeStagesWithAssignee@20cdb152]" started-at="2025-07-29T15:24:48 IST" name="completeStagesWithDetails" finished-at="2025-07-29T15:24:58 IST" duration-ms="9941" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- completeStagesWithDetails -->
-      </class> <!-- tests.completeStagesWithAssignee -->
-      <class name="tests.OrderCreationTest">
-        <test-method signature="createOrder()[pri:0, instance:tests.OrderCreationTest@110e9982]" started-at="2025-07-29T15:24:40 IST" name="createOrder" finished-at="2025-07-29T15:24:41 IST" duration-ms="843" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createOrder -->
-      </class> <!-- tests.OrderCreationTest -->
-      <class name="tests.SplitOrderTest">
-        <test-method signature="splitOrder()[pri:0, instance:tests.SplitOrderTest@5a1dddba]" started-at="2025-07-29T15:24:41 IST" name="splitOrder" finished-at="2025-07-29T15:24:41 IST" duration-ms="159" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- splitOrder -->
-      </class> <!-- tests.SplitOrderTest -->
-      <class name="tests.UserAssignmentTest">
-        <test-method signature="createUserAndAssignStages()[pri:0, instance:tests.UserAssignmentTest@13866329]" started-at="2025-07-29T15:24:42 IST" name="createUserAndAssignStages" finished-at="2025-07-29T15:24:45 IST" duration-ms="3327" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createUserAndAssignStages -->
-      </class> <!-- tests.UserAssignmentTest -->
-    </test> <!-- End-to-End Admin Asignee Order Flow -->
-  </suite> <!-- Admin Order Suite -->
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.ReportValidationTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

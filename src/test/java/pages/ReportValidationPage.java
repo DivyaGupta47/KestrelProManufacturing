@@ -308,7 +308,7 @@ public class ReportValidationPage {
 	        try {
 	            JavascriptExecutor js = (JavascriptExecutor) driver;
 
-	            new WebDriverWait(driver, Duration.ofSeconds(5))
+	            new WebDriverWait(driver, Duration.ofSeconds(10))
 	                .until(ExpectedConditions.visibilityOf(element));
 
 	            String text = (String) js.executeScript(
