@@ -6,6 +6,17 @@ on:
   pull_request:
     branches: [main]
   workflow_dispatch:
+    inputs:
+      suiteFile:
+        description: 'Select TestNG XML suite to run'
+        required: true
+        type: choice
+        options:
+          - testngParallelRun.xml
+          - testngselenium.xml
+          - testngAdminAsignee.xml
+          - testnghybrid.xml
+        default: testnghybrid.xml
   schedule:
     - cron: '30 4 * * *'  # Daily at 4:30 AM UTC
 
@@ -29,8 +40,13 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y maven
 
-      - name: 🧪 Run Tests
-        run: mvn clean test -Dheadless=true
+      - name: 🧪 Run Tests (based on selected or default XML)
+        run: |
+          XML_FILE="${{ github.event.inputs.suiteFile }}"
+          if [ -z "$XML_FILE" ]; then
+            XML_FILE="testnghybrid.xml"
+          fi
+          mvn clean test -Dheadless=true -DsuiteXmlFile=$XML_FILE
 
       - name: 🟦 Set up Node.js
         uses: actions/setup-node@v3
