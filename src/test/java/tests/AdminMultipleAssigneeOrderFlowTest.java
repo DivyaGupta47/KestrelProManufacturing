@@ -86,11 +86,11 @@ public class AdminMultipleAssigneeOrderFlowTest {
     @BeforeClass
     public void setupSession() {
     	System.out.println("\n=========================================================");
-    	System.out.println("Starting Flow: ADMIN MULTIPLE ASIGNEE ORDER FLOW TEST");
+    	System.out.println("Starting Flow: ADMIN MULTIPLE ASSIGNEE ORDER FLOW TEST");
     	System.out.println("=========================================================\n");
         String token = LoginUtil.performLogin(adminEmail,adminPassword);
         Config.setSessionToken(token);
-        System.out.println("Login Successfully with Admin Email: " +adminEmail);
+        System.out.println("TEST PASSED: Admin logged in successfully with email: " +adminEmail);
     }
 
    
@@ -128,12 +128,13 @@ public class AdminMultipleAssigneeOrderFlowTest {
 
         Response createResponse = OrderAPI.createOrder(payload);
         Assert.assertEquals(createResponse.getStatusCode(), 201, "Order creation failed!");
-        System.out.println("Create Status Code: " + createResponse.getStatusCode());
-        System.out.println("Create Customer Response:\n" + createResponse.getBody().asString());
+        //System.out.println("Create Status Code: " + createResponse.getStatusCode());
+        //System.out.println("Create Customer Response:\n" + createResponse.getBody().asString());
         orderId = OrderVerificationAPI.getOrderIdByCustomerName(customerName);
         Assert.assertNotNull(orderId);
-        System.out.println("Order ID: " + orderId); 
-        System.out.println("Customer found in queue. Customer Name: " + customerName);
+        //System.out.println("Order ID: " + orderId); 
+        //System.out.println("Customer found in queue. Customer Name: " + customerName);
+        System.out.println("TEST PASSED: Order created and verified in 'Queued' status for customer: " +customerName);
         Thread.sleep(2000);
     }
 
@@ -143,6 +144,7 @@ public class AdminMultipleAssigneeOrderFlowTest {
         Response splitOrderResponse = SplitAPI.splitOrder(orderId, false);
         int statusCode = splitOrderResponse.getStatusCode();
         Assert.assertTrue(statusCode == 200 || statusCode == 201, "Split failed!");
+        System.out.println("TEST PASSED: Split status is 'NO' for the order");
     }
 
     @Test(dependsOnMethods = "splitOrder")
@@ -157,8 +159,9 @@ public class AdminMultipleAssigneeOrderFlowTest {
         stageIdToUpdate = ((Number) matchedStage.get("id")).intValue();
 
         Response updateResponse = StageUpdateTATAPI.updateTAT(stageIdToUpdate, orderId, 2, 4);
-        System.out.println("TAT Update Status Code: " + updateResponse.getStatusCode());
+        //System.out.println("TAT Update Status Code: " + updateResponse.getStatusCode());
         Assert.assertEquals(updateResponse.getStatusCode(), 200, "Failed to update TAT!");
+        System.out.println("TEST PASSED: TAT is updated successfully");
         Thread.sleep(2000);
     }
     
@@ -167,7 +170,7 @@ public class AdminMultipleAssigneeOrderFlowTest {
         assignee1Id = createUser(assignee1Email, "User1");
         assignee2Id = createUser(assignee2Email, "User2");
         assignee3Id = createUser(assignee3Email, "User3");
-
+        System.out.println("TEST PASSED: Users added successfully");
         List<Map<String, Object>> allStages = StageAPI.getStageList(orderId);
         filteredStages1 = allStages.stream()
             .filter(stage -> {
@@ -181,6 +184,7 @@ public class AdminMultipleAssigneeOrderFlowTest {
                 List.of(assignee1Id, assignee2Id, assignee3Id));
             Assert.assertEquals(assignResponse.getStatusCode(), 200);
         }
+        System.out.println("TEST PASSED: Associate assigned successfully");
     }
 
     private String createUser(String email, String firstName) {
@@ -198,9 +202,10 @@ public class AdminMultipleAssigneeOrderFlowTest {
             String comment = "Test Remark from admin Stage " + remarkNumber;
             Response response = RemarkAPI.addRemark(orderId, stageId, comment);
             Assert.assertTrue(response.getStatusCode() == 200 || response.getStatusCode() == 201);
-            System.out.println("Added remark from admin to stage: " + remarkNumber);
+            //System.out.println("Added remark from admin to stage: " + remarkNumber);
             remarkNumber++;
         }
+        System.out.println("TEST PASSED: Remarks for stages 2 to 7 added successfully by Admin");
     }
 
     @Test(dependsOnMethods = "addRemarks")
@@ -212,9 +217,10 @@ public class AdminMultipleAssigneeOrderFlowTest {
             String comment = "Test Attachment from admin Stage " + attachmentNumber;
             Response response = AttachmentAPI.addAttachment(orderId, stageId, comment);
             Assert.assertTrue(response.getStatusCode() == 200 || response.getStatusCode() == 201);
-            System.out.println("Added attachment from admin to stage: " + attachmentNumber);
+            //System.out.println("Added attachment from admin to stage: " + attachmentNumber);
             attachmentNumber++;
         }
+        System.out.println("TEST PASSED: Attachments for stages 2 to 7 added successfully by Admin");
     }
 
     @Test(dependsOnMethods = "addAttachments")
@@ -222,6 +228,8 @@ public class AdminMultipleAssigneeOrderFlowTest {
         acceptTerms(assignee1Email, assigneePassword, assignee1Id);
         acceptTerms(assignee2Email, assigneePassword, assignee2Id);
         acceptTerms(assignee3Email, assigneePassword, assignee3Id);
+        System.out.println("TEST PASSED: Switched session successfully for the assigned users");
+        System.out.println("TEST PASSED: Terms accepted successfully by Associates on first login");
     }
 
     private void acceptTerms(String email, String pass, String userId) {
@@ -229,7 +237,7 @@ public class AdminMultipleAssigneeOrderFlowTest {
         Config.setSessionToken(token);
         Response resp = TermConditionAPI.acceptTerms(userId);
         Assert.assertEquals(resp.getStatusCode(), 200);
-        System.out.println("Terms accepted for: " + email);
+        //System.out.println("Terms accepted for: " + email);
     }
     @Test(dependsOnMethods = "acceptTermsForAllUsers")
     public void performStageActionsAsMultipleUsers() throws InterruptedException {
@@ -242,23 +250,26 @@ public class AdminMultipleAssigneeOrderFlowTest {
             switchUserSession(assignee1Email, assigneePassword);
             Response remarkResponse = RemarkAPI.addRemark(orderId, stageId, "Remark added by assignee1Email to Stage " + stageNumber);
             Assert.assertTrue(remarkResponse.getStatusCode() == 200 || remarkResponse.getStatusCode() == 201);
-            System.out.println("assignee1Email added remark at stage: " + stageNumber);
+            //System.out.println("assignee1Email added remark at stage: " + stageNumber);
 
             // User 2: Add attachment
             switchUserSession(assignee2Email, assigneePassword);
             Response attachmentResponse = AttachmentAPI.addAttachment(orderId, stageId, "Attachment added by assignee2Email to Stage " + stageNumber);
             Assert.assertTrue(attachmentResponse.getStatusCode() == 200 || attachmentResponse.getStatusCode() == 201);
-            System.out.println("assignee2Email added attachment at stage: " + stageNumber);
+            //System.out.println("assignee2Email added attachment at stage: " + stageNumber);
 
             // User 3: Complete stage
             switchUserSession(assignee3Email, assigneePassword);
             Response completeResponse = StatusAPI.completeStage(orderId, stageId);
             Assert.assertEquals(completeResponse.getStatusCode(), 200);
-            System.out.println("completed by assignee3Email stage: " + stageNumber);
+            //System.out.println("completed by assignee3Email stage: " + stageNumber);
 
             stageNumber++;
             Thread.sleep(1000);
         }
+        System.out.println("TEST PASSED: Remarks for stages 2 to 7 added successfully by the Associate 1");
+        System.out.println("TEST PASSED: Attachments for stages 2 to 7 added successfully by the Associate 2");
+        System.out.println("TEST PASSED: Stages 2 to 7 marked as 'Completed' successfully by the Associate 3");
     }
 
     private void switchUserSession(String email, String pass) {

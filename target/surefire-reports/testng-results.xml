@@ -1,289 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="48" passed="48" failed="0" skipped="0">
+<testng-results ignored="0" total="9" passed="9" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-08-04T14:40:52 IST" name="Hybrid Automation Suite" finished-at="2025-08-04T14:43:57 IST" duration-ms="184971">
+  <suite started-at="2025-08-05T12:43:49 IST" name="Admin Order Suite" finished-at="2025-08-05T12:44:11 IST" duration-ms="22708">
     <groups>
     </groups>
-    <test started-at="2025-08-04T14:40:52 IST" name="UI - Dashboard Before" finished-at="2025-08-04T14:41:08 IST" duration-ms="15218">
-      <class name="tests.DashboardTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.DashboardTest@6c80d78a]" started-at="2025-08-04T14:40:52 IST" name="setUp" finished-at="2025-08-04T14:40:57 IST" duration-ms="4671" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="testDashboardCountsBefore()[pri:0, instance:tests.DashboardTest@6c80d78a]" started-at="2025-08-04T14:40:57 IST" name="testDashboardCountsBefore" finished-at="2025-08-04T14:41:07 IST" duration-ms="9506" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testDashboardCountsBefore -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.DashboardTest@6c80d78a]" started-at="2025-08-04T14:41:07 IST" name="tearDown" finished-at="2025-08-04T14:41:08 IST" duration-ms="962" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- tests.DashboardTest -->
-    </test> <!-- UI - Dashboard Before -->
-    <test started-at="2025-08-04T14:41:08 IST" name="API - Admin Flow" finished-at="2025-08-04T14:41:33 IST" duration-ms="24203">
-      <class name="tests.AdminOrderFlowTest">
-        <test-method is-config="true" signature="setupSession()[pri:0, instance:tests.AdminOrderFlowTest@45385f75]" started-at="2025-08-04T14:41:08 IST" name="setupSession" finished-at="2025-08-04T14:41:13 IST" duration-ms="4253" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setupSession -->
-        <test-method signature="createOrder()[pri:0, instance:tests.AdminOrderFlowTest@45385f75]" started-at="2025-08-04T14:41:13 IST" name="createOrder" finished-at="2025-08-04T14:41:16 IST" duration-ms="2940" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createOrder -->
-        <test-method signature="downloadcompleteOnTimeReportTest()[pri:0, instance:tests.AdminOrderFlowTest@45385f75]" started-at="2025-08-04T14:41:16 IST" name="downloadcompleteOnTimeReportTest" finished-at="2025-08-04T14:41:16 IST" duration-ms="768" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- downloadcompleteOnTimeReportTest -->
-        <test-method signature="downloadcompleteWithDelayReportTest()[pri:0, instance:tests.AdminOrderFlowTest@45385f75]" started-at="2025-08-04T14:41:16 IST" name="downloadcompleteWithDelayReportTest" finished-at="2025-08-04T14:41:17 IST" duration-ms="320" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- downloadcompleteWithDelayReportTest -->
-        <test-method signature="splitOrder()[pri:0, instance:tests.AdminOrderFlowTest@45385f75]" started-at="2025-08-04T14:41:17 IST" name="splitOrder" finished-at="2025-08-04T14:41:17 IST" depends-on-methods="tests.AdminOrderFlowTest.createOrder" duration-ms="246" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- splitOrder -->
-        <test-method signature="updateTAT()[pri:0, instance:tests.AdminOrderFlowTest@45385f75]" started-at="2025-08-04T14:41:17 IST" name="updateTAT" finished-at="2025-08-04T14:41:21 IST" depends-on-methods="tests.AdminOrderFlowTest.splitOrder" duration-ms="3767" status="PASS">
+    <test started-at="2025-08-05T12:43:49 IST" name="End-to-End Admin Asignee Order Flow" finished-at="2025-08-05T12:44:11 IST" duration-ms="22708">
+      <class name="tests.StageUpdateTest">
+        <test-method signature="updateTAT()[pri:0, instance:tests.StageUpdateTest@6fe595dc]" started-at="2025-08-05T12:43:50 IST" name="updateTAT" finished-at="2025-08-05T12:43:50 IST" duration-ms="722" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- updateTAT -->
-        <test-method signature="addAndAssignUsers()[pri:0, instance:tests.AdminOrderFlowTest@45385f75]" started-at="2025-08-04T14:41:21 IST" name="addAndAssignUsers" finished-at="2025-08-04T14:41:24 IST" depends-on-methods="tests.AdminOrderFlowTest.updateTAT" duration-ms="3606" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- addAndAssignUsers -->
-        <test-method signature="addRemarks()[pri:0, instance:tests.AdminOrderFlowTest@45385f75]" started-at="2025-08-04T14:41:24 IST" name="addRemarks" finished-at="2025-08-04T14:41:25 IST" depends-on-methods="tests.AdminOrderFlowTest.addAndAssignUsers" duration-ms="787" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- addRemarks -->
-        <test-method signature="addAttachments()[pri:0, instance:tests.AdminOrderFlowTest@45385f75]" started-at="2025-08-04T14:41:25 IST" name="addAttachments" finished-at="2025-08-04T14:41:26 IST" depends-on-methods="tests.AdminOrderFlowTest.addRemarks" duration-ms="1144" status="PASS">
+      </class> <!-- tests.StageUpdateTest -->
+      <class name="tests.RemarkAndAttachmentTest">
+        <test-method signature="addAttachments()[pri:0, instance:tests.RemarkAndAttachmentTest@3a8cea24]" started-at="2025-08-05T12:43:53 IST" name="addAttachments" finished-at="2025-08-05T12:43:59 IST" duration-ms="5846" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addAttachments -->
-        <test-method signature="completeStages()[pri:0, instance:tests.AdminOrderFlowTest@45385f75]" started-at="2025-08-04T14:41:26 IST" name="completeStages" finished-at="2025-08-04T14:41:30 IST" depends-on-methods="tests.AdminOrderFlowTest.addAttachments" duration-ms="3376" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- completeStages -->
-        <test-method signature="verifyCompletion()[pri:0, instance:tests.AdminOrderFlowTest@45385f75]" started-at="2025-08-04T14:41:30 IST" name="verifyCompletion" finished-at="2025-08-04T14:41:32 IST" depends-on-methods="tests.AdminOrderFlowTest.completeStages" duration-ms="2810" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyCompletion -->
-        <test-method signature="updateUser()[pri:0, instance:tests.AdminOrderFlowTest@45385f75]" started-at="2025-08-04T14:41:32 IST" name="updateUser" finished-at="2025-08-04T14:41:33 IST" depends-on-methods="tests.AdminOrderFlowTest.addAndAssignUsers, tests.AdminOrderFlowTest.verifyCompletion" duration-ms="160" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- updateUser -->
-      </class> <!-- tests.AdminOrderFlowTest -->
-    </test> <!-- API - Admin Flow -->
-    <test started-at="2025-08-04T14:41:33 IST" name="API - Admin Order with Split Flow" finished-at="2025-08-04T14:41:42 IST" duration-ms="9776">
-      <class name="tests.AdminSplitOrderFlowTest">
-        <test-method is-config="true" signature="setupSession()[pri:0, instance:tests.AdminSplitOrderFlowTest@5e3f861]" started-at="2025-08-04T14:41:33 IST" name="setupSession" finished-at="2025-08-04T14:41:33 IST" duration-ms="433" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setupSession -->
-        <test-method signature="createOrder()[pri:0, instance:tests.AdminSplitOrderFlowTest@5e3f861]" started-at="2025-08-04T14:41:33 IST" name="createOrder" finished-at="2025-08-04T14:41:34 IST" duration-ms="561" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createOrder -->
-        <test-method signature="downloadcompleteOnTimeReportTest()[pri:0, instance:tests.AdminSplitOrderFlowTest@5e3f861]" started-at="2025-08-04T14:41:34 IST" name="downloadcompleteOnTimeReportTest" finished-at="2025-08-04T14:41:34 IST" duration-ms="214" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- downloadcompleteOnTimeReportTest -->
-        <test-method signature="downloadcompleteWithDelayReportTest()[pri:0, instance:tests.AdminSplitOrderFlowTest@5e3f861]" started-at="2025-08-04T14:41:34 IST" name="downloadcompleteWithDelayReportTest" finished-at="2025-08-04T14:41:34 IST" duration-ms="124" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- downloadcompleteWithDelayReportTest -->
-        <test-method signature="splitOrder()[pri:0, instance:tests.AdminSplitOrderFlowTest@5e3f861]" started-at="2025-08-04T14:41:34 IST" name="splitOrder" finished-at="2025-08-04T14:41:35 IST" depends-on-methods="tests.AdminSplitOrderFlowTest.createOrder" duration-ms="588" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- splitOrder -->
-        <test-method signature="updateTAT()[pri:0, instance:tests.AdminSplitOrderFlowTest@5e3f861]" started-at="2025-08-04T14:41:35 IST" name="updateTAT" finished-at="2025-08-04T14:41:35 IST" depends-on-methods="tests.AdminSplitOrderFlowTest.splitOrder" duration-ms="273" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- updateTAT -->
-        <test-method signature="addAndAssignUsers()[pri:0, instance:tests.AdminSplitOrderFlowTest@5e3f861]" started-at="2025-08-04T14:41:35 IST" name="addAndAssignUsers" finished-at="2025-08-04T14:41:37 IST" depends-on-methods="tests.AdminSplitOrderFlowTest.updateTAT" duration-ms="2471" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- addAndAssignUsers -->
-        <test-method signature="addRemarks()[pri:0, instance:tests.AdminSplitOrderFlowTest@5e3f861]" started-at="2025-08-04T14:41:37 IST" name="addRemarks" finished-at="2025-08-04T14:41:38 IST" depends-on-methods="tests.AdminSplitOrderFlowTest.addAndAssignUsers" duration-ms="736" status="PASS">
+        <test-method signature="addRemarks()[pri:0, instance:tests.RemarkAndAttachmentTest@3a8cea24]" started-at="2025-08-05T12:43:59 IST" name="addRemarks" finished-at="2025-08-05T12:44:00 IST" duration-ms="777" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addRemarks -->
-        <test-method signature="completeStages()[pri:0, instance:tests.AdminSplitOrderFlowTest@5e3f861]" started-at="2025-08-04T14:41:38 IST" name="completeStages" finished-at="2025-08-04T14:41:39 IST" depends-on-methods="tests.AdminSplitOrderFlowTest.addAndAssignUsers" duration-ms="1222" status="PASS">
+      </class> <!-- tests.RemarkAndAttachmentTest -->
+      <class name="tests.AssigneeLogin">
+        <test-method signature="loginAssignee()[pri:0, instance:tests.AssigneeLogin@298b64f7]" started-at="2025-08-05T12:44:00 IST" name="loginAssignee" finished-at="2025-08-05T12:44:00 IST" duration-ms="459" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- completeStages -->
-        <test-method signature="addAttachments()[pri:0, instance:tests.AdminSplitOrderFlowTest@5e3f861]" started-at="2025-08-04T14:41:39 IST" name="addAttachments" finished-at="2025-08-04T14:41:40 IST" depends-on-methods="tests.AdminSplitOrderFlowTest.addRemarks" duration-ms="759" status="PASS">
+        </test-method> <!-- loginAssignee -->
+        <test-method signature="acceptTerms()[pri:0, instance:tests.AssigneeLogin@298b64f7]" started-at="2025-08-05T12:44:00 IST" name="acceptTerms" finished-at="2025-08-05T12:44:00 IST" depends-on-methods="tests.AssigneeLogin.loginAssignee" duration-ms="182" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- addAttachments -->
-        <test-method signature="verifyCompletion()[pri:0, instance:tests.AdminSplitOrderFlowTest@5e3f861]" started-at="2025-08-04T14:41:40 IST" name="verifyCompletion" finished-at="2025-08-04T14:41:42 IST" depends-on-methods="tests.AdminSplitOrderFlowTest.completeStages" duration-ms="2383" status="PASS">
+        </test-method> <!-- acceptTerms -->
+      </class> <!-- tests.AssigneeLogin -->
+      <class name="tests.completeStagesWithAssignee">
+        <test-method signature="completeStagesWithDetails()[pri:0, instance:tests.completeStagesWithAssignee@740b6628]" started-at="2025-08-05T12:44:00 IST" name="completeStagesWithDetails" finished-at="2025-08-05T12:44:11 IST" duration-ms="10906" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyCompletion -->
-      </class> <!-- tests.AdminSplitOrderFlowTest -->
-    </test> <!-- API - Admin Order with Split Flow -->
-    <test started-at="2025-08-04T14:41:42 IST" name="API - Admin Asignee Flow" finished-at="2025-08-04T14:42:04 IST" duration-ms="21123">
-      <class name="tests.AdminAssigneeOrderFlowTest">
-        <test-method is-config="true" signature="setupSession()[pri:0, instance:tests.AdminAssigneeOrderFlowTest@642a7222]" started-at="2025-08-04T14:41:42 IST" name="setupSession" finished-at="2025-08-04T14:41:43 IST" duration-ms="435" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setupSession -->
-        <test-method signature="createOrder()[pri:0, instance:tests.AdminAssigneeOrderFlowTest@642a7222]" started-at="2025-08-04T14:41:43 IST" name="createOrder" finished-at="2025-08-04T14:41:45 IST" duration-ms="2513" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createOrder -->
-        <test-method signature="splitOrder()[pri:0, instance:tests.AdminAssigneeOrderFlowTest@642a7222]" started-at="2025-08-04T14:41:45 IST" name="splitOrder" finished-at="2025-08-04T14:41:46 IST" depends-on-methods="tests.AdminAssigneeOrderFlowTest.createOrder" duration-ms="103" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- splitOrder -->
-        <test-method signature="updateTAT()[pri:0, instance:tests.AdminAssigneeOrderFlowTest@642a7222]" started-at="2025-08-04T14:41:46 IST" name="updateTAT" finished-at="2025-08-04T14:41:48 IST" depends-on-methods="tests.AdminAssigneeOrderFlowTest.splitOrder" duration-ms="2239" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- updateTAT -->
-        <test-method signature="addAndAssignUsers()[pri:0, instance:tests.AdminAssigneeOrderFlowTest@642a7222]" started-at="2025-08-04T14:41:48 IST" name="addAndAssignUsers" finished-at="2025-08-04T14:41:51 IST" depends-on-methods="tests.AdminAssigneeOrderFlowTest.updateTAT" duration-ms="2932" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- addAndAssignUsers -->
-        <test-method signature="addRemarks()[pri:0, instance:tests.AdminAssigneeOrderFlowTest@642a7222]" started-at="2025-08-04T14:41:51 IST" name="addRemarks" finished-at="2025-08-04T14:41:51 IST" depends-on-methods="tests.AdminAssigneeOrderFlowTest.addAndAssignUsers" duration-ms="718" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- addRemarks -->
-        <test-method signature="addAttachments()[pri:0, instance:tests.AdminAssigneeOrderFlowTest@642a7222]" started-at="2025-08-04T14:41:51 IST" name="addAttachments" finished-at="2025-08-04T14:41:52 IST" depends-on-methods="tests.AdminAssigneeOrderFlowTest.addRemarks" duration-ms="1035" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- addAttachments -->
-        <test-method signature="switchToAssignedUser()[pri:0, instance:tests.AdminAssigneeOrderFlowTest@642a7222]" started-at="2025-08-04T14:41:52 IST" name="switchToAssignedUser" finished-at="2025-08-04T14:41:53 IST" depends-on-methods="tests.AdminAssigneeOrderFlowTest.addAndAssignUsers, tests.AdminAssigneeOrderFlowTest.addAttachments" duration-ms="464" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- switchToAssignedUser -->
-        <test-method signature="termAndConditionAssignedUser()[pri:0, instance:tests.AdminAssigneeOrderFlowTest@642a7222]" started-at="2025-08-04T14:41:53 IST" name="termAndConditionAssignedUser" finished-at="2025-08-04T14:41:53 IST" depends-on-methods="tests.AdminAssigneeOrderFlowTest.switchToAssignedUser" duration-ms="210" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- termAndConditionAssignedUser -->
-        <test-method signature="completeStagesWithRemarksAndAttachments()[pri:0, instance:tests.AdminAssigneeOrderFlowTest@642a7222]" started-at="2025-08-04T14:41:53 IST" name="completeStagesWithRemarksAndAttachments" finished-at="2025-08-04T14:42:04 IST" depends-on-methods="tests.AdminAssigneeOrderFlowTest.termAndConditionAssignedUser" duration-ms="10460" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- completeStagesWithRemarksAndAttachments -->
-      </class> <!-- tests.AdminAssigneeOrderFlowTest -->
-    </test> <!-- API - Admin Asignee Flow -->
-    <test started-at="2025-08-04T14:42:04 IST" name="API - Admin Multiple Assignee Flow" finished-at="2025-08-04T14:42:37 IST" duration-ms="33266">
-      <class name="tests.AdminMultipleAssigneeOrderFlowTest">
-        <test-method is-config="true" signature="setupSession()[pri:0, instance:tests.AdminMultipleAssigneeOrderFlowTest@4470fbd6]" started-at="2025-08-04T14:42:04 IST" name="setupSession" finished-at="2025-08-04T14:42:07 IST" duration-ms="3413" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setupSession -->
-        <test-method signature="createOrder()[pri:0, instance:tests.AdminMultipleAssigneeOrderFlowTest@4470fbd6]" started-at="2025-08-04T14:42:07 IST" name="createOrder" finished-at="2025-08-04T14:42:10 IST" duration-ms="2898" status="PASS">
+        </test-method> <!-- completeStagesWithDetails -->
+      </class> <!-- tests.completeStagesWithAssignee -->
+      <class name="tests.OrderCreationTest">
+        <test-method signature="createOrder()[pri:0, instance:tests.OrderCreationTest@72443081]" started-at="2025-08-05T12:43:49 IST" name="createOrder" finished-at="2025-08-05T12:43:50 IST" duration-ms="842" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createOrder -->
-        <test-method signature="splitOrder()[pri:0, instance:tests.AdminMultipleAssigneeOrderFlowTest@4470fbd6]" started-at="2025-08-04T14:42:10 IST" name="splitOrder" finished-at="2025-08-04T14:42:10 IST" depends-on-methods="tests.AdminMultipleAssigneeOrderFlowTest.createOrder" duration-ms="123" status="PASS">
+      </class> <!-- tests.OrderCreationTest -->
+      <class name="tests.SplitOrderTest">
+        <test-method signature="splitOrder()[pri:0, instance:tests.SplitOrderTest@7b2bf745]" started-at="2025-08-05T12:43:50 IST" name="splitOrder" finished-at="2025-08-05T12:43:50 IST" duration-ms="152" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- splitOrder -->
-        <test-method signature="updateTAT()[pri:0, instance:tests.AdminMultipleAssigneeOrderFlowTest@4470fbd6]" started-at="2025-08-04T14:42:10 IST" name="updateTAT" finished-at="2025-08-04T14:42:12 IST" depends-on-methods="tests.AdminMultipleAssigneeOrderFlowTest.splitOrder" duration-ms="2271" status="PASS">
+      </class> <!-- tests.SplitOrderTest -->
+      <class name="tests.UserAssignmentTest">
+        <test-method signature="createUserAndAssignStages()[pri:0, instance:tests.UserAssignmentTest@5af5d76f]" started-at="2025-08-05T12:43:50 IST" name="createUserAndAssignStages" finished-at="2025-08-05T12:43:53 IST" duration-ms="2770" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- updateTAT -->
-        <test-method signature="createAndAssignMultipleUsers()[pri:0, instance:tests.AdminMultipleAssigneeOrderFlowTest@4470fbd6]" started-at="2025-08-04T14:42:12 IST" name="createAndAssignMultipleUsers" finished-at="2025-08-04T14:42:18 IST" depends-on-methods="tests.AdminMultipleAssigneeOrderFlowTest.updateTAT" duration-ms="5267" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createAndAssignMultipleUsers -->
-        <test-method signature="addRemarks()[pri:0, instance:tests.AdminMultipleAssigneeOrderFlowTest@4470fbd6]" started-at="2025-08-04T14:42:18 IST" name="addRemarks" finished-at="2025-08-04T14:42:18 IST" depends-on-methods="tests.AdminMultipleAssigneeOrderFlowTest.createAndAssignMultipleUsers" duration-ms="664" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- addRemarks -->
-        <test-method signature="addAttachments()[pri:0, instance:tests.AdminMultipleAssigneeOrderFlowTest@4470fbd6]" started-at="2025-08-04T14:42:18 IST" name="addAttachments" finished-at="2025-08-04T14:42:19 IST" depends-on-methods="tests.AdminMultipleAssigneeOrderFlowTest.addRemarks" duration-ms="693" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- addAttachments -->
-        <test-method signature="acceptTermsForAllUsers()[pri:0, instance:tests.AdminMultipleAssigneeOrderFlowTest@4470fbd6]" started-at="2025-08-04T14:42:19 IST" name="acceptTermsForAllUsers" finished-at="2025-08-04T14:42:21 IST" depends-on-methods="tests.AdminMultipleAssigneeOrderFlowTest.addAttachments" duration-ms="1611" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- acceptTermsForAllUsers -->
-        <test-method signature="performStageActionsAsMultipleUsers()[pri:0, instance:tests.AdminMultipleAssigneeOrderFlowTest@4470fbd6]" started-at="2025-08-04T14:42:21 IST" name="performStageActionsAsMultipleUsers" finished-at="2025-08-04T14:42:37 IST" depends-on-methods="tests.AdminMultipleAssigneeOrderFlowTest.acceptTermsForAllUsers" duration-ms="16316" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- performStageActionsAsMultipleUsers -->
-      </class> <!-- tests.AdminMultipleAssigneeOrderFlowTest -->
-    </test> <!-- API - Admin Multiple Assignee Flow -->
-    <test started-at="2025-08-04T14:42:37 IST" name="API - Admin Reject Flow" finished-at="2025-08-04T14:42:49 IST" duration-ms="11967">
-      <class name="tests.AdminOrderRejectFlowTest">
-        <test-method is-config="true" signature="setupSession()[pri:0, instance:tests.AdminOrderRejectFlowTest@2235eaab]" started-at="2025-08-04T14:42:37 IST" name="setupSession" finished-at="2025-08-04T14:42:37 IST" duration-ms="388" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setupSession -->
-        <test-method signature="createOrder()[pri:0, instance:tests.AdminOrderRejectFlowTest@2235eaab]" started-at="2025-08-04T14:42:37 IST" name="createOrder" finished-at="2025-08-04T14:42:40 IST" duration-ms="2625" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createOrder -->
-        <test-method signature="splitOrder()[pri:0, instance:tests.AdminOrderRejectFlowTest@2235eaab]" started-at="2025-08-04T14:42:40 IST" name="splitOrder" finished-at="2025-08-04T14:42:40 IST" depends-on-methods="tests.AdminOrderRejectFlowTest.createOrder" duration-ms="106" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- splitOrder -->
-        <test-method signature="updateTAT()[pri:0, instance:tests.AdminOrderRejectFlowTest@2235eaab]" started-at="2025-08-04T14:42:40 IST" name="updateTAT" finished-at="2025-08-04T14:42:42 IST" depends-on-methods="tests.AdminOrderRejectFlowTest.splitOrder" duration-ms="2262" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- updateTAT -->
-        <test-method signature="addAndAssignUsers()[pri:0, instance:tests.AdminOrderRejectFlowTest@2235eaab]" started-at="2025-08-04T14:42:42 IST" name="addAndAssignUsers" finished-at="2025-08-04T14:42:44 IST" depends-on-methods="tests.AdminOrderRejectFlowTest.updateTAT" duration-ms="2109" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- addAndAssignUsers -->
-        <test-method signature="completeStages()[pri:0, instance:tests.AdminOrderRejectFlowTest@2235eaab]" started-at="2025-08-04T14:42:44 IST" name="completeStages" finished-at="2025-08-04T14:42:47 IST" depends-on-methods="tests.AdminOrderRejectFlowTest.addAndAssignUsers" duration-ms="2321" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- completeStages -->
-        <test-method signature="verifyRejectOrder()[pri:0, instance:tests.AdminOrderRejectFlowTest@2235eaab]" started-at="2025-08-04T14:42:47 IST" name="verifyRejectOrder" finished-at="2025-08-04T14:42:49 IST" depends-on-methods="tests.AdminOrderRejectFlowTest.completeStages" duration-ms="2150" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyRejectOrder -->
-      </class> <!-- tests.AdminOrderRejectFlowTest -->
-    </test> <!-- API - Admin Reject Flow -->
-    <test started-at="2025-08-04T14:42:49 IST" name="UI - Report Validation" finished-at="2025-08-04T14:43:15 IST" duration-ms="25534">
-      <class name="tests.ReportValidationTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.ReportValidationTest@20bd8be5]" started-at="2025-08-04T14:42:49 IST" name="setUp" finished-at="2025-08-04T14:42:53 IST" duration-ms="3540" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="compareReportUIAndExcelData()[pri:0, instance:tests.ReportValidationTest@20bd8be5]" started-at="2025-08-04T14:42:53 IST" name="compareReportUIAndExcelData" finished-at="2025-08-04T14:43:14 IST" duration-ms="21039" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- compareReportUIAndExcelData -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.ReportValidationTest@20bd8be5]" started-at="2025-08-04T14:43:14 IST" name="tearDown" finished-at="2025-08-04T14:43:15 IST" duration-ms="951" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- tests.ReportValidationTest -->
-    </test> <!-- UI - Report Validation -->
-    <test started-at="2025-08-04T14:43:15 IST" name="UI - Add User via UI" finished-at="2025-08-04T14:43:41 IST" duration-ms="26130">
-      <class name="tests.AddUserTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.AddUserTest@461ad730]" started-at="2025-08-04T14:43:15 IST" name="setUp" finished-at="2025-08-04T14:43:19 IST" duration-ms="4756" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="testfillAddUser()[pri:0, instance:tests.AddUserTest@461ad730]" started-at="2025-08-04T14:43:19 IST" name="testfillAddUser" finished-at="2025-08-04T14:43:40 IST" duration-ms="20773" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testfillAddUser -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.AddUserTest@461ad730]" started-at="2025-08-04T14:43:40 IST" name="tearDown" finished-at="2025-08-04T14:43:41 IST" duration-ms="598" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- tests.AddUserTest -->
-    </test> <!-- UI - Add User via UI -->
-    <test started-at="2025-08-04T14:43:41 IST" name="UI - Dashboard After" finished-at="2025-08-04T14:43:57 IST" duration-ms="16612">
-      <class name="tests.DashboardTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.DashboardTest@7068e664]" started-at="2025-08-04T14:43:41 IST" name="setUp" finished-at="2025-08-04T14:43:44 IST" duration-ms="3685" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="testDashboardCountsAfter()[pri:0, instance:tests.DashboardTest@7068e664]" started-at="2025-08-04T14:43:44 IST" name="testDashboardCountsAfter" finished-at="2025-08-04T14:43:55 IST" duration-ms="10785" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testDashboardCountsAfter -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.DashboardTest@7068e664]" started-at="2025-08-04T14:43:55 IST" name="tearDown" finished-at="2025-08-04T14:43:57 IST" duration-ms="2141" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- tests.DashboardTest -->
-    </test> <!-- UI - Dashboard After -->
-  </suite> <!-- Hybrid Automation Suite -->
+        </test-method> <!-- createUserAndAssignStages -->
+      </class> <!-- tests.UserAssignmentTest -->
+    </test> <!-- End-to-End Admin Asignee Order Flow -->
+  </suite> <!-- Admin Order Suite -->
 </testng-results>

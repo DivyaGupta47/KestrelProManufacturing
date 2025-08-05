@@ -1,5 +1,6 @@
 D:\SeleniumDemo\KestralPro\src\test\java\apis\DashboardAPI.java
 D:\SeleniumDemo\KestralPro\src\test\java\apis\ReportAPI.java
+D:\SeleniumDemo\KestralPro\src\test\java\pages\ReportAssertionPage.java
 D:\SeleniumDemo\KestralPro\src\test\java\listeners\ExtentTestNGListener.java
 D:\SeleniumDemo\KestralPro\src\test\java\base\BaseFlowData.java
 D:\SeleniumDemo\KestralPro\src\test\java\tests\AdminSplitOrderFlowTest.java
@@ -48,12 +49,15 @@ D:\SeleniumDemo\KestralPro\src\test\java\tests\ProductFlowOnTimeTest.java
 D:\SeleniumDemo\KestralPro\src\test\java\tests\ReportDownloadTest.java
 D:\SeleniumDemo\KestralPro\src\test\java\utils\CredentialsUtil.java
 D:\SeleniumDemo\KestralPro\src\test\java\pages\ProductFlowCompletePage.java
+D:\SeleniumDemo\KestralPro\src\test\java\tests\ReportWithExcel.java
 D:\SeleniumDemo\KestralPro\src\test\java\utils\ExcelReader.java
 D:\SeleniumDemo\KestralPro\src\test\java\tests\CreateOrderAdminTest.java
 D:\SeleniumDemo\KestralPro\src\test\java\tests\AdminOrderRejectFlowTest.java
 D:\SeleniumDemo\KestralPro\src\test\java\tests\UserUpdateTest.java
 D:\SeleniumDemo\KestralPro\src\test\java\tests\StageCompletionTest.java
 D:\SeleniumDemo\KestralPro\src\test\java\tests\UserAssignmentTest.java
+D:\SeleniumDemo\KestralPro\src\test\java\utils\ExcelReaderAPI.java
+D:\SeleniumDemo\KestralPro\src\test\java\utils\ExcelDownloader.java
 D:\SeleniumDemo\KestralPro\src\test\java\tests\ProductFlowQueuedTest.java
 D:\SeleniumDemo\KestralPro\src\test\java\apis\OrderAPI.java
 D:\SeleniumDemo\KestralPro\src\test\java\pages\LoginPage.java

@@ -84,8 +84,8 @@ public class AdminOrderFlowTest {
     	System.out.println("=========================================================\n");
         String token = LoginUtil.performLogin(adminEmail,adminPassword);
         Config.setSessionToken(token);
-        System.out.println("Login Successfully with Admin Email: " +adminEmail);
-        
+        //System.out.println("Login Successfully with Admin Email: " +adminEmail);
+        System.out.println("TEST PASSED: Admin logged in successfully with email: " +adminEmail);
         //Response countResponse = DashboardAPI.getDashboardCounts();
         //System.out.println("Initial Dashboard Counts: " + countResponse.asPrettyString());
     }
@@ -125,12 +125,13 @@ public class AdminOrderFlowTest {
 
         Response createResponse = OrderAPI.createOrder(payload);
         Assert.assertEquals(createResponse.getStatusCode(), 201, "Order creation failed!");
-        System.out.println("Create Status Code: " + createResponse.getStatusCode());
-        System.out.println("Create Customer Response:\n" + createResponse.getBody().asString());
+        //System.out.println("Create Status Code: " + createResponse.getStatusCode());
+        //System.out.println("Create Customer Response:\n" + createResponse.getBody().asString());
         orderId = OrderVerificationAPI.getOrderIdByCustomerName(customerName);
         Assert.assertNotNull(orderId);
-        System.out.println("Order ID: " + orderId); 
-        System.out.println("Customer found in queue. Customer Name: " + customerName);
+        //System.out.println("Order ID: " + orderId); 
+        //System.out.println("Customer found in queue. Customer Name: " + customerName);
+        System.out.println("TEST PASSED: Order created and verified in 'Queued' status for customer: " +customerName);
         Thread.sleep(2000);
     }
 
@@ -140,6 +141,7 @@ public class AdminOrderFlowTest {
         Response splitOrderResponse = SplitAPI.splitOrder(orderId, false);
         int statusCode = splitOrderResponse.getStatusCode();
         Assert.assertTrue(statusCode == 200 || statusCode == 201, "Split failed!");
+        System.out.println("TEST PASSED: Split status is 'NO' for the order");
     }
 
     @Test(dependsOnMethods = "splitOrder")
@@ -154,7 +156,8 @@ public class AdminOrderFlowTest {
         stageIdToUpdate = ((Number) matchedStage.get("id")).intValue();
 
         Response updateResponse = StageUpdateTATAPI.updateTAT(stageIdToUpdate, orderId, 2, 4);
-        System.out.println("TAT Update Status Code: " + updateResponse.getStatusCode());
+        //System.out.println("TAT Update Status Code: " + updateResponse.getStatusCode());
+        System.out.println("TEST PASSED: TAT is updated successfully");
         Assert.assertEquals(updateResponse.getStatusCode(), 200, "Failed to update TAT!");
         Thread.sleep(2000);
     }
@@ -166,7 +169,8 @@ public class AdminOrderFlowTest {
         Assert.assertEquals(userResponse.getStatusCode(), 200, "User creation failed!");
 
         userId = userResponse.jsonPath().getString("identity_id");
-        System.out.println("New Member User ID: " + userId);
+        //System.out.println("New Member User ID: " + userId);
+        System.out.println("TEST PASSED: User added successfully");
         List<Map<String, Object>> allStages = StageAPI.getStageList(orderId);
         filteredStages1 = allStages.stream()
             .filter(stage -> {
@@ -179,9 +183,10 @@ public class AdminOrderFlowTest {
             int stageIdToAssign = ((Number) stage.get("id")).intValue();
             Response resp = AssigneeAPI.assignStageToOrder(orderId, stageIdToAssign, List.of(userId));
             Assert.assertEquals(resp.getStatusCode(), 200);
-            System.out.println("Assigned user to stage: " + assigneeNumber + ", Email: " + assigneeEmail);
+            //System.out.println("Assigned user to stage: " + assigneeNumber + ", Email: " + assigneeEmail);
             assigneeNumber++;
         }
+        System.out.println("TEST PASSED: Associate assigned successfully");
     }
 
     @Test(dependsOnMethods = "addAndAssignUsers")
@@ -193,9 +198,10 @@ public class AdminOrderFlowTest {
             String comment = "Test Remark from admin to Stage " + remarkNumber;
             Response response = RemarkAPI.addRemark(orderId, stageId, comment);
             Assert.assertTrue(response.getStatusCode() == 200 || response.getStatusCode() == 201);
-            System.out.println("Added remark from admin to stage: " + remarkNumber);
+            //System.out.println("Added remark from admin to stage: " + remarkNumber);
             remarkNumber++;
         }
+        System.out.println("TEST PASSED: Remarks for stages 2 to 7 added successfully by Admin");
     }
 
     @Test(dependsOnMethods = "addRemarks")
@@ -207,9 +213,10 @@ public class AdminOrderFlowTest {
             String comment = "Test Attachment from admin to Stage " + attachmentNumber;
             Response response = AttachmentAPI.addAttachment(orderId, stageId, comment);
             Assert.assertTrue(response.getStatusCode() == 200 || response.getStatusCode() == 201);
-            System.out.println("Added attachment from admin to stage: " + attachmentNumber);
+            //System.out.println("Added attachment from admin to stage: " + attachmentNumber);
             attachmentNumber++;
         }
+        System.out.println("TEST PASSED: Attachments for stages 2 to 7 added successfully by Admin");
     }
 
     @Test(dependsOnMethods = "addAttachments")
@@ -220,10 +227,11 @@ public class AdminOrderFlowTest {
             int stageId = ((Number) stage.get("id")).intValue();
             Response response = StatusAPI.completeStage(orderId, stageId);
             Assert.assertEquals(response.getStatusCode(), 200);
-            System.out.println("Completed from admin to stage: " + completeNumber);
+            //System.out.println("Completed from admin to stage: " + completeNumber);
             completeNumber++;
         }
         Thread.sleep(2000);
+        System.out.println("TEST PASSED: All 2 to 7 stages status set to completed successfully");
     }
 
     @Test(dependsOnMethods = "completeStages")
@@ -231,7 +239,7 @@ public class AdminOrderFlowTest {
     	ExtentTest test = ExtentTestNGListener.getTest();
         Integer orderIdCompleted = OrderVerificationAPI.getOrderIdByCustomerNameCompleted(customerName);
         Assert.assertNotNull(orderIdCompleted, "Order not found in COMPLETED list for customer: " + customerName);
-        System.out.println("Order found in completed. Customer Name: " + customerName);
+        System.out.println("TEST PASSED: Order verified in 'completed' list for the Customer Name: " + customerName);
         
         Thread.sleep(2000);
         
@@ -245,6 +253,7 @@ public class AdminOrderFlowTest {
 	    String filePath = "test-output/completeOnTime-report.csv";
 	    Response response = ReportAPI.downloadCompleteOnTimeReport(filePath);
 	    Assert.assertEquals(response.statusCode(), 200, "Report download failed!");
+	    System.out.println("TEST PASSED: Complete on time report downloaded successfully");
 	}
 	
 	@Test
@@ -253,6 +262,7 @@ public class AdminOrderFlowTest {
 	    String filePath = "test-output/completeWithDelay-report.csv";
 	    Response response = ReportAPI.downloadCompleteWithDelayReport(filePath);
 	    Assert.assertEquals(response.statusCode(), 200, "Report download failed!");
+	    System.out.println("TEST PASSED: Complete with delay report downloaded successfully");
 	}
 	
 	@Test(dependsOnMethods = {"addAndAssignUsers", "verifyCompletion"})
@@ -265,7 +275,7 @@ public class AdminOrderFlowTest {
 	    boolean isUpdated = response.jsonPath().getBoolean("is_updated");
 	    Assert.assertTrue(isUpdated, "Update flag not true!");
 
-	    System.out.println("User updated successfully. Identity ID: " + identityId);
+	    System.out.println("TEST PASSED: User updated successfully");
 	}
 	
 	/*

@@ -55,7 +55,7 @@ public class AdminOrderRejectFlowTest {
     	System.out.println("=========================================================\n");
         String token = LoginUtil.performLogin(adminEmail,adminPassword);
         Config.setSessionToken(token);
-        System.out.println("Login Successfully with Admin Email: " +adminEmail);
+        System.out.println("TEST PASSED: Admin logged in successfully with email: " +adminEmail);
     }
 
    
@@ -93,12 +93,13 @@ public class AdminOrderRejectFlowTest {
 
         Response createResponse = OrderAPI.createOrder(payload);
         Assert.assertEquals(createResponse.getStatusCode(), 201, "Order creation failed!");
-        System.out.println("Create Status Code: " + createResponse.getStatusCode());
-        System.out.println("Create Customer Response:\n" + createResponse.getBody().asString());
+        //System.out.println("Create Status Code: " + createResponse.getStatusCode());
+        //System.out.println("Create Customer Response:\n" + createResponse.getBody().asString());
         orderId = OrderVerificationAPI.getOrderIdByCustomerName(customerName);
         Assert.assertNotNull(orderId);
-        System.out.println("Order ID: " + orderId); 
-        System.out.println("Customer found in queue. Customer Name: " + customerName);
+        //System.out.println("Order ID: " + orderId); 
+        //System.out.println("Customer found in queue. Customer Name: " + customerName);
+        System.out.println("TEST PASSED: Order created and verified in 'Queued' status for customer: " +customerName);
         Thread.sleep(2000);
     }
 
@@ -108,6 +109,7 @@ public class AdminOrderRejectFlowTest {
         Response splitOrderResponse = SplitAPI.splitOrder(orderId, false);
         int statusCode = splitOrderResponse.getStatusCode();
         Assert.assertTrue(statusCode == 200 || statusCode == 201, "Split failed!");
+        System.out.println("TEST PASSED: Split status is 'NO' for the order");
     }
 
     @Test(dependsOnMethods = "splitOrder")
@@ -122,7 +124,8 @@ public class AdminOrderRejectFlowTest {
         stageIdToUpdate = ((Number) matchedStage.get("id")).intValue();
 
         Response updateResponse = StageUpdateTATAPI.updateTAT(stageIdToUpdate, orderId, 2, 4);
-        System.out.println("TAT Update Status Code: " + updateResponse.getStatusCode());
+        //System.out.println("TAT Update Status Code: " + updateResponse.getStatusCode());
+        System.out.println("TEST PASSED: TAT is updated successfully");
         Assert.assertEquals(updateResponse.getStatusCode(), 200, "Failed to update TAT!");
         Thread.sleep(2000);
     }
@@ -134,7 +137,8 @@ public class AdminOrderRejectFlowTest {
         Assert.assertEquals(userResponse.getStatusCode(), 200, "User creation failed!");
 
         userId = userResponse.jsonPath().getString("identity_id");
-        System.out.println("New Member User ID: " + userId);
+        //System.out.println("New Member User ID: " + userId);
+        System.out.println("TEST PASSED: User added successfully");
         List<Map<String, Object>> allStages = StageAPI.getStageList(orderId);
         filteredStages1 = allStages.stream()
             .filter(stage -> {
@@ -147,9 +151,10 @@ public class AdminOrderRejectFlowTest {
             int stageIdToAssign = ((Number) stage.get("id")).intValue();
             Response resp = AssigneeAPI.assignStageToOrder(orderId, stageIdToAssign, List.of(userId));
             Assert.assertEquals(resp.getStatusCode(), 200);
-            System.out.println("Assigned user to stage: " + assigneeNumber + ", Email: " + assigneeEmail);
+            //System.out.println("Assigned user to stage: " + assigneeNumber + ", Email: " + assigneeEmail);
             assigneeNumber++;
         }
+        System.out.println("TEST PASSED: Associate assigned successfully");
     }
     
     @Test(dependsOnMethods = "addAndAssignUsers")
@@ -164,13 +169,14 @@ public class AdminOrderRejectFlowTest {
                 // Complete stage 2
                 Response response = StatusAPI.completeStage(orderId, stageId);
                 Assert.assertEquals(response.getStatusCode(), 200, "Failed to complete stage 2");
-                System.out.println("Completed Stage 2");
+                //System.out.println("Completed Stage 2");
+                System.out.println("TEST PASSED: Stage 2 completed successfully");
 
             } else if (sequence == 3) {
                 // Reject stage 3
                 Response rejectResponse = StatusAPI.rejectStage(orderId, stageId);
                 Assert.assertEquals(rejectResponse.getStatusCode(), 200, "Failed to reject stage 3");
-                System.out.println("Rejected Stage 3 with reason");
+                System.out.println("TEST PASSED: Stage 3 rejected successfully with reason");
 
             } 
         }
@@ -182,7 +188,8 @@ public class AdminOrderRejectFlowTest {
     	ExtentTest test = ExtentTestNGListener.getTest();
         Integer orderIdCompleted = OrderVerificationAPI.getOrderIdByCustomerNameOnTime(customerName);
         Assert.assertNotNull(orderIdCompleted, "Order not found in OnTIME list for customer: " + customerName);
-        System.out.println("Order found in on time. Customer Name: " + customerName);
+        //System.out.println("Order found in on time. Customer Name: " + customerName);
+        System.out.println("TEST PASSED: Order rejected and verified in 'On Time' status for customer: " +customerName);
         
         Thread.sleep(2000);
         

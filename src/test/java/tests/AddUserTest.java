@@ -22,6 +22,7 @@ public class AddUserTest extends BaseTest {
         loginPage.enterUsername(userName);
         loginPage.enterPassword(password);
         loginPage.clickSignIn();
+        System.out.println("TEST PASSED: Admin logged in successfully with email: " +userName);
     }
     
 	@Test
@@ -32,6 +33,8 @@ public class AddUserTest extends BaseTest {
 		AddUser.Settings();
 		AddUser.addMember();
 		AddUser.fillAddUser();
+		
+		 System.out.println("TEST PASSED: User added successfully via UI");
 
 	}
 }

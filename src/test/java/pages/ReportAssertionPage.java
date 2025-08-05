@@ -111,7 +111,7 @@ public class ReportAssertionPage {
                     "arguments[0].scrollIntoView(true); return arguments[0].innerText || arguments[0].textContent;", element);
 
             String fieldValue = text != null ? text.trim() : "";
-            System.out.println("UI [" + fieldLabel + "]: " + fieldValue);
+            //System.out.println("UI [" + fieldLabel + "]: " + fieldValue);
             return fieldValue;
         } catch (Exception e) {
             System.err.println("Failed to extract text for: " + fieldLabel);

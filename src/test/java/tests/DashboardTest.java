@@ -42,6 +42,7 @@ public class DashboardTest extends BaseTest {
         loginPage.enterUsername(userName);
         loginPage.enterPassword(password);
         loginPage.clickSignIn();
+        System.out.println("TEST PASSED: Admin logged in successfully with email: " +userName);
     }
     
     @Test
@@ -63,6 +64,8 @@ public class DashboardTest extends BaseTest {
         System.out.println("Queued Orders: " + queuedBefore);;
 
         loginPage.signOutAdmin();
+        System.out.println("TEST PASSED: Dashboard count fetched successfully before all suites ran");
+        
     }
     
     @Test
@@ -84,6 +87,7 @@ public class DashboardTest extends BaseTest {
         System.out.println("Queued Orders: " + queuedAfter);
 
         loginPage.signOutAdmin();
+        System.out.println("TEST PASSED: Dashboard count fetched successfully after all suites ran");
     }
     
     

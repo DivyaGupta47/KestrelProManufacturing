@@ -46,7 +46,7 @@ public class ReportAPI {
             try (FileOutputStream fos = new FileOutputStream(filePath)) {
                 fos.write(bytes);
             }
-            System.out.println("CompleteOnTime Report downloaded successfully to: " + filePath);
+           // System.out.println("CompleteOnTime Report downloaded successfully to: " + filePath);
         } else {
             System.err.println("Failed to download report. Status Code: " + response.getStatusCode());
         }
@@ -75,7 +75,7 @@ public class ReportAPI {
             try (FileOutputStream fos = new FileOutputStream(filePath)) {
                 fos.write(bytes);
             }
-            System.out.println("CompleteWithDelay Report downloaded successfully to: " + filePath);
+            //System.out.println("CompleteWithDelay Report downloaded successfully to: " + filePath);
         } else {
             System.err.println("Failed to download report. Status Code: " + response.getStatusCode());
         }

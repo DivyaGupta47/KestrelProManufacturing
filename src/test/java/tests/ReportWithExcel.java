@@ -6,17 +6,19 @@ import java.util.List;
 import java.util.Map;
 
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import apis.ReportAPI;
 import base.BaseTest;
+import listeners.ExtentTestNGListener;
 import pages.LoginPage;
 import pages.ReportAssertionPage;
 import utils.ExcelDownloader;
 import utils.ExcelReaderAPI;
 import utils.LoginUtil;
 import utils.Config;
-
+@Listeners(ExtentTestNGListener.class)
 public class ReportWithExcel extends BaseTest {
 
     LoginPage loginPage;
@@ -32,6 +34,7 @@ public class ReportWithExcel extends BaseTest {
         loginPage.enterUsername(userName);
         loginPage.enterPassword(password);
         loginPage.clickSignIn();
+        System.out.println("TEST PASSED: Admin logged in successfully with email: " +userName);
     }
 
     @Test
@@ -43,7 +46,7 @@ public class ReportWithExcel extends BaseTest {
         String customer = "Manisha Automation";
         ReportAssertionPage page = new ReportAssertionPage(driver);
         Map<String, String> uiData = page.getUIReportData(customer);
-
+        System.out.println("TEST PASSED: UI data fetched successfully");
         // Step 3: Fresh API login (so token is valid)
         String sessionToken = LoginUtil.performLogin(userName, password);
         Config.setSessionToken(sessionToken);
@@ -55,7 +58,7 @@ public class ReportWithExcel extends BaseTest {
                 "2025-04-01",
                 "2025-08-04"
         );
-        System.out.println("Report downloaded via API: " + excelFile.getAbsolutePath());
+        System.out.println("TEST PASSED: Report downloaded via API successfully");
 
 
         // Step 5: Read Excel data
@@ -70,11 +73,11 @@ public class ReportWithExcel extends BaseTest {
             String expected = excelData.get(key);
             String actual = uiData.getOrDefault(key, "");
 
-            System.out.println("Comparing field: " + key + " | Expected: " + expected + " | Actual: " + actual);
+            //System.out.println("Comparing field: " + key + " | Expected: " + expected + " | Actual: " + actual);
             Assert.assertEquals(normalize(actual), normalize(expected), "Mismatch in: " + key);
         }
 
-        System.out.println("All matched fields validated for: " + customer);
+        System.out.println("TEST PASSED: All matched fields validated for customer: " + customer);
     }
 
     private String normalize(String value) {

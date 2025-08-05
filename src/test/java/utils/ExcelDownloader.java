@@ -35,8 +35,8 @@ public class ExcelDownloader {
 
             int responseCode = connection.getResponseCode();
             String contentType = connection.getContentType();
-            System.out.println("DEBUG: API Response Code = " + responseCode);
-            System.out.println("DEBUG: API Content-Type = " + contentType);
+            //System.out.println("DEBUG: API Response Code = " + responseCode);
+            //System.out.println("DEBUG: API Content-Type = " + contentType);
 
             if (responseCode == HttpURLConnection.HTTP_OK) {
                 // Detect file type
@@ -58,7 +58,7 @@ public class ExcelDownloader {
                     }
                 }
 
-                System.out.println("File downloaded to: " + file.getAbsolutePath());
+                //System.out.println("File downloaded to: " + file.getAbsolutePath());
                 return file;
             } else {
                 throw new RuntimeException("Failed with HTTP code: " + responseCode);

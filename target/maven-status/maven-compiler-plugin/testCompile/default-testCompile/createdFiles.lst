@@ -13,6 +13,7 @@ tests\AdminAssigneeOrderFlowTest.class
 apis\AssigneeAPI.class
 tests\AddUserTest.class
 utils\LoginUtil.class
+pages\ReportAssertionPage.class
 pages\LoginPageUi.class
 pages\AddUserPage.class
 pages\ProductFlowOnTimePage.class
@@ -23,12 +24,15 @@ pages\CreateOrderPage.class
 pages\CreateOrderWithLogin.class
 apis\StatusAPI.class
 apis\OrderAPI.class
+utils\ExcelDownloader.class
 pages\MyTaskFlowAssigneePage.class
 tests\AdminMultipleAssigneeOrderFlowTest.class
 tests\AssigneeLogin.class
 tests\ProductFlowQueuedTest.class
+utils\ExcelReaderAPI$1.class
 tests\test.class
 pages\CreateOrderAdminPage.class
+tests\ReportWithExcel.class
 listeners\ExtentTestNGListener.class
 apis\TermConditionAPI.class
 tests\ProductFlowOnTimeTest.class
@@ -36,6 +40,7 @@ tests\ReportValidationTest.class
 pages\ProductFlowCompletePage.class
 apis\RemarkAPI.class
 pages\Test.class
+utils\ExcelReaderAPI.class
 pages\LoginPage.class
 pages\DashboardPage.class
 tests\ProductFlowCompleteTest.class
