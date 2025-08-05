@@ -9,7 +9,7 @@ on:
         type: choice
         options:
           - testngHybrid.xml
-          - testngparallel.xml
+          - testngpParallelRun.xml
           - testngAdminAsignee.xml
           - testngselenium.xml
         default: testngHybrid.xml
