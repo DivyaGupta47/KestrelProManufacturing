@@ -1,115 +1,41 @@
-name: 🧪 Run KestrelPro Tests
+name: 🧪 Run TestNG Suites
 
 on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
   workflow_dispatch:
     inputs:
       suiteFile:
-        description: 'Select TestNG XML suite to run'
-        required: true
+        description: 'Select TestNG suite XML to run'
+        required: false
         type: choice
         options:
-          - testngParallelRun.xml
-          - testngselenium.xml
-          - testngAdminAsignee.xml
           - testngHybrid.xml
-        default: testnghybrid.xml
-  schedule:
-    - cron: '30 4 * * *'  # Daily at 4:30 AM UTC
+          - testngparallel.xml
+          - testngAdminAsignee.xml
+          - testngselenium.xml
+        default: testngHybrid.xml
+
+  push:
+    branches: [ main ]
 
 jobs:
-  kestrelpro-manufacturing:
-    name: KestrelPro Manufacturing
+  run-tests:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 Checkout Repository
+      - name: ⬇️ Checkout Code
         uses: actions/checkout@v4
 
-      - name: ☕ Set up Java 17
+      - name: ☕ Set up JDK 17
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: 📦 Install Maven
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y maven
-
-      - name: 🧪 Run Tests (based on selected or default XML)
+      - name: 🧪 Run Tests (selected or default XML)
         run: |
           XML_FILE="${{ github.event.inputs.suiteFile }}"
           if [ -z "$XML_FILE" ]; then
-            XML_FILE="testnghybrid.xml"
+            XML_FILE="testngHybrid.xml"
           fi
-          mvn clean test -Dheadless=true -DsuiteXmlFile=$XML_FILE
-
-      - name: 🟦 Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-
-      - name: 📦 Install Puppeteer
-        run: npm install puppeteer
-
-      - name: 🧾 Generate ExtentReport PDF (Dashboard + Tests tabs)
-        run: |
-          echo "const puppeteer = require('puppeteer');
-          const path = require('path');
-          const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
-
-          (async () => {
-            const browser = await puppeteer.launch({
-              headless: 'new',
-              args: ['--no-sandbox', '--disable-setuid-sandbox']
-            });
-
-            const page = await browser.newPage();
-            const filePath = path.resolve(__dirname, 'test-output', 'ExtentReport.html');
-            await page.goto(\`file://\${filePath}\`, { waitUntil: 'networkidle0' });
-            await delay(3000);
-
-            // Save Tests tab
-            await page.pdf({
-              path: 'test-output/ExtentReport_Tests.pdf',
-              format: 'A4',
-              printBackground: true
-            });
-
-            // Click Dashboard tab (bar chart icon)
-            await page.click('i.fa.fa-bar-chart');
-            await delay(3000);
-
-            // Save Dashboard tab
-            await page.pdf({
-              path: 'test-output/ExtentReport_Dashboard.pdf',
-              format: 'A4',
-              printBackground: true
-            });
-
-            await browser.close();
-          })();" > generate-pdf.js
-
-          node generate-pdf.js
-
-      - name: 📎 Merge PDFs (Tests + Dashboard)
-        run: |
-          sudo apt-get install -y poppler-utils
-          pdfunite test-output/ExtentReport_Tests.pdf test-output/ExtentReport_Dashboard.pdf test-output/KestrelPro_FinalReport.pdf
-
-      - name: 📤 Upload Final Merged PDF
-        uses: actions/upload-artifact@v4
-        with:
-          name: KestrelPro_Report
-          path: test-output/KestrelPro_FinalReport.pdf
-
-      - name: 📁 Upload full test-output folder
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: All_ExtentReports
-          path: test-output/
+          echo "Running suite: $XML_FILE"
+          mvn clean test -Dheadless=true -Dsurefire.suiteXmlFiles=./$XML_FILE
