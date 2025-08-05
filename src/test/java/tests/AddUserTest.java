@@ -10,7 +10,7 @@ import pages.LoginPageUi;
 public class AddUserTest extends BaseTest {
 
     LoginPageUi loginPage;
-    String userName = "divyaadmin@yopmail.com";
+    String userName = "newuser@yopmail.com";
     String password = "KestrelPro@123";
 
     public void login()    

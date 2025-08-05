@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="171.822" tests="47" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="250.384" tests="48" errors="0" skipped="0" failures="0">
   <properties>
-    <property name="surefire.suiteXmlFiles" value="testngHybrid.xml"/>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
@@ -11,12 +10,13 @@
     <property name="user.variant" value=""/>
     <property name="java.vendor.url" value="https://java.oracle.com/"/>
     <property name="user.timezone" value="Asia/Calcutta"/>
+    <property name="suiteXmlFile" value="testngHybrid.xml"/>
     <property name="os.name" value="Windows 11"/>
     <property name="java.vm.specification.version" value="21"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="IN"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21\bin"/>
-    <property name="sun.java.command" value="C:\Users\47Billion\AppData\Local\Temp\surefire2284442343000243197\surefirebooter-20250731170444931_3.jar C:\Users\47Billion\AppData\Local\Temp\surefire2284442343000243197 2025-07-31T17-04-44_504-jvmRun1 surefire-20250731170444931_1tmp surefire_0-20250731170444931_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\47Billion\AppData\Local\Temp\surefire1371989780907622416\surefirebooter-20250804144050277_3.jar C:\Users\47Billion\AppData\Local\Temp\surefire1371989780907622416 2025-08-04T14-40-49_904-jvmRun1 surefire-20250804144050277_1tmp surefire_0-20250804144050277_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="D:\SeleniumDemo\KestralPro\target\test-classes;D:\SeleniumDemo\KestralPro\target\classes;C:\Users\47Billion\.m2\repository\org\seleniumhq\selenium\selenium-java\4.27.0\selenium-java-4.27.0.jar;C:\Users\47Billion\.m2\repository\org\seleniumhq\selenium\selenium-api\4.27.0\selenium-api-4.27.0.jar;C:\Users\47Billion\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\47Billion\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.27.0\selenium-chrome-driver-4.27.0.jar;C:\Users\47Billion\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\47Billion\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.27.0\selenium-chromium-driver-4.27.0.jar;C:\Users\47Billion\.m2\repository\org\seleniumhq\selenium\selenium-json\4.27.0\selenium-json-4.27.0.jar;C:\Users\47Billion\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.27.0\selenium-manager-4.27.0.jar;C:\Users\47Billion\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v129\4.27.0\selenium-devtools-v129-4.27.0.jar;C:\Users\47Billion\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v130\4.27.0\selenium-devtools-v130-4.27.0.jar;C:\Users\47Billion\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v131\4.27.0\selenium-devtools-v131-4.27.0.jar;C:\Users\47Billion\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v85\4.27.0\selenium-devtools-v85-4.27.0.jar;C:\Users\47Billion\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.27.0\selenium-edge-driver-4.27.0.jar;C:\Users\47Billion\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.27.0\selenium-firefox-driver-4.27.0.jar;C:\Users\47Billion\.m2\repository\org\seleniumhq\selenium\selenium-http\4.27.0\selenium-http-4.27.0.jar;C:\Users\47Billion\.m2\repository\dev\failsafe\failsafe\3.3.2\failsafe-3.3.2.jar;C:\Users\47Billion\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.27.0\selenium-ie-driver-4.27.0.jar;C:\Users\47Billion\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.27.0\selenium-remote-driver-4.27.0.jar;C:\Users\47Billion\.m2\repository\com\google\guava\guava\33.3.1-jre\guava-33.3.1-jre.jar;C:\Users\47Billion\.m2\repository\com\google\guava\failureaccess\1.0.2\failureaccess-1.0.2.jar;C:\Users\47Billion\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\47Billion\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\47Billion\.m2\repository\org\checkerframework\checker-qual\3.43.0\checker-qual-3.43.0.jar;C:\Users\47Billion\.m2\repository\com\google\errorprone\error_prone_annotations\2.28.0\error_prone_annotations-2.28.0.jar;C:\Users\47Billion\.m2\repository\com\google\j2objc\j2objc-annotations\3.0.0\j2objc-annotations-3.0.0.jar;C:\Users\47Billion\.m2\repository\io\opentelemetry\semconv\opentelemetry-semconv\1.25.0-alpha\opentelemetry-semconv-1.25.0-alpha.jar;C:\Users\47Billion\.m2\repository\io\opentelemetry\opentelemetry-api\1.44.1\opentelemetry-api-1.44.1.jar;C:\Users\47Billion\.m2\repository\io\opentelemetry\opentelemetry-context\1.44.1\opentelemetry-context-1.44.1.jar;C:\Users\47Billion\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.44.1\opentelemetry-exporter-logging-1.44.1.jar;C:\Users\47Billion\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.44.1\opentelemetry-sdk-common-1.44.1.jar;C:\Users\47Billion\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.44.1\opentelemetry-sdk-extension-autoconfigure-spi-1.44.1.jar;C:\Users\47Billion\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.44.1\opentelemetry-sdk-extension-autoconfigure-1.44.1.jar;C:\Users\47Billion\.m2\repository\io\opentelemetry\opentelemetry-api-incubator\1.44.1-alpha\opentelemetry-api-incubator-1.44.1-alpha.jar;C:\Users\47Billion\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.44.1\opentelemetry-sdk-trace-1.44.1.jar;C:\Users\47Billion\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.44.1\opentelemetry-sdk-1.44.1.jar;C:\Users\47Billion\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.44.1\opentelemetry-sdk-metrics-1.44.1.jar;C:\Users\47Billion\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.44.1\opentelemetry-sdk-logs-1.44.1.jar;C:\Users\47Billion\.m2\repository\net\bytebuddy\byte-buddy\1.15.10\byte-buddy-1.15.10.jar;C:\Users\47Billion\.m2\repository\org\seleniumhq\selenium\selenium-os\4.27.0\selenium-os-4.27.0.jar;C:\Users\47Billion\.m2\repository\org\apache\commons\commons-exec\1.4.0\commons-exec-1.4.0.jar;C:\Users\47Billion\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.27.0\selenium-safari-driver-4.27.0.jar;C:\Users\47Billion\.m2\repository\org\seleniumhq\selenium\selenium-support\4.27.0\selenium-support-4.27.0.jar;C:\Users\47Billion\.m2\repository\org\testng\testng\7.9.0\testng-7.9.0.jar;C:\Users\47Billion\.m2\repository\org\slf4j\slf4j-api\1.7.36\slf4j-api-1.7.36.jar;C:\Users\47Billion\.m2\repository\com\beust\jcommander\1.82\jcommander-1.82.jar;C:\Users\47Billion\.m2\repository\org\webjars\jquery\3.7.1\jquery-3.7.1.jar;C:\Users\47Billion\.m2\repository\io\rest-assured\rest-assured\5.3.0\rest-assured-5.3.0.jar;C:\Users\47Billion\.m2\repository\org\apache\groovy\groovy\4.0.6\groovy-4.0.6.jar;C:\Users\47Billion\.m2\repository\org\apache\groovy\groovy-xml\4.0.6\groovy-xml-4.0.6.jar;C:\Users\47Billion\.m2\repository\org\apache\httpcomponents\httpclient\4.5.13\httpclient-4.5.13.jar;C:\Users\47Billion\.m2\repository\org\apache\httpcomponents\httpcore\4.4.13\httpcore-4.4.13.jar;C:\Users\47Billion\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\47Billion\.m2\repository\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;C:\Users\47Billion\.m2\repository\org\apache\httpcomponents\httpmime\4.5.13\httpmime-4.5.13.jar;C:\Users\47Billion\.m2\repository\org\hamcrest\hamcrest\2.1\hamcrest-2.1.jar;C:\Users\47Billion\.m2\repository\org\ccil\cowan\tagsoup\tagsoup\1.2.1\tagsoup-1.2.1.jar;C:\Users\47Billion\.m2\repository\io\rest-assured\xml-path\5.3.0\xml-path-5.3.0.jar;C:\Users\47Billion\.m2\repository\io\rest-assured\json-path\5.3.0\json-path-5.3.0.jar;C:\Users\47Billion\.m2\repository\org\apache\groovy\groovy-json\4.0.6\groovy-json-4.0.6.jar;C:\Users\47Billion\.m2\repository\io\rest-assured\rest-assured-common\5.3.0\rest-assured-common-5.3.0.jar;C:\Users\47Billion\.m2\repository\io\github\bonigarcia\webdrivermanager\5.4.1\webdrivermanager-5.4.1.jar;C:\Users\47Billion\.m2\repository\com\google\code\gson\gson\2.10.1\gson-2.10.1.jar;C:\Users\47Billion\.m2\repository\com\github\docker-java\docker-java\3.3.2\docker-java-3.3.2.jar;C:\Users\47Billion\.m2\repository\com\github\docker-java\docker-java-core\3.3.2\docker-java-core-3.3.2.jar;C:\Users\47Billion\.m2\repository\com\github\docker-java\docker-java-api\3.3.2\docker-java-api-3.3.2.jar;C:\Users\47Billion\.m2\repository\org\bouncycastle\bcpkix-jdk15on\1.64\bcpkix-jdk15on-1.64.jar;C:\Users\47Billion\.m2\repository\org\bouncycastle\bcprov-jdk15on\1.64\bcprov-jdk15on-1.64.jar;C:\Users\47Billion\.m2\repository\org\slf4j\jcl-over-slf4j\1.7.30\jcl-over-slf4j-1.7.30.jar;C:\Users\47Billion\.m2\repository\com\github\docker-java\docker-java-transport-httpclient5\3.3.2\docker-java-transport-httpclient5-3.3.2.jar;C:\Users\47Billion\.m2\repository\com\github\docker-java\docker-java-transport\3.3.2\docker-java-transport-3.3.2.jar;C:\Users\47Billion\.m2\repository\net\java\dev\jna\jna\5.12.1\jna-5.12.1.jar;C:\Users\47Billion\.m2\repository\org\brotli\dec\0.1.2\dec-0.1.2.jar;C:\Users\47Billion\.m2\repository\org\apache\commons\commons-lang3\3.12.0\commons-lang3-3.12.0.jar;C:\Users\47Billion\.m2\repository\org\apache\httpcomponents\client5\httpclient5\5.2.1\httpclient5-5.2.1.jar;C:\Users\47Billion\.m2\repository\org\apache\httpcomponents\core5\httpcore5\5.2\httpcore5-5.2.jar;C:\Users\47Billion\.m2\repository\org\apache\httpcomponents\core5\httpcore5-h2\5.2\httpcore5-h2-5.2.jar;C:\Users\47Billion\.m2\repository\com\aventstack\extentreports\5.1.1\extentreports-5.1.1.jar;C:\Users\47Billion\.m2\repository\io\reactivex\rxjava3\rxjava\3.1.6\rxjava-3.1.6.jar;C:\Users\47Billion\.m2\repository\org\reactivestreams\reactive-streams\1.0.4\reactive-streams-1.0.4.jar;C:\Users\47Billion\.m2\repository\org\freemarker\freemarker\2.3.32\freemarker-2.3.32.jar;C:\Users\47Billion\.m2\repository\org\projectlombok\lombok\1.18.26\lombok-1.18.26.jar;C:\Users\47Billion\.m2\repository\commons-io\commons-io\2.11.0\commons-io-2.11.0.jar;C:\Users\47Billion\.m2\repository\org\slf4j\slf4j-simple\2.0.9\slf4j-simple-2.0.9.jar;C:\Users\47Billion\.m2\repository\com\sun\mail\jakarta.mail\2.0.1\jakarta.mail-2.0.1.jar;C:\Users\47Billion\.m2\repository\com\sun\activation\jakarta.activation\2.0.1\jakarta.activation-2.0.1.jar;C:\Users\47Billion\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.15.3\jackson-databind-2.15.3.jar;C:\Users\47Billion\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.15.3\jackson-annotations-2.15.3.jar;C:\Users\47Billion\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.15.3\jackson-core-2.15.3.jar;C:\Users\47Billion\.m2\repository\org\apache\poi\poi-ooxml\5.2.3\poi-ooxml-5.2.3.jar;C:\Users\47Billion\.m2\repository\org\apache\poi\poi\5.2.3\poi-5.2.3.jar;C:\Users\47Billion\.m2\repository\org\apache\commons\commons-math3\3.6.1\commons-math3-3.6.1.jar;C:\Users\47Billion\.m2\repository\com\zaxxer\SparseBitSet\1.2\SparseBitSet-1.2.jar;C:\Users\47Billion\.m2\repository\org\apache\poi\poi-ooxml-lite\5.2.3\poi-ooxml-lite-5.2.3.jar;C:\Users\47Billion\.m2\repository\org\apache\xmlbeans\xmlbeans\5.1.1\xmlbeans-5.1.1.jar;C:\Users\47Billion\.m2\repository\org\apache\commons\commons-compress\1.21\commons-compress-1.21.jar;C:\Users\47Billion\.m2\repository\com\github\virtuald\curvesapi\1.07\curvesapi-1.07.jar;C:\Users\47Billion\.m2\repository\org\apache\logging\log4j\log4j-api\2.18.0\log4j-api-2.18.0.jar;C:\Users\47Billion\.m2\repository\org\apache\commons\commons-collections4\4.4\commons-collections4-4.4.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -31,7 +31,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\47Billion\AppData\Local\Temp\surefire2284442343000243197\surefirebooter-20250731170444931_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\47Billion\AppData\Local\Temp\surefire1371989780907622416\surefirebooter-20250804144050277_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.7+8-LTS-245"/>
@@ -59,46 +59,46 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="testDashboardCountsBefore" classname="tests.DashboardTest" time="10.803">
+  <testcase name="testDashboardCountsBefore" classname="tests.DashboardTest" time="9.514">
     <system-out><![CDATA[
 =========================================================
 Starting Flow: DASHBOARD COUNT TEST
 =========================================================
 
 ===== Dashboard Counts BEFORE Order Flow =====
-Total Orders: 1041
-Completed Orders: 382
-On Time Orders: 12
-Queued Orders: 272
+Total Orders: 1120
+Completed Orders: 427
+On Time Orders: 15
+Queued Orders: 293
 ]]></system-out>
     <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-Jul 31, 2025 5:04:52 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Aug 04, 2025 2:40:56 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 138
-Jul 31, 2025 5:04:52 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+Aug 04, 2025 2:40:56 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
 WARNING: Unable to find version of CDP to use for 138.0.7204.169. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.27.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 ]]></system-err>
   </testcase>
-  <testcase name="testDashboardCountsAfter" classname="tests.DashboardTest" time="11.552">
+  <testcase name="testDashboardCountsAfter" classname="tests.DashboardTest" time="0.03">
     <system-out><![CDATA[
 =========================================================
 Starting Flow: DASHBOARD COUNT TEST
 =========================================================
 
 ===== Dashboard Counts AFTER Order Flow =====
-Total Orders: 1048
-Completed Orders: 386
-On Time Orders: 13
-Queued Orders: 274
+Total Orders: 1127
+Completed Orders: 431
+On Time Orders: 16
+Queued Orders: 295
 ]]></system-out>
-    <system-err><![CDATA[Jul 31, 2025 5:07:21 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+    <system-err><![CDATA[Aug 04, 2025 2:43:43 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 138
-Jul 31, 2025 5:07:21 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+Aug 04, 2025 2:43:43 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
 WARNING: Unable to find version of CDP to use for 138.0.7204.169. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.27.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 ]]></system-err>
   </testcase>
-  <testcase name="createOrder" classname="tests.AdminOrderFlowTest" time="3.372">
+  <testcase name="createOrder" classname="tests.AdminOrderFlowTest" time="2.939">
     <system-out><![CDATA[
 =========================================================
 Starting Flow: ADMIN ORDER FLOW TEST
@@ -107,35 +107,35 @@ Starting Flow: ADMIN ORDER FLOW TEST
 Login Successfully with Admin Email: automation@yopmail.com
 Create Status Code: 201
 Create Customer Response:
-{"customerName":"Toshi Automation","customerCode":"CUST7890","workflowId":5,"organizationId":8,"region":"MADHYA PRADESH","soQuantity":1000,"umo":"Kg","soDate":"2025-06-17T09:00:00.000Z","singleRollW":50,"filmType":"LDPE","soNumber":"ORD123456","length":200,"width":120,"coreId":"76","od":45,"noOfRolls":25,"destination":"Indore Distribution Center","salesOrderLineNumber":"SO/9821","packagingType":"Shrink Wrap","salesCategory":"Industrial","grade":"A+","promiseDay":"2025-06-20T09:00:00.000Z","palletType":"Euro","requestDate":"2025-06-17T09:00:00.000Z","consigneeDetails":"Indore Warehouse A1","palletTier":"2","currentStage":1,"createdBy":"afb5cb1f-0753-46f2-b144-1b7f64b5e8ea","assignee":["afb5cb1f-0753-46f2-b144-1b7f64b5e8ea"],"customerOrganizationName":"Kestrel Industries Pvt. Ltd.","headerId":null,"lineId":null,"endDate":null,"splittedAt":null,"isSplitted":null,"parentId":null,"remarks":"","orderStatus":"","orderLineStatus":"","collectorName":"","id":3012,"status":"QUEUED","startDate":"2025-07-31T00:00:00.000Z","createdAt":"2025-07-31T11:35:13.772Z","updatedAt":"2025-07-31T11:35:13.772Z","timeData":{}}
-Order ID: 3012
+{"customerName":"Toshi Automation","customerCode":"CUST7890","workflowId":5,"organizationId":8,"region":"MADHYA PRADESH","soQuantity":1000,"umo":"Kg","soDate":"2025-06-17T09:00:00.000Z","singleRollW":50,"filmType":"LDPE","soNumber":"ORD123456","length":200,"width":120,"coreId":"76","od":45,"noOfRolls":25,"destination":"Indore Distribution Center","salesOrderLineNumber":"SO/9821","packagingType":"Shrink Wrap","salesCategory":"Industrial","grade":"A+","promiseDay":"2025-06-20T09:00:00.000Z","palletType":"Euro","requestDate":"2025-06-17T09:00:00.000Z","consigneeDetails":"Indore Warehouse A1","palletTier":"2","currentStage":1,"createdBy":"afb5cb1f-0753-46f2-b144-1b7f64b5e8ea","assignee":["afb5cb1f-0753-46f2-b144-1b7f64b5e8ea"],"customerOrganizationName":"Kestrel Industries Pvt. Ltd.","headerId":null,"lineId":null,"endDate":null,"splittedAt":null,"isSplitted":null,"parentId":null,"remarks":"","orderStatus":"","orderLineStatus":"","collectorName":"","id":3101,"status":"QUEUED","startDate":"2025-08-04T00:00:00.000Z","createdAt":"2025-08-04T09:11:13.465Z","updatedAt":"2025-08-04T09:11:13.465Z","timeData":{}}
+Order ID: 3101
 Customer found in queue. Customer Name: Toshi Automation
 ]]></system-out>
   </testcase>
-  <testcase name="downloadcompleteOnTimeReportTest" classname="tests.AdminOrderFlowTest" time="0.49">
+  <testcase name="downloadcompleteOnTimeReportTest" classname="tests.AdminOrderFlowTest" time="0.769">
     <system-out><![CDATA[CompleteOnTime Report downloaded successfully to: test-output/completeOnTime-report.csv
 ]]></system-out>
   </testcase>
-  <testcase name="downloadcompleteWithDelayReportTest" classname="tests.AdminOrderFlowTest" time="0.173">
+  <testcase name="downloadcompleteWithDelayReportTest" classname="tests.AdminOrderFlowTest" time="0.32">
     <system-out><![CDATA[CompleteWithDelay Report downloaded successfully to: test-output/completeWithDelay-report.csv
 ]]></system-out>
   </testcase>
-  <testcase name="splitOrder" classname="tests.AdminOrderFlowTest" time="0.165"/>
-  <testcase name="updateTAT" classname="tests.AdminOrderFlowTest" time="2.767">
+  <testcase name="splitOrder" classname="tests.AdminOrderFlowTest" time="0.246"/>
+  <testcase name="updateTAT" classname="tests.AdminOrderFlowTest" time="3.767">
     <system-out><![CDATA[TAT Update Status Code: 200
 ]]></system-out>
   </testcase>
-  <testcase name="addAndAssignUsers" classname="tests.AdminOrderFlowTest" time="3.625">
-    <system-out><![CDATA[New Member User ID: 9828409b-e844-43f1-b52a-1420d02b00a3
-Assigned user to stage: 2, Email: testuser_1753961687682@yopmail.com
-Assigned user to stage: 3, Email: testuser_1753961687682@yopmail.com
-Assigned user to stage: 4, Email: testuser_1753961687682@yopmail.com
-Assigned user to stage: 5, Email: testuser_1753961687682@yopmail.com
-Assigned user to stage: 6, Email: testuser_1753961687682@yopmail.com
-Assigned user to stage: 7, Email: testuser_1753961687682@yopmail.com
+  <testcase name="addAndAssignUsers" classname="tests.AdminOrderFlowTest" time="3.614">
+    <system-out><![CDATA[New Member User ID: c3383981-512b-4b4f-b50b-8e535fac0b38
+Assigned user to stage: 2, Email: testuser_1754298652655@yopmail.com
+Assigned user to stage: 3, Email: testuser_1754298652655@yopmail.com
+Assigned user to stage: 4, Email: testuser_1754298652655@yopmail.com
+Assigned user to stage: 5, Email: testuser_1754298652655@yopmail.com
+Assigned user to stage: 6, Email: testuser_1754298652655@yopmail.com
+Assigned user to stage: 7, Email: testuser_1754298652655@yopmail.com
 ]]></system-out>
   </testcase>
-  <testcase name="addRemarks" classname="tests.AdminOrderFlowTest" time="0.88">
+  <testcase name="addRemarks" classname="tests.AdminOrderFlowTest" time="0.783">
     <system-out><![CDATA[Added remark from admin to stage: 2
 Added remark from admin to stage: 3
 Added remark from admin to stage: 4
@@ -144,7 +144,7 @@ Added remark from admin to stage: 6
 Added remark from admin to stage: 7
 ]]></system-out>
   </testcase>
-  <testcase name="addAttachments" classname="tests.AdminOrderFlowTest" time="0.904">
+  <testcase name="addAttachments" classname="tests.AdminOrderFlowTest" time="1.144">
     <system-out><![CDATA[Added attachment from admin to stage: 2
 Added attachment from admin to stage: 3
 Added attachment from admin to stage: 4
@@ -153,7 +153,7 @@ Added attachment from admin to stage: 6
 Added attachment from admin to stage: 7
 ]]></system-out>
   </testcase>
-  <testcase name="completeStages" classname="tests.AdminOrderFlowTest" time="3.689">
+  <testcase name="completeStages" classname="tests.AdminOrderFlowTest" time="3.376">
     <system-out><![CDATA[Completed from admin to stage: 2
 Completed from admin to stage: 3
 Completed from admin to stage: 4
@@ -162,49 +162,49 @@ Completed from admin to stage: 6
 Completed from admin to stage: 7
 ]]></system-out>
   </testcase>
-  <testcase name="verifyCompletion" classname="tests.AdminOrderFlowTest" time="2.579">
+  <testcase name="verifyCompletion" classname="tests.AdminOrderFlowTest" time="2.812">
     <system-out><![CDATA[Order found in completed. Customer Name: Toshi Automation
 ]]></system-out>
   </testcase>
-  <testcase name="updateUser" classname="tests.AdminOrderFlowTest" time="0.166">
-    <system-out><![CDATA[User updated successfully. Identity ID: 9828409b-e844-43f1-b52a-1420d02b00a3
+  <testcase name="updateUser" classname="tests.AdminOrderFlowTest" time="0.161">
+    <system-out><![CDATA[User updated successfully. Identity ID: c3383981-512b-4b4f-b50b-8e535fac0b38
 ]]></system-out>
   </testcase>
-  <testcase name="createOrder" classname="tests.AdminSplitOrderFlowTest" time="0.779">
+  <testcase name="createOrder" classname="tests.AdminSplitOrderFlowTest" time="0.561">
     <system-out><![CDATA[
 =========================================================
 Starting Flow: ADMIN ORDER WITH SPLIT FLOW TEST
 =========================================================
 
 Login Successfully with Admin Email: splitautomation@yopmail.com
-Original Order ID (before split): 3013
+Original Order ID (before split): 3102
 Customer found in queue. Customer Name: Yadhi Automation
 ]]></system-out>
   </testcase>
-  <testcase name="downloadcompleteOnTimeReportTest" classname="tests.AdminSplitOrderFlowTest" time="0.65">
+  <testcase name="downloadcompleteOnTimeReportTest" classname="tests.AdminSplitOrderFlowTest" time="0.215">
     <system-out><![CDATA[CompleteOnTime Report downloaded successfully to: test-output/completeOnTime-report.csv
 ]]></system-out>
   </testcase>
-  <testcase name="downloadcompleteWithDelayReportTest" classname="tests.AdminSplitOrderFlowTest" time="0.144">
+  <testcase name="downloadcompleteWithDelayReportTest" classname="tests.AdminSplitOrderFlowTest" time="0.126">
     <system-out><![CDATA[CompleteWithDelay Report downloaded successfully to: test-output/completeWithDelay-report.csv
 ]]></system-out>
   </testcase>
-  <testcase name="splitOrder" classname="tests.AdminSplitOrderFlowTest" time="0.778">
-    <system-out><![CDATA[Using split child Order ID (Part 1): 3016
+  <testcase name="splitOrder" classname="tests.AdminSplitOrderFlowTest" time="0.585">
+    <system-out><![CDATA[Using split child Order ID (Part 1): 3105
 ]]></system-out>
   </testcase>
-  <testcase name="updateTAT" classname="tests.AdminSplitOrderFlowTest" time="0.359"/>
-  <testcase name="addAndAssignUsers" classname="tests.AdminSplitOrderFlowTest" time="2.71">
-    <system-out><![CDATA[New Member User ID: 5c4180a8-d336-4f3c-a541-2495c410b7a3
-Assigned user to stage: 2, Email: testuser_1753961687804@yopmail.com
-Assigned user to stage: 3, Email: testuser_1753961687804@yopmail.com
-Assigned user to stage: 4, Email: testuser_1753961687804@yopmail.com
-Assigned user to stage: 5, Email: testuser_1753961687804@yopmail.com
-Assigned user to stage: 6, Email: testuser_1753961687804@yopmail.com
-Assigned user to stage: 7, Email: testuser_1753961687804@yopmail.com
+  <testcase name="updateTAT" classname="tests.AdminSplitOrderFlowTest" time="0.275"/>
+  <testcase name="addAndAssignUsers" classname="tests.AdminSplitOrderFlowTest" time="2.472">
+    <system-out><![CDATA[New Member User ID: 17e7bb6e-999d-41b3-9a2b-49ef9fb0e3e7
+Assigned user to stage: 2, Email: testuser_1754298652742@yopmail.com
+Assigned user to stage: 3, Email: testuser_1754298652742@yopmail.com
+Assigned user to stage: 4, Email: testuser_1754298652742@yopmail.com
+Assigned user to stage: 5, Email: testuser_1754298652742@yopmail.com
+Assigned user to stage: 6, Email: testuser_1754298652742@yopmail.com
+Assigned user to stage: 7, Email: testuser_1754298652742@yopmail.com
 ]]></system-out>
   </testcase>
-  <testcase name="addRemarks" classname="tests.AdminSplitOrderFlowTest" time="0.85">
+  <testcase name="addRemarks" classname="tests.AdminSplitOrderFlowTest" time="0.735">
     <system-out><![CDATA[Added remark from admin to stage: 2
 Added remark from admin to stage: 3
 Added remark from admin to stage: 4
@@ -213,17 +213,17 @@ Added remark from admin to stage: 6
 Added remark from admin to stage: 7
 ]]></system-out>
   </testcase>
-  <testcase name="completeStages" classname="tests.AdminSplitOrderFlowTest" time="1.314">
-    <system-out><![CDATA[Completing stages for orderId = 3016
-Completing stages for orderId = 3016
-Completing stages for orderId = 3016
-Completing stages for orderId = 3016
-Completing stages for orderId = 3016
-Completing stages for orderId = 3016
-Completing stages for orderId = 3016
+  <testcase name="completeStages" classname="tests.AdminSplitOrderFlowTest" time="1.221">
+    <system-out><![CDATA[Completing stages for orderId = 3105
+Completing stages for orderId = 3105
+Completing stages for orderId = 3105
+Completing stages for orderId = 3105
+Completing stages for orderId = 3105
+Completing stages for orderId = 3105
+Completing stages for orderId = 3105
 ]]></system-out>
   </testcase>
-  <testcase name="addAttachments" classname="tests.AdminSplitOrderFlowTest" time="0.868">
+  <testcase name="addAttachments" classname="tests.AdminSplitOrderFlowTest" time="0.762">
     <system-out><![CDATA[Added attachment from admin to stage: 2
 Added attachment from admin to stage: 3
 Added attachment from admin to stage: 4
@@ -232,11 +232,11 @@ Added attachment from admin to stage: 6
 Added attachment from admin to stage: 7
 ]]></system-out>
   </testcase>
-  <testcase name="verifyCompletion" classname="tests.AdminSplitOrderFlowTest" time="2.437">
+  <testcase name="verifyCompletion" classname="tests.AdminSplitOrderFlowTest" time="2.381">
     <system-out><![CDATA[Order found in completed. Customer Name: Yadhi Automation
 ]]></system-out>
   </testcase>
-  <testcase name="createOrder" classname="tests.AdminAssigneeOrderFlowTest" time="2.687">
+  <testcase name="createOrder" classname="tests.AdminAssigneeOrderFlowTest" time="2.509">
     <system-out><![CDATA[
 =========================================================
 Starting Flow: ADMIN ASIGNEE ORDER FLOW TEST
@@ -245,27 +245,27 @@ Starting Flow: ADMIN ASIGNEE ORDER FLOW TEST
 Login Successfully with Admin Email:divyaadmin@yopmail.com
 Create Status Code: 201
 Create Customer Response:
-{"customerName":"Mehak Automation","customerCode":"CUST7890","workflowId":5,"organizationId":8,"region":"MADHYA PRADESH","soQuantity":1000,"umo":"Kg","soDate":"2025-06-17T09:00:00.000Z","singleRollW":50,"filmType":"LDPE","soNumber":"ORD123456","length":200,"width":120,"coreId":"76","od":45,"noOfRolls":25,"destination":"Indore Distribution Center","salesOrderLineNumber":"SO/9821","packagingType":"Shrink Wrap","salesCategory":"Industrial","grade":"A+","promiseDay":"2025-06-20T09:00:00.000Z","palletType":"Euro","requestDate":"2025-06-17T09:00:00.000Z","consigneeDetails":"Indore Warehouse A1","palletTier":"2","currentStage":1,"createdBy":"897006fd-ac75-425f-991a-f9edc3db7241","assignee":["897006fd-ac75-425f-991a-f9edc3db7241"],"customerOrganizationName":"Kestrel Industries Pvt. Ltd.","headerId":null,"lineId":null,"endDate":null,"splittedAt":null,"isSplitted":null,"parentId":null,"remarks":"","orderStatus":"","orderLineStatus":"","collectorName":"","id":3017,"status":"QUEUED","startDate":"2025-07-31T00:00:00.000Z","createdAt":"2025-07-31T11:35:44.560Z","updatedAt":"2025-07-31T11:35:44.560Z","timeData":{}}
-Order ID: 3017
+{"customerName":"Mehak Automation","customerCode":"CUST7890","workflowId":5,"organizationId":8,"region":"MADHYA PRADESH","soQuantity":1000,"umo":"Kg","soDate":"2025-06-17T09:00:00.000Z","singleRollW":50,"filmType":"LDPE","soNumber":"ORD123456","length":200,"width":120,"coreId":"76","od":45,"noOfRolls":25,"destination":"Indore Distribution Center","salesOrderLineNumber":"SO/9821","packagingType":"Shrink Wrap","salesCategory":"Industrial","grade":"A+","promiseDay":"2025-06-20T09:00:00.000Z","palletType":"Euro","requestDate":"2025-06-17T09:00:00.000Z","consigneeDetails":"Indore Warehouse A1","palletTier":"2","currentStage":1,"createdBy":"897006fd-ac75-425f-991a-f9edc3db7241","assignee":["897006fd-ac75-425f-991a-f9edc3db7241"],"customerOrganizationName":"Kestrel Industries Pvt. Ltd.","headerId":null,"lineId":null,"endDate":null,"splittedAt":null,"isSplitted":null,"parentId":null,"remarks":"","orderStatus":"","orderLineStatus":"","collectorName":"","id":3106,"status":"QUEUED","startDate":"2025-08-04T00:00:00.000Z","createdAt":"2025-08-04T09:11:43.639Z","updatedAt":"2025-08-04T09:11:43.639Z","timeData":{}}
+Order ID: 3106
 Customer found in queue. Customer Name: Mehak Automation
 ]]></system-out>
   </testcase>
-  <testcase name="splitOrder" classname="tests.AdminAssigneeOrderFlowTest" time="0.223"/>
-  <testcase name="updateTAT" classname="tests.AdminAssigneeOrderFlowTest" time="2.308">
+  <testcase name="splitOrder" classname="tests.AdminAssigneeOrderFlowTest" time="0.104"/>
+  <testcase name="updateTAT" classname="tests.AdminAssigneeOrderFlowTest" time="2.238">
     <system-out><![CDATA[TAT Update Status Code: 200
 ]]></system-out>
   </testcase>
-  <testcase name="addAndAssignUsers" classname="tests.AdminAssigneeOrderFlowTest" time="2.658">
-    <system-out><![CDATA[New Member User ID: 409a0d2e-a7f7-4731-b4e0-fc31810d9836
-Assigned user to stage: 2, Email: testuser_1753961687877@yopmail.com
-Assigned user to stage: 3, Email: testuser_1753961687877@yopmail.com
-Assigned user to stage: 4, Email: testuser_1753961687877@yopmail.com
-Assigned user to stage: 5, Email: testuser_1753961687877@yopmail.com
-Assigned user to stage: 6, Email: testuser_1753961687877@yopmail.com
-Assigned user to stage: 7, Email: testuser_1753961687877@yopmail.com
+  <testcase name="addAndAssignUsers" classname="tests.AdminAssigneeOrderFlowTest" time="2.934">
+    <system-out><![CDATA[New Member User ID: ad2a04af-4e07-4d1b-b8c8-73ed463aa402
+Assigned user to stage: 2, Email: testuser_1754298652807@yopmail.com
+Assigned user to stage: 3, Email: testuser_1754298652807@yopmail.com
+Assigned user to stage: 4, Email: testuser_1754298652807@yopmail.com
+Assigned user to stage: 5, Email: testuser_1754298652807@yopmail.com
+Assigned user to stage: 6, Email: testuser_1754298652807@yopmail.com
+Assigned user to stage: 7, Email: testuser_1754298652807@yopmail.com
 ]]></system-out>
   </testcase>
-  <testcase name="addRemarks" classname="tests.AdminAssigneeOrderFlowTest" time="1.015">
+  <testcase name="addRemarks" classname="tests.AdminAssigneeOrderFlowTest" time="0.719">
     <system-out><![CDATA[Added remark from admin to stage: 2
 Added remark from admin to stage: 3
 Added remark from admin to stage: 4
@@ -274,7 +274,7 @@ Added remark from admin to stage: 6
 Added remark from admin to stage: 7
 ]]></system-out>
   </testcase>
-  <testcase name="addAttachments" classname="tests.AdminAssigneeOrderFlowTest" time="0.816">
+  <testcase name="addAttachments" classname="tests.AdminAssigneeOrderFlowTest" time="1.043">
     <system-out><![CDATA[Added attachment from admin to stage: 2
 Added attachment from admin to stage: 3
 Added attachment from admin to stage: 4
@@ -283,15 +283,15 @@ Added attachment from admin to stage: 6
 Added attachment from admin to stage: 7
 ]]></system-out>
   </testcase>
-  <testcase name="switchToAssignedUser" classname="tests.AdminAssigneeOrderFlowTest" time="0.483">
-    <system-out><![CDATA[Switched session to assigned user.testuser_1753961687877@yopmail.com
+  <testcase name="switchToAssignedUser" classname="tests.AdminAssigneeOrderFlowTest" time="0.456">
+    <system-out><![CDATA[Switched session to assigned user.testuser_1754298652807@yopmail.com
 ]]></system-out>
   </testcase>
-  <testcase name="termAndConditionAssignedUser" classname="tests.AdminAssigneeOrderFlowTest" time="0.172">
+  <testcase name="termAndConditionAssignedUser" classname="tests.AdminAssigneeOrderFlowTest" time="0.21">
     <system-out><![CDATA[Terms accepted
 ]]></system-out>
   </testcase>
-  <testcase name="completeStagesWithRemarksAndAttachments" classname="tests.AdminAssigneeOrderFlowTest" time="10.332">
+  <testcase name="completeStagesWithRemarksAndAttachments" classname="tests.AdminAssigneeOrderFlowTest" time="10.459">
     <system-out><![CDATA[Added remark from asignee to stage: 2
 Added attachment from asignee to stage: 2
 Completed stage from asignee: 2
@@ -312,7 +312,7 @@ Added attachment from asignee to stage: 7
 Completed stage from asignee: 7
 ]]></system-out>
   </testcase>
-  <testcase name="createOrder" classname="tests.AdminMultipleAssigneeOrderFlowTest" time="2.74">
+  <testcase name="createOrder" classname="tests.AdminMultipleAssigneeOrderFlowTest" time="2.894">
     <system-out><![CDATA[
 =========================================================
 Starting Flow: ADMIN MULTIPLE ASIGNEE ORDER FLOW TEST
@@ -321,18 +321,18 @@ Starting Flow: ADMIN MULTIPLE ASIGNEE ORDER FLOW TEST
 Login Successfully with Admin Email: multipleuseradmin@yopmail.com
 Create Status Code: 201
 Create Customer Response:
-{"customerName":"Kay Automation","customerCode":"CUST7890","workflowId":5,"organizationId":8,"region":"MADHYA PRADESH","soQuantity":1000,"umo":"Kg","soDate":"2025-06-17T09:00:00.000Z","singleRollW":50,"filmType":"LDPE","soNumber":"ORD123456","length":200,"width":120,"coreId":"76","od":45,"noOfRolls":25,"destination":"Indore Distribution Center","salesOrderLineNumber":"SO/9821","packagingType":"Shrink Wrap","salesCategory":"Industrial","grade":"A+","promiseDay":"2025-06-20T09:00:00.000Z","palletType":"Euro","requestDate":"2025-06-17T09:00:00.000Z","consigneeDetails":"Indore Warehouse A1","palletTier":"2","currentStage":1,"createdBy":"34bb2c08-3966-41e0-9865-ce645234fee4","assignee":["34bb2c08-3966-41e0-9865-ce645234fee4"],"customerOrganizationName":"Kestrel Industries Pvt. Ltd.","headerId":null,"lineId":null,"endDate":null,"splittedAt":null,"isSplitted":null,"parentId":null,"remarks":"","orderStatus":"","orderLineStatus":"","collectorName":"","id":3018,"status":"QUEUED","startDate":"2025-07-31T00:00:00.000Z","createdAt":"2025-07-31T11:36:05.846Z","updatedAt":"2025-07-31T11:36:05.846Z","timeData":{}}
-Order ID: 3018
+{"customerName":"Kay Automation","customerCode":"CUST7890","workflowId":5,"organizationId":8,"region":"MADHYA PRADESH","soQuantity":1000,"umo":"Kg","soDate":"2025-06-17T09:00:00.000Z","singleRollW":50,"filmType":"LDPE","soNumber":"ORD123456","length":200,"width":120,"coreId":"76","od":45,"noOfRolls":25,"destination":"Indore Distribution Center","salesOrderLineNumber":"SO/9821","packagingType":"Shrink Wrap","salesCategory":"Industrial","grade":"A+","promiseDay":"2025-06-20T09:00:00.000Z","palletType":"Euro","requestDate":"2025-06-17T09:00:00.000Z","consigneeDetails":"Indore Warehouse A1","palletTier":"2","currentStage":1,"createdBy":"34bb2c08-3966-41e0-9865-ce645234fee4","assignee":["34bb2c08-3966-41e0-9865-ce645234fee4"],"customerOrganizationName":"Kestrel Industries Pvt. Ltd.","headerId":null,"lineId":null,"endDate":null,"splittedAt":null,"isSplitted":null,"parentId":null,"remarks":"","orderStatus":"","orderLineStatus":"","collectorName":"","id":3107,"status":"QUEUED","startDate":"2025-08-04T00:00:00.000Z","createdAt":"2025-08-04T09:12:08.138Z","updatedAt":"2025-08-04T09:12:08.138Z","timeData":{}}
+Order ID: 3107
 Customer found in queue. Customer Name: Kay Automation
 ]]></system-out>
   </testcase>
-  <testcase name="splitOrder" classname="tests.AdminMultipleAssigneeOrderFlowTest" time="0.171"/>
-  <testcase name="updateTAT" classname="tests.AdminMultipleAssigneeOrderFlowTest" time="2.291">
+  <testcase name="splitOrder" classname="tests.AdminMultipleAssigneeOrderFlowTest" time="0.124"/>
+  <testcase name="updateTAT" classname="tests.AdminMultipleAssigneeOrderFlowTest" time="2.271">
     <system-out><![CDATA[TAT Update Status Code: 200
 ]]></system-out>
   </testcase>
-  <testcase name="createAndAssignMultipleUsers" classname="tests.AdminMultipleAssigneeOrderFlowTest" time="5.354"/>
-  <testcase name="addRemarks" classname="tests.AdminMultipleAssigneeOrderFlowTest" time="0.763">
+  <testcase name="createAndAssignMultipleUsers" classname="tests.AdminMultipleAssigneeOrderFlowTest" time="5.266"/>
+  <testcase name="addRemarks" classname="tests.AdminMultipleAssigneeOrderFlowTest" time="162.779">
     <system-out><![CDATA[Added remark from admin to stage: 2
 Added remark from admin to stage: 3
 Added remark from admin to stage: 4
@@ -341,7 +341,7 @@ Added remark from admin to stage: 6
 Added remark from admin to stage: 7
 ]]></system-out>
   </testcase>
-  <testcase name="addAttachments" classname="tests.AdminMultipleAssigneeOrderFlowTest" time="0.852">
+  <testcase name="addAttachments" classname="tests.AdminMultipleAssigneeOrderFlowTest" time="0.12">
     <system-out><![CDATA[Added attachment from admin to stage: 2
 Added attachment from admin to stage: 3
 Added attachment from admin to stage: 4
@@ -350,13 +350,13 @@ Added attachment from admin to stage: 6
 Added attachment from admin to stage: 7
 ]]></system-out>
   </testcase>
-  <testcase name="acceptTermsForAllUsers" classname="tests.AdminMultipleAssigneeOrderFlowTest" time="1.835">
-    <system-out><![CDATA[Terms accepted for: assigneeuser1_1753961688018@yopmail.com
-Terms accepted for: assigneeuser2_1753961688019@yopmail.com
-Terms accepted for: assigneeuser3_1753961688019@yopmail.com
+  <testcase name="acceptTermsForAllUsers" classname="tests.AdminMultipleAssigneeOrderFlowTest" time="0.026">
+    <system-out><![CDATA[Terms accepted for: assigneeuser1_1754298652839@yopmail.com
+Terms accepted for: assigneeuser2_1754298652839@yopmail.com
+Terms accepted for: assigneeuser3_1754298652840@yopmail.com
 ]]></system-out>
   </testcase>
-  <testcase name="performStageActionsAsMultipleUsers" classname="tests.AdminMultipleAssigneeOrderFlowTest" time="17.711">
+  <testcase name="performStageActionsAsMultipleUsers" classname="tests.AdminMultipleAssigneeOrderFlowTest" time="0.227">
     <system-out><![CDATA[assignee1Email added remark at stage: 2
 assignee2Email added attachment at stage: 2
 completed by assignee3Email stage: 2
@@ -377,7 +377,7 @@ assignee2Email added attachment at stage: 7
 completed by assignee3Email stage: 7
 ]]></system-out>
   </testcase>
-  <testcase name="createOrder" classname="tests.AdminOrderRejectFlowTest" time="2.801">
+  <testcase name="createOrder" classname="tests.AdminOrderRejectFlowTest" time="0.007">
     <system-out><![CDATA[
 =========================================================
 Starting Flow: ADMIN ORDER REJECT FLOW TEST
@@ -386,36 +386,36 @@ Starting Flow: ADMIN ORDER REJECT FLOW TEST
 Login Successfully with Admin Email: rejectautomation@yopmail.com
 Create Status Code: 201
 Create Customer Response:
-{"customerName":"Keshav Automation","customerCode":"CUST7890","workflowId":5,"organizationId":8,"region":"MADHYA PRADESH","soQuantity":1000,"umo":"Kg","soDate":"2025-06-17T09:00:00.000Z","singleRollW":50,"filmType":"LDPE","soNumber":"ORD123456","length":200,"width":120,"coreId":"76","od":45,"noOfRolls":25,"destination":"Indore Distribution Center","salesOrderLineNumber":"SO/9821","packagingType":"Shrink Wrap","salesCategory":"Industrial","grade":"A+","promiseDay":"2025-06-20T09:00:00.000Z","palletType":"Euro","requestDate":"2025-06-17T09:00:00.000Z","consigneeDetails":"Indore Warehouse A1","palletTier":"2","currentStage":1,"createdBy":"30c23242-a2f8-4778-8833-c4495dfe4b16","assignee":["30c23242-a2f8-4778-8833-c4495dfe4b16"],"customerOrganizationName":"Kestrel Industries Pvt. Ltd.","headerId":null,"lineId":null,"endDate":null,"splittedAt":null,"isSplitted":null,"parentId":null,"remarks":"","orderStatus":"","orderLineStatus":"","collectorName":"","id":3019,"status":"QUEUED","startDate":"2025-07-31T00:00:00.000Z","createdAt":"2025-07-31T11:36:38.127Z","updatedAt":"2025-07-31T11:36:38.127Z","timeData":{}}
-Order ID: 3019
+{"customerName":"Keshav Automation","customerCode":"CUST7890","workflowId":5,"organizationId":8,"region":"MADHYA PRADESH","soQuantity":1000,"umo":"Kg","soDate":"2025-06-17T09:00:00.000Z","singleRollW":50,"filmType":"LDPE","soNumber":"ORD123456","length":200,"width":120,"coreId":"76","od":45,"noOfRolls":25,"destination":"Indore Distribution Center","salesOrderLineNumber":"SO/9821","packagingType":"Shrink Wrap","salesCategory":"Industrial","grade":"A+","promiseDay":"2025-06-20T09:00:00.000Z","palletType":"Euro","requestDate":"2025-06-17T09:00:00.000Z","consigneeDetails":"Indore Warehouse A1","palletTier":"2","currentStage":1,"createdBy":"30c23242-a2f8-4778-8833-c4495dfe4b16","assignee":["30c23242-a2f8-4778-8833-c4495dfe4b16"],"customerOrganizationName":"Kestrel Industries Pvt. Ltd.","headerId":null,"lineId":null,"endDate":null,"splittedAt":null,"isSplitted":null,"parentId":null,"remarks":"","orderStatus":"","orderLineStatus":"","collectorName":"","id":3108,"status":"QUEUED","startDate":"2025-08-04T00:00:00.000Z","createdAt":"2025-08-04T09:12:38.253Z","updatedAt":"2025-08-04T09:12:38.253Z","timeData":{}}
+Order ID: 3108
 Customer found in queue. Customer Name: Keshav Automation
 ]]></system-out>
   </testcase>
-  <testcase name="splitOrder" classname="tests.AdminOrderRejectFlowTest" time="0.105"/>
-  <testcase name="updateTAT" classname="tests.AdminOrderRejectFlowTest" time="2.265">
+  <testcase name="splitOrder" classname="tests.AdminOrderRejectFlowTest" time="0.0"/>
+  <testcase name="updateTAT" classname="tests.AdminOrderRejectFlowTest" time="0.011">
     <system-out><![CDATA[TAT Update Status Code: 200
 ]]></system-out>
   </testcase>
-  <testcase name="addAndAssignUsers" classname="tests.AdminOrderRejectFlowTest" time="2.463">
-    <system-out><![CDATA[New Member User ID: 81b66466-4d23-436b-afbb-42989d0b03c4
-Assigned user to stage: 2, Email: testuser_1753961688092@yopmail.com
-Assigned user to stage: 3, Email: testuser_1753961688092@yopmail.com
-Assigned user to stage: 4, Email: testuser_1753961688092@yopmail.com
-Assigned user to stage: 5, Email: testuser_1753961688092@yopmail.com
-Assigned user to stage: 6, Email: testuser_1753961688092@yopmail.com
-Assigned user to stage: 7, Email: testuser_1753961688092@yopmail.com
+  <testcase name="addAndAssignUsers" classname="tests.AdminOrderRejectFlowTest" time="0.038">
+    <system-out><![CDATA[New Member User ID: 00e91ec3-2613-428d-89f3-edc65cb187dc
+Assigned user to stage: 2, Email: testuser_1754298652865@yopmail.com
+Assigned user to stage: 3, Email: testuser_1754298652865@yopmail.com
+Assigned user to stage: 4, Email: testuser_1754298652865@yopmail.com
+Assigned user to stage: 5, Email: testuser_1754298652865@yopmail.com
+Assigned user to stage: 6, Email: testuser_1754298652865@yopmail.com
+Assigned user to stage: 7, Email: testuser_1754298652865@yopmail.com
 ]]></system-out>
   </testcase>
-  <testcase name="completeStages" classname="tests.AdminOrderRejectFlowTest" time="2.382">
+  <testcase name="completeStages" classname="tests.AdminOrderRejectFlowTest" time="0.019">
     <system-out><![CDATA[Completed Stage 2
 Rejected Stage 3 with reason
 ]]></system-out>
   </testcase>
-  <testcase name="verifyRejectOrder" classname="tests.AdminOrderRejectFlowTest" time="2.184">
+  <testcase name="verifyRejectOrder" classname="tests.AdminOrderRejectFlowTest" time="0.011">
     <system-out><![CDATA[Order found in on time. Customer Name: Keshav Automation
 ]]></system-out>
   </testcase>
-  <testcase name="compareReportUIAndExcelData" classname="tests.ReportValidationTest" time="23.14">
+  <testcase name="compareReportUIAndExcelData" classname="tests.ReportValidationTest" time="0.183">
     <system-out><![CDATA[
 =========================================================
 Starting Flow: REPORT ASSERTION FLOW TEST
@@ -487,11 +487,25 @@ Comparing field: Stage 6 | Expected: 0 | Actual: 0.0000
 Comparing field: Stage 7 | Expected: 0 | Actual: 0.0000
 All matched fields validated for: Vasu Automation
 ]]></system-out>
-    <system-err><![CDATA[Jul 31, 2025 5:06:52 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+    <system-err><![CDATA[Aug 04, 2025 2:42:51 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 138
-Jul 31, 2025 5:06:52 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+Aug 04, 2025 2:42:51 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
 WARNING: Unable to find version of CDP to use for 138.0.7204.169. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.27.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 ERROR StatusLogger Log4j2 could not find a logging implementation. Please add log4j-core to the classpath. Using SimpleLogger to log to the console...
+]]></system-err>
+  </testcase>
+  <testcase name="testfillAddUser" classname="tests.AddUserTest" time="0.008">
+    <system-out><![CDATA[
+=========================================================
+Starting Flow: ADDING NEW USER TEST
+=========================================================
+
+User Added Successfully: testuser_1754298816412@yopmail.com
+]]></system-out>
+    <system-err><![CDATA[Aug 04, 2025 2:43:18 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 138
+Aug 04, 2025 2:43:18 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 138.0.7204.169. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.27.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 ]]></system-err>
   </testcase>
 </testsuite>

@@ -1,15 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Hybrid Automation Suite]">
-  <test thread-count="5" name="UI - Dashboard After(failed)">
+<suite thread-count="7" parallel="tests" name="Failed suite [Parallel Admin Assignee Results]">
+  <test thread-count="7" parallel="tests" name="Admin-Assignee Flow(failed)">
     <classes>
-      <class name="tests.DashboardTest">
+      <class name="tests.AdminAssigneeOrderFlowTest">
+        <methods>
+          <include name="addAttachments"/>
+          <include name="createOrder"/>
+          <include name="addAndAssignUsers"/>
+          <include name="termAndConditionAssignedUser"/>
+          <include name="setupSession"/>
+          <include name="updateTAT"/>
+          <include name="switchToAssignedUser"/>
+          <include name="completeStagesWithRemarksAndAttachments"/>
+          <include name="addRemarks"/>
+          <include name="splitOrder"/>
+        </methods>
+      </class> <!-- tests.AdminAssigneeOrderFlowTest -->
+    </classes>
+  </test> <!-- Admin-Assignee Flow(failed) -->
+  <test thread-count="7" parallel="tests" name="UI - Report Validation(failed)">
+    <classes>
+      <class name="tests.ReportWithExcel">
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="testDashboardCountsAfter"/>
+          <include name="compareReportUIAndExcelData"/>
         </methods>
-      </class> <!-- tests.DashboardTest -->
+      </class> <!-- tests.ReportWithExcel -->
     </classes>
-  </test> <!-- UI - Dashboard After(failed) -->
-</suite> <!-- Failed suite [Hybrid Automation Suite] -->
+  </test> <!-- UI - Report Validation(failed) -->
+  <test thread-count="7" parallel="tests" name="UI - Add User via UI(failed)">
+    <classes>
+      <class name="tests.AddUserTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="testfillAddUser"/>
+        </methods>
+      </class> <!-- tests.AddUserTest -->
+    </classes>
+  </test> <!-- UI - Add User via UI(failed) -->
+</suite> <!-- Failed suite [Parallel Admin Assignee Results] -->

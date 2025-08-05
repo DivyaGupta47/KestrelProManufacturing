@@ -39,7 +39,7 @@
 
 	<test name="UI - Report Validation">
 		<classes>
-			<class name="tests.ReportValidationTest" />
+			<class name="tests.ReportWithExcel" />
 		</classes>
 	</test>
 

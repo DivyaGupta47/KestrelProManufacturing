@@ -1,27 +1,44 @@
-<suite name="Parallel Admin Assignee Results" parallel="tests" thread-count="4" verbose="1" preserve-order="false">
+<suite name="Parallel Admin Assignee Results" parallel="tests" thread-count="7" verbose="1" preserve-order="false">
 
-    <test name="Admin Flow">
-        <classes>
-            <class name="tests.AdminOrderFlowTest" />
-        </classes>
-    </test>
+	<test name="Admin Flow">
+		<classes>
+			<class name="tests.AdminOrderFlowTest" />
+		</classes>
+	</test>
 
-    <test name="Admin-Assignee Flow">
-        <classes>
-            <class name="tests.AdminAssigneeOrderFlowTest" />
-        </classes>
-    </test>
-
-    <test name="API - Admin Order with Split Flow">
+	<test name="API - Admin Order with Split Flow">
 		<classes>
 			<class name="tests.AdminSplitOrderFlowTest" />
 		</classes>
 	</test>
-	
-	<test name="UI - Report Validation">
+
+	<test name="Admin-Assignee Flow">
 		<classes>
-			<class name="tests.ReportValidationTest" />
+			<class name="tests.AdminAssigneeOrderFlowTest" />
 		</classes>
 	</test>
 
+	<test name="API - Admin Multiple Assignee Flow">
+		<classes>
+			<class name="tests.AdminMultipleAssigneeOrderFlowTest" />
+		</classes>
+	</test>
+
+	<test name="API - Admin Reject Flow">
+		<classes>
+			<class name="tests.AdminOrderRejectFlowTest" />
+		</classes>
+	</test>
+
+	<test name="UI - Report Validation">
+		<classes>
+			<class name="tests.ReportWithExcel" />
+		</classes>
+	</test>
+
+	<test name="UI - Add User via UI">
+		<classes>
+			<class name="tests.AddUserTest" />
+		</classes>
+	</test>
 </suite>

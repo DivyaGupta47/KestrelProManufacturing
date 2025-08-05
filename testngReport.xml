@@ -2,7 +2,7 @@
 
 	<test name="UI - Report Assertion">
 		<classes>
-			<class name="tests.ReportValidationTest" />
+			<class name="tests.ReportWithExcel" />
 		</classes>
 	</test>
 
