@@ -16,6 +16,7 @@ public class Config {
 
 	// Base URL for API endpoints
 	public static final String BASE_URI = "https://freetrial-mf.kestrelpro.ai";
+	public static final String BASE_URI_QA = "https://qa-mf.kestrelpro.ai";
 
 	// Extracted CSRF token from Set-Cookie
 	public static final String CSRF_TOKEN = "A0KnUgvqZS95HDUkMJNlFwx5I0fwufDs95AKuyRsHe8=";

@@ -29,5 +29,18 @@ public class RemarkAPI {
                 .post("/api/v1/remark");
     }
     
+    public static Response addRemarkQA(int orderId, int stageId, String comment) {
+        return RestAssured
+            .given()
+                .baseUri(Config.BASE_URI_QA)
+                .header("Authorization", "Bearer " + Config.getSessionToken())
+                .queryParam("orderId", orderId)
+                .queryParam("orderStageId", stageId)
+                .contentType("application/json")
+                .body(Map.of("comment", comment))
+            .when()
+                .post("/api/v1/remark");
+    }
+    
     
 }

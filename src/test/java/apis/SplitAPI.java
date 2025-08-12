@@ -61,5 +61,18 @@ public class SplitAPI {
                 .body(payload)
                 .post("/api/v1/orders/split");
     }
+    
+
+	//Split order-NO QA
+    public static Response splitOrderQA(int orderId, boolean isSplitted) {
+        return RestAssured.given()
+                .baseUri(Config.BASE_URI_QA)
+                .header("Authorization", "Bearer " + Config.getSessionToken())
+                .contentType("application/json")
+                .queryParam("orderId", orderId)
+                .queryParam("isSplitted", isSplitted)
+                .when()
+                .post("/api/v1/orders/split");
+    }
 
 }

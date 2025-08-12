@@ -40,5 +40,23 @@ public class AssigneeAPI {
             .when()
                 .put("/api/v1/orders/assign-unassign");
     }
+    
+    public static Response assignStageToOrderQA(int orderId, int stageId, List<String> userIds) {
+        Map<String, Object> payload = new HashMap<>();
+        payload.put("assigneeIds", userIds);
+        payload.put("unassigneeIds", new ArrayList<>()); // Always send an array
+
+        return RestAssured
+            .given()
+                .baseUri(Config.BASE_URI_QA)
+                .header("Authorization", "Bearer " + Config.getSessionToken())
+                .header("Content-Type", "application/json")
+                .queryParam("orderId", orderId)
+                .queryParam("orderStageId", stageId)
+                .queryParam("status", "NOT_STARTED")
+                .body(payload)
+            .when()
+                .put("/api/v1/orders/assign-unassign");
+    }
 
 }

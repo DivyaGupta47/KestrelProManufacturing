@@ -1,0 +1,11 @@
+<suite name="Admin Order Suite" verbose="1" preserve-order="true" parallel="false">
+	<listeners>
+		<listener class-name="listeners.ExtentTestNGListener" />
+	</listeners>
+	<test name="Admin Order Flow with Workflow Open">
+		<classes>
+			<class name="tests.WorkflowMixStagesTest" />
+			<class name="tests.WorkflowMixStagesAPITest" />
+		</classes>
+	</test>
+</suite>

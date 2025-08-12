@@ -42,5 +42,17 @@ public class StatusAPI {
          .when()
              .put("/api/v1/stage/status");
  }
+	 
+	 public static Response completeStageQA(int orderId, int stageId) {
+         return RestAssured.given()
+             .baseUri(Config.BASE_URI_QA)
+             .header("Authorization", "Bearer " + Config.getSessionToken())
+             .contentType("application/json")
+             .queryParam("orderId", orderId)
+             .queryParam("orderStageId", stageId)
+             .body(Map.of("status", "COMPLETED", "comment", ""))
+         .when()
+             .put("/api/v1/stage/status");
+ }
 
 }

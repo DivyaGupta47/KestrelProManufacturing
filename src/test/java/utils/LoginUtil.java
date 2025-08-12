@@ -79,4 +79,45 @@ public class LoginUtil {
 
         return sessionToken;
     }
+    
+    public static String performLogin_QA(String email, String password) {
+        // Step 1: Start login flow
+        Response flowResponse = RestAssured
+                .given()
+                .baseUri(Config.BASE_URI_QA)
+                .get("/.ory/kratos/public/self-service/login/api");
+
+        String flowId = flowResponse.jsonPath().getString("id");
+
+        // Step 2: Prepare login request payload
+        String loginPayload = "{"
+                + "\"method\": \"password\","
+                + "\"identifier\": \"" + email + "\","
+                + "\"password\": \"" + password + "\""
+                + "}";
+
+        // Step 3: Submit login request with credentials and flow ID
+        Response loginResponse = RestAssured
+                .given()
+                .baseUri(Config.BASE_URI_QA)
+                .contentType(ContentType.JSON)
+                .accept(ContentType.JSON)
+                .queryParam("flow", flowId)
+                .body(loginPayload)
+                .post("/.ory/kratos/public/self-service/login");
+
+        // Step 4: Handle login failure
+        if (loginResponse.getStatusCode() != 200) {
+            throw new RuntimeException("Login failed: " + loginResponse.asPrettyString());
+        }
+
+        // Step 5: Extract token from response body
+        String sessionToken = loginResponse.jsonPath().getString("session_token");
+
+        if (sessionToken == null || sessionToken.isEmpty()) {
+            throw new RuntimeException("No session_token returned in login response.");
+        }
+
+        return sessionToken;
+    }
 }

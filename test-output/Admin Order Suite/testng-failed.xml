@@ -4,30 +4,22 @@
   <listeners>
     <listener class-name="listeners.ExtentTestNGListener"/>
   </listeners>
-  <test thread-count="5" name="End-to-End Admin Asignee Order Flow(failed)">
+  <test thread-count="5" name="Admin Order Flow with Workflow Open(failed)">
     <classes>
-      <class name="tests.RemarkAndAttachmentTest">
+      <class name="tests.WorkflowOpenAPITest">
         <methods>
-          <include name="addAttachments"/>
+          <include name="updateUser"/>
+          <include name="setupSession"/>
+          <include name="verifyCompletion"/>
+          <include name="splitOrder"/>
           <include name="addRemarks"/>
+          <include name="addAndAssignUsers"/>
+          <include name="completeStages"/>
+          <include name="updateTAT"/>
+          <include name="addAttachments"/>
+          <include name="createOrder"/>
         </methods>
-      </class> <!-- tests.RemarkAndAttachmentTest -->
-      <class name="tests.UserAssignmentTest">
-        <methods>
-          <include name="createUserAndAssignStages"/>
-        </methods>
-      </class> <!-- tests.UserAssignmentTest -->
-      <class name="tests.AssigneeLogin">
-        <methods>
-          <include name="acceptTerms"/>
-          <include name="loginAssignee"/>
-        </methods>
-      </class> <!-- tests.AssigneeLogin -->
-      <class name="tests.completeStagesWithAssignee">
-        <methods>
-          <include name="completeStagesWithDetails"/>
-        </methods>
-      </class> <!-- tests.completeStagesWithAssignee -->
+      </class> <!-- tests.WorkflowOpenAPITest -->
     </classes>
-  </test> <!-- End-to-End Admin Asignee Order Flow(failed) -->
+  </test> <!-- Admin Order Flow with Workflow Open(failed) -->
 </suite> <!-- Failed suite [Admin Order Suite] -->

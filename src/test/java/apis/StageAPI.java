@@ -45,9 +45,50 @@ public class StageAPI {
 
         return response.jsonPath().getInt("items[1].id"); // Use "items" instead of "data"
     }
-
+    
     public static List<Map<String, Object>> getStageList(Integer orderId) {
         Response response = getStages(orderId);
+        return response.jsonPath().getList("items");
+    }
+
+    /*public static Response getStagesQA(Integer orderId) {
+        return RestAssured
+            .given()
+                .baseUri(Config.BASE_URI_QA)
+                //.header("Cookie", Config.getCookieHeader())
+                .header("Authorization", "Bearer " + Config.getSessionToken())
+                .queryParam("orderId", orderId)
+                .queryParam("isAssignee", false)
+                .queryParam("sortKey", "sequence")
+                .queryParam("sortValue", "ASC")
+            .when()
+                .get("/api/v1/stage/order/list");
+    }
+    public static List<Map<String, Object>> getStageListQA(Integer orderId) {
+        Response response = getStagesQA(orderId);
+        return response.jsonPath().getList("items");
+    }*/
+    public static Response getStagesQA(Integer orderId) {
+        return RestAssured
+            .given()
+                .baseUri(Config.BASE_URI_QA)
+                //.header("Cookie", Config.getCookieHeader()) // optional if using token
+                .header("Authorization", "Bearer " + Config.getSessionToken())
+                .queryParam("orderId", orderId)
+                .queryParam("isAssignee", true)
+                .queryParam("sortKey", "sequence")
+                .queryParam("sortValue", "ASC")
+                .queryParam("limit", 11)
+                .queryParam("offset", 0)
+                .queryParam("searchKey", "name")
+                .queryParam("searchValue", "")
+            .when()
+                .get("/api/v1/stage/order/list");
+    }
+
+    
+    public static List<Map<String, Object>> getStageListQA(Integer orderId) {
+        Response response = getStagesQA(orderId);
         return response.jsonPath().getList("items");
     }
  

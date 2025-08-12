@@ -72,5 +72,40 @@ public class UserAPI {
                 .body(payload)
                 .put("/user/kratos/identity/" + identityId);
     }
+    
+    public static Response createUserAssociateQA(String email, String firstName, String lastName,String role, String phone) {
+        String payload = "{"
+                + "\"email\": \"" + email + "\","
+                + "\"first_name\": \"" + firstName + "\","
+                + "\"last_name\": \"" + lastName + "\","
+                + "\"role\": \"" + role + "\","
+                + "\"phone\": \"" + phone + "\","
+                + "\"status\": \"PENDING\","
+                + "\"region\": \"(GMT+5:30) Kolkata, India\""
+                + "}";
+
+        return RestAssured.given()
+                .baseUri(Config.BASE_URI_QA)
+                .header("Authorization", "Bearer " + Config.getSessionToken())
+                .contentType(ContentType.JSON)
+                .body(payload)
+                .post("/user/kratos/identity");
+    }
+    
+    public static Response updateUserQA(String identityId, String firstName, String lastName, String phone, String region) {
+        String payload = "{"
+                + "\"first_name\": \"" + firstName + "\","
+                + "\"last_name\": \"" + lastName + "\","
+                + "\"phone\": \"" + phone + "\","
+                + "\"region\": \"" + region + "\""
+                + "}";
+
+        return RestAssured.given()
+                .baseUri(Config.BASE_URI_QA)
+                .header("Authorization", "Bearer " + Config.getSessionToken())
+                .contentType(ContentType.JSON)
+                .body(payload)
+                .put("/user/kratos/identity/" + identityId);
+    }
 
 }

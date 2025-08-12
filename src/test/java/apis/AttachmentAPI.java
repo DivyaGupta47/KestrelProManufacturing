@@ -28,4 +28,16 @@ public class AttachmentAPI {
         .when()
             .post("/api/v1/orders/attachment");
     }
+    
+    public static Response addAttachmentQA(int orderId, int stageId, String attachment) {
+        return RestAssured.given()
+            .baseUri(Config.BASE_URI_QA)
+            .header("Authorization", "Bearer " + Config.getSessionToken())
+            .queryParam("orderId", orderId)
+            .queryParam("orderStageId", stageId)
+            .contentType("application/json")
+            .body(Map.of("attachment", attachment))
+        .when()
+            .post("/api/v1/orders/attachment");
+    }
 }
