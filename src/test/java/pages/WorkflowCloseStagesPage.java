@@ -14,11 +14,11 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-public class WorkflowOpenStagesPage {
+public class WorkflowCloseStagesPage  {
 	
 	 WebDriver driver;
 
-	    public WorkflowOpenStagesPage(WebDriver driver) {
+	    public WorkflowCloseStagesPage(WebDriver driver) {
 	        this.driver = driver;
 	        PageFactory.initElements(driver, this);  // Initialize Page Factory
 //workflow@yopmail.com
@@ -39,15 +39,6 @@ public class WorkflowOpenStagesPage {
 		
 		@FindBy(xpath = "//input[@placeholder='Enter Details' and @name='description']")
 		WebElement enterDetails;
-		
-		@FindBy(xpath = "//span[normalize-space()='Open (Editable)']/ancestor::label")
-		WebElement openRadioBtn;		
-		
-		@FindBy(xpath = "//span[text()='Open (Editable)']/ancestor::div[contains(@class,'flex justify-between')]//button[@data-slot='trigger']")
-		private WebElement dropdownforOpenDays;		
-		
-		@FindBy(xpath = "//span[normalize-space()='Time']/preceding::button[@data-slot='trigger'][1]")
-		private WebElement dropdownforOpenTime;
 		
 		@FindBy(xpath = "//ul[@role='menu']//li[@role='menuitemradio']//span[text()='2']")
 		private WebElement option2;		
@@ -81,10 +72,20 @@ public class WorkflowOpenStagesPage {
 		@FindBy(xpath = "//input[@aria-label='Search']")
 		private WebElement searchInputWorkflow;
 		
-		//String workflowName = "Workflow Open Test 2";
+		@FindBy(xpath = "//button[@data-slot='trigger' and normalize-space(text())='0']")
+		WebElement dropdownAutomatedDays;
+		
+		@FindBy(xpath = "//span[normalize-space()='Open (Editable)']/ancestor::label")
+		WebElement openRadioBtn;		
+		
+		@FindBy(xpath = "//span[text()='Open (Editable)']/ancestor::div[contains(@class,'flex justify-between')]//button[@data-slot='trigger']")
+		private WebElement dropdownforOpenDays;		
+		
+		@FindBy(xpath = "//span[normalize-space()='Time']/preceding::button[@data-slot='trigger'][1]")
+		private WebElement dropdownforOpenTime;
 
-		public void WorkflowsOpen(String workflowName) throws InterruptedException {
-		    Thread.sleep(1000);
+		public void WorkflowsClose(String workflowName) throws InterruptedException {
+			Thread.sleep(1000);
 		    workflowsLink.click();
 		    Thread.sleep(3000);
 		    newWorkflowBtn.click();
@@ -109,7 +110,7 @@ public class WorkflowOpenStagesPage {
 			saveBtn.click();
 			Thread.sleep(2000); 
 		   
-		    for (int i = 3; i <= 5; i++) {
+		    for (int i = 3; i <= 7; i++) {
 		        addStageBtn.click();
 
 		        // Clear and enter new stage name and details dynamically
@@ -119,19 +120,10 @@ public class WorkflowOpenStagesPage {
 		        enterDetails.clear();
 		        enterDetails.sendKeys("Added Stage " + i);
 
-		        openRadioBtn.click();
-		        Thread.sleep(2000);
-
-		        dropdownforOpenDays.click();
+		        dropdownAutomatedDays.click();
 		        Thread.sleep(2000);
 		        option2.click();
-		        Thread.sleep(2000);
-
-		        dropdownforOpenTime.click();
-		        Thread.sleep(2000);
-		        option2.click();
-
-
+		      
 		        assignCustomerToUser("workflowasignee@yopmail.com", wait, waitLong, actions, js);
 		        Thread.sleep(2000);
 		        rejectionSettionBtn.click();
@@ -144,6 +136,10 @@ public class WorkflowOpenStagesPage {
 		        Thread.sleep(3000);  // wait a bit longer to save before next iteration
 		        
 		    }
+		    
+		    ((JavascriptExecutor) driver).executeScript(
+					"arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", workflowNameInput);
+		    
 		    workflowNameInput.sendKeys(workflowName);
 		    workflowSavedBtn.click();
 		    Thread.sleep(1000);

@@ -7,10 +7,10 @@ import com.aventstack.extentreports.ExtentTest;
 import base.BaseTestWorkflow;
 import listeners.ExtentTestNGListener;
 import pages.LoginPageUi;
-import pages.WorkflowMixStagesPage;
+import pages.WorkflowCloseStagesPage;
 import pages.WorkflowOpenStagesPage;
 
-public class WorkflowMixStagesTest extends BaseTestWorkflow{
+public class WorkflowCloseStagesTest extends BaseTestWorkflow{
 	   LoginPageUi loginPage;
 	    String userName = "workflow@yopmail.com";
 	    String password = "KestrelPro@123";
@@ -19,7 +19,7 @@ public class WorkflowMixStagesTest extends BaseTestWorkflow{
 		public void login()    
 	    {
 	    	System.out.println("\n=========================================================");
-	    	System.out.println("Starting Flow: WORKFLOW OPEN-CLOSE TEST UI");
+	    	System.out.println("Starting Flow: WORKFLOW CLOSE TEST UI");
 	    	System.out.println("=========================================================\n");
 	    	loginPage = new LoginPageUi(driver);
 	        loginPage.enterUsername(userName);
@@ -29,14 +29,14 @@ public class WorkflowMixStagesTest extends BaseTestWorkflow{
 	    }
 	    
 	    @Test
-	    public void workflowOpenForAllStages() throws InterruptedException {
+	    public void workflowCloseForAllStages() throws InterruptedException {
 	    	ExtentTest test = ExtentTestNGListener.getTest();
 	        login();
-	        WorkflowMixStagesPage workflowMixStagesPage = new WorkflowMixStagesPage(driver);
+	        WorkflowCloseStagesPage workflowCloseStagesPage = new WorkflowCloseStagesPage(driver);
 	        Thread.sleep(3000);
 	        
-	        workflowMixStagesPage.WorkflowsAlternateOpenStages(workflowName);
-	        workflowMixStagesPage.verifyWorkflow(workflowName);	   
+	        workflowCloseStagesPage.WorkflowsClose(workflowName);
+	        workflowCloseStagesPage.verifyWorkflow(workflowName);	   
 	        System.out.println("TEST PASSED: Workflow added successfully Workflow Name: " +workflowName);
 	        
 	    }

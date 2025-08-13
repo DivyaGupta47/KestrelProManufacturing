@@ -3,19 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.WorkflowOpenAPITest">
+      <class name="tests.WorkflowCloseStagesTest">
         <methods>
-          <include name="setupSession"/>
-          <include name="verifyCompletion"/>
-          <include name="splitOrder"/>
-          <include name="addRemarks"/>
-          <include name="completeStages"/>
-          <include name="addAndAssignUsers"/>
-          <include name="updateTAT"/>
-          <include name="addAttachments"/>
-          <include name="createOrder"/>
+          <include name="tearDown"/>
+          <include name="workflowCloseForAllStages"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- tests.WorkflowOpenAPITest -->
+      </class> <!-- tests.WorkflowCloseStagesTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

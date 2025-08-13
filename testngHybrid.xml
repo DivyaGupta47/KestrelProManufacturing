@@ -65,6 +65,13 @@
 			<class name="tests.WorkflowMixStagesAPITest"/>
 		</classes>
 	</test>
+	
+	<test name="Admin Order Flow with Workflow Open">
+		<classes>
+			<class name="tests.WorkflowCloseStagesTest" />
+			<class name="tests.WorkflowCloseStagesAPITest" />
+		</classes>
+	</test>
 
 	<test name="UI - Dashboard After">
 		<classes>
