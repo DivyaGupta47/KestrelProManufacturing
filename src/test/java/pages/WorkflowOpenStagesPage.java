@@ -144,8 +144,19 @@ public class WorkflowOpenStagesPage {
 		        Thread.sleep(3000);  // wait a bit longer to save before next iteration
 		        
 		    }
-		    workflowNameInput.sendKeys(workflowName);
-		    workflowSavedBtn.click();
+		    WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+		 // Wait until the workflow name input is clickable
+		 wait1.until(ExpectedConditions.elementToBeClickable(workflowNameInput));
+		 workflowNameInput.clear();
+		 workflowNameInput.sendKeys(workflowName);
+
+		 // Wait until the save button is clickable
+		 wait1.until(ExpectedConditions.elementToBeClickable(workflowSavedBtn));
+		 workflowSavedBtn.click();
+		    
+		    //workflowNameInput.sendKeys(workflowName);
+		   // workflowSavedBtn.click();
 		    Thread.sleep(1000);
 		}
 
