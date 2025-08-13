@@ -16,6 +16,7 @@ on:
           - testngParallelR.xml
           - testngAdminAsignee.xml
           - testngselenium.xml
+	  - testngworkflow.xml
         default: testngHybrid.xml
   schedule:
     - cron: '30 4 * * *'  # Daily at 4:30 AM UTC
