@@ -1,15 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Default test(failed)">
+<suite name="Failed suite [Admin Order Suite]">
+  <listeners>
+    <listener class-name="listeners.ExtentTestNGListener"/>
+  </listeners>
+  <test thread-count="5" name="Admin Order Flow with Workflow Open(failed)">
     <classes>
-      <class name="tests.WorkflowCloseStagesTest">
+      <class name="tests.WorkflowOpenStagesTest">
         <methods>
+          <include name="workflowOpenForAllStages"/>
           <include name="tearDown"/>
-          <include name="workflowCloseForAllStages"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- tests.WorkflowCloseStagesTest -->
+      </class> <!-- tests.WorkflowOpenStagesTest -->
+      <class name="tests.WorkflowOpenAPITest">
+        <methods>
+          <include name="verifyCompletion"/>
+          <include name="setupSession"/>
+          <include name="splitOrder"/>
+          <include name="addRemarks"/>
+          <include name="addAndAssignUsers"/>
+          <include name="completeStages"/>
+          <include name="updateTAT"/>
+          <include name="addAttachments"/>
+          <include name="createOrder"/>
+        </methods>
+      </class> <!-- tests.WorkflowOpenAPITest -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Admin Order Flow with Workflow Open(failed) -->
+</suite> <!-- Failed suite [Admin Order Suite] -->

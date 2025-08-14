@@ -6,13 +6,26 @@
   </listeners>
   <test thread-count="5" name="Admin Order Flow with Workflow Open(failed)">
     <classes>
-      <class name="tests.WorkflowCloseStagesTest">
+      <class name="tests.WorkflowOpenStagesTest">
         <methods>
+          <include name="workflowOpenForAllStages"/>
           <include name="tearDown"/>
-          <include name="workflowCloseForAllStages"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- tests.WorkflowCloseStagesTest -->
+      </class> <!-- tests.WorkflowOpenStagesTest -->
+      <class name="tests.WorkflowOpenAPITest">
+        <methods>
+          <include name="verifyCompletion"/>
+          <include name="setupSession"/>
+          <include name="splitOrder"/>
+          <include name="addRemarks"/>
+          <include name="addAndAssignUsers"/>
+          <include name="completeStages"/>
+          <include name="updateTAT"/>
+          <include name="addAttachments"/>
+          <include name="createOrder"/>
+        </methods>
+      </class> <!-- tests.WorkflowOpenAPITest -->
     </classes>
   </test> <!-- Admin Order Flow with Workflow Open(failed) -->
 </suite> <!-- Failed suite [Admin Order Suite] -->

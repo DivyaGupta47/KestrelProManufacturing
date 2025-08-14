@@ -141,6 +141,7 @@ public class WorkflowOpenStagesPage {
 		        stage2Btn.click();
 		        Thread.sleep(1500);
 		        saveBtn.click();
+		        System.out.println("TEST PASSES: Stage created via UI Automation");
 		        Thread.sleep(3000);  // wait a bit longer to save before next iteration
 		        
 		    }
