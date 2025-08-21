@@ -1,63 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="9" passed="9" failed="0" skipped="0">
+<testng-results ignored="0" total="11" passed="11" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-08-14T12:41:14 IST" name="Admin Order Suite" finished-at="2025-08-14T12:43:17 IST" duration-ms="122781">
+  <suite started-at="2025-08-21T17:23:03 IST" name="Default suite" finished-at="2025-08-21T17:23:22 IST" duration-ms="19000">
     <groups>
     </groups>
-    <test started-at="2025-08-14T12:41:14 IST" name="Admin Order Flow with Workflow Open" finished-at="2025-08-14T12:43:17 IST" duration-ms="122781">
-      <class name="tests.WorkflowOpenAPITest">
-        <test-method is-config="true" signature="setupSession()[pri:0, instance:tests.WorkflowOpenAPITest@4b14918a]" started-at="2025-08-14T12:42:53 IST" name="setupSession" finished-at="2025-08-14T12:42:57 IST" duration-ms="3589" status="PASS">
+    <test started-at="2025-08-21T17:23:03 IST" name="Default test" finished-at="2025-08-21T17:23:22 IST" duration-ms="19000">
+      <class name="tests.ActiveInactiveUserTest">
+        <test-method is-config="true" signature="setupSession()[pri:0, instance:tests.ActiveInactiveUserTest@1349883]" started-at="2025-08-21T17:23:03 IST" name="setupSession" finished-at="2025-08-21T17:23:07 IST" duration-ms="4112" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupSession -->
-        <test-method signature="createOrder()[pri:0, instance:tests.WorkflowOpenAPITest@4b14918a]" started-at="2025-08-14T12:42:57 IST" name="createOrder" finished-at="2025-08-14T12:43:01 IST" duration-ms="4762" status="PASS">
+        <test-method signature="createOrder()[pri:0, instance:tests.ActiveInactiveUserTest@1349883]" started-at="2025-08-21T17:23:07 IST" name="createOrder" finished-at="2025-08-21T17:23:11 IST" duration-ms="4628" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createOrder -->
-        <test-method signature="splitOrder()[pri:0, instance:tests.WorkflowOpenAPITest@4b14918a]" started-at="2025-08-14T12:43:01 IST" name="splitOrder" finished-at="2025-08-14T12:43:01 IST" depends-on-methods="tests.WorkflowOpenAPITest.createOrder" duration-ms="148" status="PASS">
+        <test-method signature="splitOrder()[pri:0, instance:tests.ActiveInactiveUserTest@1349883]" started-at="2025-08-21T17:23:11 IST" name="splitOrder" finished-at="2025-08-21T17:23:12 IST" depends-on-methods="tests.ActiveInactiveUserTest.createOrder" duration-ms="403" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- splitOrder -->
-        <test-method signature="updateTAT()[pri:0, instance:tests.WorkflowOpenAPITest@4b14918a]" started-at="2025-08-14T12:43:01 IST" name="updateTAT" finished-at="2025-08-14T12:43:08 IST" depends-on-methods="tests.WorkflowOpenAPITest.splitOrder" duration-ms="6296" status="PASS">
+        <test-method signature="updateTAT()[pri:0, instance:tests.ActiveInactiveUserTest@1349883]" started-at="2025-08-21T17:23:12 IST" name="updateTAT" finished-at="2025-08-21T17:23:14 IST" depends-on-methods="tests.ActiveInactiveUserTest.splitOrder" duration-ms="2042" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- updateTAT -->
-        <test-method signature="addAndAssignUsers()[pri:0, instance:tests.WorkflowOpenAPITest@4b14918a]" started-at="2025-08-14T12:43:08 IST" name="addAndAssignUsers" finished-at="2025-08-14T12:43:09 IST" depends-on-methods="tests.WorkflowOpenAPITest.updateTAT" duration-ms="1633" status="PASS">
+        <test-method signature="addAndAssignUsers()[pri:0, instance:tests.ActiveInactiveUserTest@1349883]" started-at="2025-08-21T17:23:14 IST" name="addAndAssignUsers" finished-at="2025-08-21T17:23:15 IST" depends-on-methods="tests.ActiveInactiveUserTest.updateTAT" duration-ms="1593" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addAndAssignUsers -->
-        <test-method signature="addRemarks()[pri:0, instance:tests.WorkflowOpenAPITest@4b14918a]" started-at="2025-08-14T12:43:09 IST" name="addRemarks" finished-at="2025-08-14T12:43:10 IST" depends-on-methods="tests.WorkflowOpenAPITest.addAndAssignUsers" duration-ms="578" status="PASS">
+        <test-method signature="switchToAssignedUser()[pri:0, instance:tests.ActiveInactiveUserTest@1349883]" started-at="2025-08-21T17:23:15 IST" name="switchToAssignedUser" finished-at="2025-08-21T17:23:16 IST" depends-on-methods="tests.ActiveInactiveUserTest.addAndAssignUsers" duration-ms="523" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- addRemarks -->
-        <test-method signature="addAttachments()[pri:0, instance:tests.WorkflowOpenAPITest@4b14918a]" started-at="2025-08-14T12:43:10 IST" name="addAttachments" finished-at="2025-08-14T12:43:11 IST" depends-on-methods="tests.WorkflowOpenAPITest.addRemarks" duration-ms="600" status="PASS">
+        </test-method> <!-- switchToAssignedUser -->
+        <test-method signature="completeStagesWithRemarksAndAttachments()[pri:0, instance:tests.ActiveInactiveUserTest@1349883]" started-at="2025-08-21T17:23:16 IST" name="completeStagesWithRemarksAndAttachments" finished-at="2025-08-21T17:23:20 IST" depends-on-methods="tests.ActiveInactiveUserTest.switchToAssignedUser" duration-ms="3739" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- addAttachments -->
-        <test-method signature="completeStages()[pri:0, instance:tests.WorkflowOpenAPITest@4b14918a]" started-at="2025-08-14T12:43:11 IST" name="completeStages" finished-at="2025-08-14T12:43:14 IST" depends-on-methods="tests.WorkflowOpenAPITest.addAttachments" duration-ms="2893" status="PASS">
+        </test-method> <!-- completeStagesWithRemarksAndAttachments -->
+        <test-method signature="switchToAdmin()[pri:0, instance:tests.ActiveInactiveUserTest@1349883]" started-at="2025-08-21T17:23:20 IST" name="switchToAdmin" finished-at="2025-08-21T17:23:20 IST" depends-on-methods="tests.ActiveInactiveUserTest.completeStagesWithRemarksAndAttachments" duration-ms="523" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- completeStages -->
-        <test-method signature="verifyCompletion()[pri:0, instance:tests.WorkflowOpenAPITest@4b14918a]" started-at="2025-08-14T12:43:14 IST" name="verifyCompletion" finished-at="2025-08-14T12:43:17 IST" depends-on-methods="tests.WorkflowOpenAPITest.completeStages" duration-ms="3390" status="PASS">
+        </test-method> <!-- switchToAdmin -->
+        <test-method signature="deactivateUser()[pri:0, instance:tests.ActiveInactiveUserTest@1349883]" started-at="2025-08-21T17:23:20 IST" name="deactivateUser" finished-at="2025-08-21T17:23:20 IST" depends-on-methods="tests.ActiveInactiveUserTest.switchToAdmin" duration-ms="224" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyCompletion -->
-      </class> <!-- tests.WorkflowOpenAPITest -->
-      <class name="tests.WorkflowOpenStagesTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.WorkflowOpenStagesTest@1f3f02ee]" started-at="2025-08-14T12:41:14 IST" name="setUp" finished-at="2025-08-14T12:41:18 IST" duration-ms="3692" status="PASS">
+        </test-method> <!-- deactivateUser -->
+        <test-method signature="switchToAssigneeDeactivated()[pri:0, instance:tests.ActiveInactiveUserTest@1349883]" started-at="2025-08-21T17:23:20 IST" name="switchToAssigneeDeactivated" finished-at="2025-08-21T17:23:21 IST" depends-on-methods="tests.ActiveInactiveUserTest.deactivateUser" duration-ms="470" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="workflowOpenForAllStages()[pri:0, instance:tests.WorkflowOpenStagesTest@1f3f02ee]" started-at="2025-08-14T12:41:18 IST" name="workflowOpenForAllStages" finished-at="2025-08-14T12:42:52 IST" duration-ms="94356" status="PASS">
+        </test-method> <!-- switchToAssigneeDeactivated -->
+        <test-method signature="switchToAdminForActivationUser()[pri:0, instance:tests.ActiveInactiveUserTest@1349883]" started-at="2025-08-21T17:23:21 IST" name="switchToAdminForActivationUser" finished-at="2025-08-21T17:23:21 IST" depends-on-methods="tests.ActiveInactiveUserTest.switchToAssigneeDeactivated" duration-ms="462" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- workflowOpenForAllStages -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.WorkflowOpenStagesTest@1f3f02ee]" started-at="2025-08-14T12:42:52 IST" name="tearDown" finished-at="2025-08-14T12:42:53 IST" duration-ms="764" status="PASS">
+        </test-method> <!-- switchToAdminForActivationUser -->
+        <test-method signature="activateUser()[pri:0, instance:tests.ActiveInactiveUserTest@1349883]" started-at="2025-08-21T17:23:21 IST" name="activateUser" finished-at="2025-08-21T17:23:22 IST" depends-on-methods="tests.ActiveInactiveUserTest.switchToAdminForActivationUser" duration-ms="189" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- tests.WorkflowOpenStagesTest -->
-    </test> <!-- Admin Order Flow with Workflow Open -->
-  </suite> <!-- Admin Order Suite -->
+        </test-method> <!-- activateUser -->
+      </class> <!-- tests.ActiveInactiveUserTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Workflow Automation Suite]">
+  <test thread-count="5" name="Admin Order Flow - Workflow Open Stages(failed)">
+    <classes>
+      <class name="tests.WorkflowOpenStagesTest">
+        <methods>
+          <include name="workflowOpenForAllStages"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- tests.WorkflowOpenStagesTest -->
+    </classes>
+  </test> <!-- Admin Order Flow - Workflow Open Stages(failed) -->
+</suite> <!-- Failed suite [Workflow Automation Suite] -->

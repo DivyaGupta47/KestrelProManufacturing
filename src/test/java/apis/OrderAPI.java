@@ -51,5 +51,19 @@ public class OrderAPI {
                 .body(payload)
                 .post();
     }
+    
+    public static Response createOrderWithWorkflow106(String payload) {
+        // Get latest workflow ID from API
+        
+        return RestAssured.given()
+                .baseUri(Config.BASE_URI_QA)
+                .basePath("/api/v1/orders")
+                .queryParam("workflowId", "106") // dynamic ID
+                .contentType(ContentType.JSON)
+                //.header("Cookie", Config.getCookieHeader())
+                .header("Authorization", "Bearer " + Config.getSessionToken())
+                .body(payload)
+                .post();
+    }
 
 }

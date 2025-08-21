@@ -1,31 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Admin Order Suite]">
-  <listeners>
-    <listener class-name="listeners.ExtentTestNGListener"/>
-  </listeners>
-  <test thread-count="5" name="Admin Order Flow with Workflow Open(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.WorkflowOpenStagesTest">
+      <class name="tests.ActiveInactiveUserTest">
         <methods>
-          <include name="workflowOpenForAllStages"/>
-          <include name="tearDown"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- tests.WorkflowOpenStagesTest -->
-      <class name="tests.WorkflowOpenAPITest">
-        <methods>
-          <include name="verifyCompletion"/>
+          <include name="createOrder"/>
+          <include name="activateUser"/>
+          <include name="switchToAssigneeDeactivated"/>
+          <include name="deactivateUser"/>
           <include name="setupSession"/>
           <include name="splitOrder"/>
-          <include name="addRemarks"/>
+          <include name="switchToAdmin"/>
+          <include name="switchToAdminForActivationUser"/>
           <include name="addAndAssignUsers"/>
-          <include name="completeStages"/>
           <include name="updateTAT"/>
-          <include name="addAttachments"/>
-          <include name="createOrder"/>
+          <include name="switchToAssignedUser"/>
+          <include name="completeStagesWithRemarksAndAttachments"/>
         </methods>
-      </class> <!-- tests.WorkflowOpenAPITest -->
+      </class> <!-- tests.ActiveInactiveUserTest -->
     </classes>
-  </test> <!-- Admin Order Flow with Workflow Open(failed) -->
-</suite> <!-- Failed suite [Admin Order Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

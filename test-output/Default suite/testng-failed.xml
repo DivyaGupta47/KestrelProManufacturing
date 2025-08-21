@@ -3,13 +3,22 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.WorkflowCloseStagesTest">
+      <class name="tests.ActiveInactiveUserTest">
         <methods>
-          <include name="tearDown"/>
-          <include name="workflowCloseForAllStages"/>
-          <include name="setUp"/>
+          <include name="createOrder"/>
+          <include name="activateUser"/>
+          <include name="switchToAssigneeDeactivated"/>
+          <include name="deactivateUser"/>
+          <include name="setupSession"/>
+          <include name="splitOrder"/>
+          <include name="switchToAdmin"/>
+          <include name="switchToAdminForActivationUser"/>
+          <include name="addAndAssignUsers"/>
+          <include name="updateTAT"/>
+          <include name="switchToAssignedUser"/>
+          <include name="completeStagesWithRemarksAndAttachments"/>
         </methods>
-      </class> <!-- tests.WorkflowCloseStagesTest -->
+      </class> <!-- tests.ActiveInactiveUserTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

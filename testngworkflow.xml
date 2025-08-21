@@ -23,5 +23,11 @@
 	</test>
 
 	
+	<test name="Active and Inactive user via API">
+		<classes>
+			<class name="tests.ActiveInactiveUserTest"/>
+		</classes>
+	</test>
+	
 
 </suite>

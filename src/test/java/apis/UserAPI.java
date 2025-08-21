@@ -107,5 +107,45 @@ public class UserAPI {
                 .body(payload)
                 .put("/user/kratos/identity/" + identityId);
     }
+    
+    public static Response deactivateSpecificUserQA() {
+        String userId = "c9450ec0-91ae-45a3-ba36-4c2b7c89b2da"; // fixed user ID
+
+        String payload = "{"
+                + "\"first_name\": \"divya\","
+                + "\"last_name\": \"gupta\","
+                + "\"phone\": \"08358864191\","
+                + "\"region\": \"(GMT+5:30) Kolkata, India\","
+                + "\"role\": \"EMPLOYEE\","
+                + "\"status\": \"SUSPENDED\""
+                + "}";
+
+        return RestAssured.given()
+                .baseUri(Config.BASE_URI_QA)
+                .header("Authorization", "Bearer " + Config.getSessionToken())
+                .contentType(ContentType.JSON)
+                .body(payload)
+                .put("/user/kratos/identity/" + userId);
+    }
+
+    public static Response activateSpecificUserQA() {
+        String userId = "c9450ec0-91ae-45a3-ba36-4c2b7c89b2da"; // fixed user ID
+
+        String payload = "{"
+                + "\"first_name\": \"divya\","
+                + "\"last_name\": \"gupta\","
+                + "\"phone\": \"08358864191\","
+                + "\"region\": \"(GMT+5:30) Kolkata, India\","
+                + "\"role\": \"EMPLOYEE\","
+                + "\"status\": \"PENDING\""
+                + "}";
+
+        return RestAssured.given()
+                .baseUri(Config.BASE_URI_QA)
+                .header("Authorization", "Bearer " + Config.getSessionToken())
+                .contentType(ContentType.JSON)
+                .body(payload)
+                .put("/user/kratos/identity/" + userId);
+    }
 
 }
