@@ -24,8 +24,12 @@ import apis.StageAPI;
 import apis.StageUpdateTATAPI;
 import apis.StatusAPI;
 import apis.UserAPI;
+import base.BaseTest;
 import io.restassured.response.Response;
 import listeners.ExtentTestNGListener;
+import pages.LoginPageUi;
+import pages.ProductFlowCompletePage;
+import pages.ProductFlowQueuedPage;
 import utils.Config;
 import utils.EmailUtil;
 import utils.LoginUtil;
@@ -57,7 +61,7 @@ import utils.PayloadUtil;
  */
 
 @Listeners(ExtentTestNGListener.class)
-public class AdminOrderFlowTest {
+public class AdminOrderFlowTest extends BaseTest {
 
 	String adminEmail = "automation@yopmail.com";
 	String adminPassword = "KestrelPro@123";
@@ -76,6 +80,10 @@ public class AdminOrderFlowTest {
     Integer orderId;
     Integer stageIdToUpdate;
     List<Map<String, Object>> filteredStages1;
+    
+    LoginPageUi loginPage;
+	String userName = "divyaadmin@yopmail.com";
+	String password = "KestrelPro@123";
 
     @BeforeClass
     public void setupSession() {
@@ -84,10 +92,12 @@ public class AdminOrderFlowTest {
     	System.out.println("=========================================================\n");
         String token = LoginUtil.performLogin(adminEmail,adminPassword);
         Config.setSessionToken(token);
-        //System.out.println("Login Successfully with Admin Email: " +adminEmail);
         System.out.println("TEST PASSED: Admin logged in successfully with email: " +adminEmail);
-        //Response countResponse = DashboardAPI.getDashboardCounts();
-        //System.out.println("Initial Dashboard Counts: " + countResponse.asPrettyString());
+        loginPage = new LoginPageUi(driver);
+        loginPage.enterUsername(userName);
+        loginPage.enterPassword(password);
+        loginPage.clickSignIn();
+        System.out.println("TEST PASSED: UI Login done: " + userName);
     }
 
    
@@ -134,8 +144,17 @@ public class AdminOrderFlowTest {
         System.out.println("TEST PASSED: Order created and verified in 'Queued' status for customer: " +customerName);
         Thread.sleep(2000);
     }
-
+    
     @Test(dependsOnMethods = "createOrder")
+	public void verifyOrderInUI() throws InterruptedException {
+		ProductFlowQueuedPage productFlowQueuedPage = new ProductFlowQueuedPage(driver);
+		driver.navigate().refresh(); // or click the “Queued” tab again
+		Thread.sleep(1000); // small pause
+		Assert.assertTrue(productFlowQueuedPage.searchOrderinQueued(customerName), "Customer name does not match in UI!");
+	    System.out.println("TEST PASSED: Order verified in UI for Queued");
+    }
+
+    @Test(dependsOnMethods = "verifyOrderInUI")
     public void splitOrder() {
     	ExtentTest test = ExtentTestNGListener.getTest();
         Response splitOrderResponse = SplitAPI.splitOrder(orderId, false);
@@ -247,25 +266,16 @@ public class AdminOrderFlowTest {
         //System.out.println("Final Dashboard Counts: " + countResponse.asPrettyString());
     }
     
-    @Test
-	public void downloadcompleteOnTimeReportTest() throws IOException {
-    	ExtentTest test = ExtentTestNGListener.getTest();
-	    String filePath = "test-output/completeOnTime-report.csv";
-	    Response response = ReportAPI.downloadCompleteOnTimeReport(filePath);
-	    Assert.assertEquals(response.statusCode(), 200, "Report download failed!");
-	    System.out.println("TEST PASSED: Complete on time report downloaded successfully");
+    @Test(dependsOnMethods = "verifyCompletion")
+	public void verifyOrderInUICompleted() throws InterruptedException {
+		ProductFlowCompletePage productFlowCompletePage = new ProductFlowCompletePage(driver);
+		driver.navigate().refresh(); // or click the “Queued” tab again
+		Thread.sleep(1000); // small pause
+		Assert.assertTrue(productFlowCompletePage.searchOrderinCompleted(customerName), "Customer name does not match in UI!");
+	    System.out.println("TEST PASSED: Order verified in UI for completed");
 	}
 	
-	@Test
-	public void downloadcompleteWithDelayReportTest() throws IOException {
-		ExtentTest test = ExtentTestNGListener.getTest();
-	    String filePath = "test-output/completeWithDelay-report.csv";
-	    Response response = ReportAPI.downloadCompleteWithDelayReport(filePath);
-	    Assert.assertEquals(response.statusCode(), 200, "Report download failed!");
-	    System.out.println("TEST PASSED: Complete with delay report downloaded successfully");
-	}
-	
-	@Test(dependsOnMethods = {"addAndAssignUsers", "verifyCompletion"})
+	@Test(dependsOnMethods = {"addAndAssignUsers", "verifyOrderInUICompleted"})
 	public void updateUser() {
 		ExtentTest test = ExtentTestNGListener.getTest();
 	    String identityId = userId; // Or get it from user creation
@@ -278,14 +288,23 @@ public class AdminOrderFlowTest {
 	    System.out.println("TEST PASSED: User updated successfully");
 	}
 	
-	/*
-	 * @AfterSuite public void sendEmailReport() { String reportPath =
-	 * "test-output/ExtentReport.html"; String to = "recipient@example.com"; String
-	 * subject = "Automation Test Report"; String body =
-	 * "Please find the attached automation test report.";
-	 * 
-	 * EmailUtil.sendReport(to, subject, body, reportPath); }
-	 */
-
-
+	  
+	 @Test(dependsOnMethods = "updateUser")
+	public void downloadcompleteOnTimeReportTest() throws IOException {
+    	ExtentTest test = ExtentTestNGListener.getTest();
+	    String filePath = "test-output/completeOnTime-report.csv";
+	    Response response = ReportAPI.downloadCompleteOnTimeReport(filePath);
+	    Assert.assertEquals(response.statusCode(), 200, "Report download failed!");
+	    System.out.println("TEST PASSED: Complete on time report downloaded successfully");
+	}
+	 
+	 @Test(dependsOnMethods = "downloadcompleteOnTimeReportTest")
+	public void downloadcompleteWithDelayReportTest() throws IOException {
+		ExtentTest test = ExtentTestNGListener.getTest();
+	    String filePath = "test-output/completeWithDelay-report.csv";
+	    Response response = ReportAPI.downloadCompleteWithDelayReport(filePath);
+	    Assert.assertEquals(response.statusCode(), 200, "Report download failed!");
+	    System.out.println("TEST PASSED: Complete with delay report downloaded successfully");
+	}
+	
 }

@@ -1,11 +1,14 @@
 package pages;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import base.BasePage;
 
@@ -67,4 +70,35 @@ public class ProductFlowCompletePage extends BasePage{
         WebElement totalOrdersElement = totalOrdersCount;
         return Integer.parseInt(totalOrdersElement.getText());
     }
+	 
+		public boolean searchOrderinCompleted(String customerName) throws InterruptedException {
+		    Thread.sleep(500);
+		    clickElement(product);      // Click product section
+		    Thread.sleep(500);
+		    clickElement(completed);       // Click queued orders
+		    Thread.sleep(9000);
+
+		 // Dynamic XPath using String.format
+		    String xpath = String.format("//td[h5[text()='%s'] and span[text()='Kestrel Industries Pvt. Ltd.']]", customerName);
+
+		    try {
+		        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(25));
+		        WebElement customerElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+
+		        String recentCustomerName = customerElement.getText().split("\n")[0]; // Take first line only
+
+		       // System.out.println("Recent customer found: " + recentCustomerName);
+
+		        if (recentCustomerName.equals(customerName)) {
+		        	System.out.println("TEST PASSED: Recent customer matches in Completed list_UI: " + customerName);
+		            return true;
+		        } else {
+		            System.out.println("TEST FAILED: Expected customer: " + customerName + " but found: " + recentCustomerName);
+		            return false;
+		        }
+		    } catch (Exception e) {
+		        System.out.println("TEST FAILED: Customer not found in UI: " + customerName);
+		        return false;
+		    }
+		}
 }

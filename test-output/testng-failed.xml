@@ -3,22 +3,28 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.ActiveInactiveUserTest">
+      <class name="tests.ActiveInactiveUserHybridTest">
         <methods>
-          <include name="createOrder"/>
+          <include name="createOrderAPI"/>
+          <include name="splitOrder"/>
+          <include name="verifyOrderInUI"/>
+          <include name="verifyOrderInUICompleted"/>
+          <include name="switchToAdmin"/>
+          <include name="switchToAssignedUser"/>
+          <include name="deactivateUser"/>
+          <include name="updateTAT"/>
+          <include name="setUp"/>
+          <include name="completeStagesWithRemarksAndAttachments"/>
+          <include name="tearDown"/>
+          <include name="addAndAssignUsers"/>
           <include name="activateUser"/>
           <include name="switchToAssigneeDeactivated"/>
-          <include name="deactivateUser"/>
-          <include name="setupSession"/>
-          <include name="splitOrder"/>
-          <include name="switchToAdmin"/>
+          <include name="verifyDeactivatedUserIsInInactiveList"/>
+          <include name="setup"/>
+          <include name="verifyOrderInactiveUserViaUI"/>
           <include name="switchToAdminForActivationUser"/>
-          <include name="addAndAssignUsers"/>
-          <include name="updateTAT"/>
-          <include name="switchToAssignedUser"/>
-          <include name="completeStagesWithRemarksAndAttachments"/>
         </methods>
-      </class> <!-- tests.ActiveInactiveUserTest -->
+      </class> <!-- tests.ActiveInactiveUserHybridTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

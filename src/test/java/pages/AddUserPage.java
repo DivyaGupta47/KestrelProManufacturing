@@ -12,12 +12,14 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-public class AddUserPage {
-	WebDriver driver;
+import base.BasePage;
 
+public class AddUserPage extends BasePage{
+	WebDriver driver;
 	public AddUserPage(WebDriver driver) {
+		super(driver);
 		this.driver = driver;
-		PageFactory.initElements(driver, this); // Initialize Page Factory
+		PageFactory.initElements(driver, this);
 	}
 
 	@FindBy(xpath = "//a[@href='/settings']//span[text()='Settings']")
@@ -49,7 +51,14 @@ public class AddUserPage {
 
 	@FindBy(xpath = "//div[contains(@class,'Toastify')]//div[contains(text(),'User created successfully')]")
 	WebElement toastMessage;
-
+	
+	
+	@FindBy(xpath = "//button[.//div[text()='Status']]")
+	WebElement statusBtn;
+	
+	@FindBy(xpath = "//ul[@role='menu']//li[@role='menuitemradio']//span[text()='Inactive']")
+	WebElement inactiveBtn;
+	
 	public void Settings() throws InterruptedException {
 		Thread.sleep(5000);
 		Settings.click();
@@ -84,6 +93,40 @@ public class AddUserPage {
 
 		Assert.assertTrue(toastMessage.getText().contains("User created successfully"));
 
+	}
+	
+	public boolean searchOrderinCompleted(String inactiveCustomerEmail) throws InterruptedException {
+	    Thread.sleep(500);
+	    clickElement(Settings);      // Click product section
+	    Thread.sleep(1000);
+	    clickElement(statusBtn); 
+	    Thread.sleep(1000);
+	    clickElement(inactiveBtn); 
+	    WebElement searchBox = driver.findElement(By.cssSelector("input[placeholder='Search']"));
+	    searchBox.click();
+	    Thread.sleep(500);
+	    String email = "da@yopmail.com";
+	    searchBox.sendKeys(email);
+
+
+	    try {	      
+
+	    	WebElement emailCell = driver.findElement(By.xpath("//td[text()='da@yopmail.com']"));
+	    	String customerEmail = emailCell.getText();
+
+	      //  System.out.println("Recent customer found: " + customerEmail);
+
+	        if (inactiveCustomerEmail.equals(inactiveCustomerEmail)) {
+	            System.out.println("TEST PASSED: Recent customer matches: " + inactiveCustomerEmail);
+	            return true;
+	        } else {
+	            System.out.println("TEST FAILED: Expected customer: " + inactiveCustomerEmail + " but found: " + customerEmail);
+	            return false;
+	        }
+	    } catch (Exception e) {
+	        System.out.println("TEST FAILED: Customer not found in UI: " + inactiveCustomerEmail);
+	        return false;
+	    }
 	}
 
 }

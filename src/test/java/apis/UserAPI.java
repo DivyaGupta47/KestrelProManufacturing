@@ -147,5 +147,48 @@ public class UserAPI {
                 .body(payload)
                 .put("/user/kratos/identity/" + userId);
     }
+    
+    
+    public static Response getInactiveUsersQA() {
+        return RestAssured.given()
+                .baseUri(Config.BASE_URI_QA)
+                .header("Authorization", "Bearer " + Config.getSessionToken())
+                .contentType(ContentType.JSON)
+                .queryParam("team", "All")
+                .queryParam("search_value", "")
+                .queryParam("skip", 0)
+                .queryParam("limit", 10)
+                .queryParam("status", "inactive")
+                .get("/user/kratos/search");
+    }
+    
+    public static Response getAactiveUsersQA() {
+        return RestAssured.given()
+                .baseUri(Config.BASE_URI_QA)
+                .header("Authorization", "Bearer " + Config.getSessionToken())
+                .contentType(ContentType.JSON)
+                .queryParam("team", "All")
+                .queryParam("search_value", "")
+                .queryParam("skip", 0)
+                .queryParam("limit", 10)
+                .queryParam("status", "active")
+                .get("/user/kratos/search");
+    }
+    
+    public static Response searchUsersQA(String team, String searchValue, String status, int skip, int limit) {
+        return RestAssured
+            .given()
+                .baseUri(Config.BASE_URI_QA)
+                .header("Authorization", "Bearer " + Config.getSessionToken())
+                .queryParam("team", team)
+                .queryParam("search_value", searchValue)
+                .queryParam("status", status)
+                .queryParam("skip", skip)
+                .queryParam("limit", limit)
+            .when()
+                .get("/user/kratos/search");
+    }
+
+  
 
 }

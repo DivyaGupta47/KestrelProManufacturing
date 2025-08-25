@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Admin Order Flow with Workflow Open</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>9/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>2/2/5</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Aug 14 12:41:14 IST 2025</td>
+<td>Started on:</td><td>Mon Aug 25 14:53:48 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>122 seconds (122781 ms)</td>
+<tr><td>Total time:</td><td>43 seconds (43319 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,148 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='tests.WorkflowMixStagesTest.workflowOpenForAllStages()'><b>workflowOpenForAllStages</b><br>Test class: tests.WorkflowMixStagesTest</td>
+<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;button class=&quot;z-0 group relative justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 px-4 min-w-20 h-10 text-small [&amp;amp;&amp;gt;svg]:max-w-[theme(spacing.8)] !transition-none data-[pressed=true]:scale-100 bg-default text-default-foreground data-[hover=true]:opacity-hover add-stage-btn flex items-center gap-2 rounded-md border&quot; type=&quot;button&quot;&gt;...&lt;/button&gt; is not clickable at point (1161, 86). Other element would receive the click: &lt;div class=&quot;group mb-3 w-full&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=139.0.7258.127)
+Build info: version: &apos;4.27.0&apos;, revision: &apos;d6e718d134&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f1172bf8b6db82b5e951a5e8a15a930b, clickElement {id=f.1E3CD8A44F8FE51F2B1779B5EEB89D76.d.C9179B34F43D7135DFB2945DDED490C6.e.2104}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 139.0.7258.127, chrome: {chromedriverVersion: 139.0.7258.138 (884e54ea8d4..., userDataDir: C:\Users\47BILL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55350}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55350/devtoo..., se:cdpVersion: 139.0.7258.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (f1172bf8b6db82b5e951a5e8a15a930b)] -&gt; xpath: //button[normalize-space()=&apos;Add Stage&apos;]]
+Session ID: f1172bf8b6db82b5e951a5e8a15a930b
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy15.click(Unknown Source)
+	at pages.WorkflowMixStagesPage.WorkflowsAlternateOpenStages(WorkflowMixStagesPage.java:113)
+	at tests.WorkflowMixStagesTest.workflowOpenForAllStages(WorkflowMixStagesTest.java:38)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 36 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2126664214", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2126664214'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;button class=&quot;z-0 group relative justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 px-4 min-w-20 h-10 text-small [&amp;amp;&amp;gt;svg]:max-w-[theme(spacing.8)] !transition-none data-[pressed=true]:scale-100 bg-default text-default-foreground data-[hover=true]:opacity-hover add-stage-btn flex items-center gap-2 rounded-md border&quot; type=&quot;button&quot;&gt;...&lt;/button&gt; is not clickable at point (1161, 86). Other element would receive the click: &lt;div class=&quot;group mb-3 w-full&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=139.0.7258.127)
+Build info: version: &apos;4.27.0&apos;, revision: &apos;d6e718d134&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f1172bf8b6db82b5e951a5e8a15a930b, clickElement {id=f.1E3CD8A44F8FE51F2B1779B5EEB89D76.d.C9179B34F43D7135DFB2945DDED490C6.e.2104}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 139.0.7258.127, chrome: {chromedriverVersion: 139.0.7258.138 (884e54ea8d4..., userDataDir: C:\Users\47BILL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55350}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55350/devtoo..., se:cdpVersion: 139.0.7258.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (f1172bf8b6db82b5e951a5e8a15a930b)] -&gt; xpath: //button[normalize-space()=&apos;Add Stage&apos;]]
+Session ID: f1172bf8b6db82b5e951a5e8a15a930b
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy15.click(Unknown Source)
+	at pages.WorkflowMixStagesPage.WorkflowsAlternateOpenStages(WorkflowMixStagesPage.java:113)
+	at tests.WorkflowMixStagesTest.workflowOpenForAllStages(WorkflowMixStagesTest.java:38)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>27</td>
+<td>tests.WorkflowMixStagesTest@6c0d9d86</td></tr>
+<tr>
+<td title='tests.WorkflowMixStagesAPITest.updateTAT()'><b>updateTAT</b><br>Test class: tests.WorkflowMixStagesAPITest</td>
+<td><div><pre>java.lang.AssertionError: Failed to update TAT for stage with sequence 4 expected [200] but found [404]
+	at tests.WorkflowMixStagesAPITest.updateTAT(WorkflowMixStagesAPITest.java:114)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 33 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace328239524", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace328239524'><pre>java.lang.AssertionError: Failed to update TAT for stage with sequence 4 expected [200] but found [404]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:1419)
+	at org.testng.Assert.assertEquals(Assert.java:1383)
+	at tests.WorkflowMixStagesAPITest.updateTAT(WorkflowMixStagesAPITest.java:114)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>1</td>
+<td>tests.WorkflowMixStagesAPITest@db57326</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -76,50 +218,174 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='tests.WorkflowOpenAPITest.updateTAT()'><b>updateTAT</b><br>Test class: tests.WorkflowOpenAPITest</td>
+<td title='tests.WorkflowMixStagesAPITest.createOrder()'><b>createOrder</b><br>Test class: tests.WorkflowMixStagesAPITest</td>
 <td></td>
-<td>6</td>
-<td>tests.WorkflowOpenAPITest@4b14918a</td></tr>
+<td>5</td>
+<td>tests.WorkflowMixStagesAPITest@db57326</td></tr>
 <tr>
-<td title='tests.WorkflowOpenAPITest.addRemarks()'><b>addRemarks</b><br>Test class: tests.WorkflowOpenAPITest</td>
+<td title='tests.WorkflowMixStagesAPITest.splitOrder()'><b>splitOrder</b><br>Test class: tests.WorkflowMixStagesAPITest</td>
 <td></td>
 <td>0</td>
-<td>tests.WorkflowOpenAPITest@4b14918a</td></tr>
+<td>tests.WorkflowMixStagesAPITest@db57326</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
 <tr>
-<td title='tests.WorkflowOpenAPITest.addAttachments()'><b>addAttachments</b><br>Test class: tests.WorkflowOpenAPITest</td>
-<td></td>
+<td title='tests.WorkflowMixStagesAPITest.addAndAssignUsers()'><b>addAndAssignUsers</b><br>Test class: tests.WorkflowMixStagesAPITest</td>
+<td><div><pre>java.lang.Throwable: Method tests.WorkflowMixStagesAPITest.addAndAssignUsers() on instance tests.WorkflowMixStagesAPITest@db57326 depends on not successfully finished methods 
+[tests.WorkflowMixStagesAPITest.updateTAT() on instance tests.WorkflowMixStagesAPITest@db57326]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1981752140", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1981752140'><pre>java.lang.Throwable: Method tests.WorkflowMixStagesAPITest.addAndAssignUsers() on instance tests.WorkflowMixStagesAPITest@db57326 depends on not successfully finished methods 
+[tests.WorkflowMixStagesAPITest.updateTAT() on instance tests.WorkflowMixStagesAPITest@db57326]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:156)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
 <td>0</td>
-<td>tests.WorkflowOpenAPITest@4b14918a</td></tr>
+<td>tests.WorkflowMixStagesAPITest@db57326</td></tr>
 <tr>
-<td title='tests.WorkflowOpenAPITest.splitOrder()'><b>splitOrder</b><br>Test class: tests.WorkflowOpenAPITest</td>
-<td></td>
+<td title='tests.WorkflowMixStagesAPITest.addAttachments()'><b>addAttachments</b><br>Test class: tests.WorkflowMixStagesAPITest</td>
+<td><div><pre>java.lang.Throwable: Method tests.WorkflowMixStagesAPITest.addAttachments() on instance tests.WorkflowMixStagesAPITest@db57326 depends on not successfully finished methods 
+[tests.WorkflowMixStagesAPITest.addRemarks() on instance tests.WorkflowMixStagesAPITest@db57326]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1252819402", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1252819402'><pre>java.lang.Throwable: Method tests.WorkflowMixStagesAPITest.addAttachments() on instance tests.WorkflowMixStagesAPITest@db57326 depends on not successfully finished methods 
+[tests.WorkflowMixStagesAPITest.addRemarks() on instance tests.WorkflowMixStagesAPITest@db57326]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:156)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
 <td>0</td>
-<td>tests.WorkflowOpenAPITest@4b14918a</td></tr>
+<td>tests.WorkflowMixStagesAPITest@db57326</td></tr>
 <tr>
-<td title='tests.WorkflowOpenAPITest.addAndAssignUsers()'><b>addAndAssignUsers</b><br>Test class: tests.WorkflowOpenAPITest</td>
-<td></td>
-<td>1</td>
-<td>tests.WorkflowOpenAPITest@4b14918a</td></tr>
+<td title='tests.WorkflowMixStagesAPITest.verifyCompletion()'><b>verifyCompletion</b><br>Test class: tests.WorkflowMixStagesAPITest</td>
+<td><div><pre>java.lang.Throwable: Method tests.WorkflowMixStagesAPITest.verifyCompletion() on instance tests.WorkflowMixStagesAPITest@db57326 depends on not successfully finished methods 
+[tests.WorkflowMixStagesAPITest.completeStages() on instance tests.WorkflowMixStagesAPITest@db57326]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace269016862", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace269016862'><pre>java.lang.Throwable: Method tests.WorkflowMixStagesAPITest.verifyCompletion() on instance tests.WorkflowMixStagesAPITest@db57326 depends on not successfully finished methods 
+[tests.WorkflowMixStagesAPITest.completeStages() on instance tests.WorkflowMixStagesAPITest@db57326]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:156)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>tests.WorkflowMixStagesAPITest@db57326</td></tr>
 <tr>
-<td title='tests.WorkflowOpenAPITest.completeStages()'><b>completeStages</b><br>Test class: tests.WorkflowOpenAPITest</td>
-<td></td>
-<td>2</td>
-<td>tests.WorkflowOpenAPITest@4b14918a</td></tr>
+<td title='tests.WorkflowMixStagesAPITest.completeStages()'><b>completeStages</b><br>Test class: tests.WorkflowMixStagesAPITest</td>
+<td><div><pre>java.lang.Throwable: Method tests.WorkflowMixStagesAPITest.completeStages() on instance tests.WorkflowMixStagesAPITest@db57326 depends on not successfully finished methods 
+[tests.WorkflowMixStagesAPITest.addAttachments() on instance tests.WorkflowMixStagesAPITest@db57326]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1664248378", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1664248378'><pre>java.lang.Throwable: Method tests.WorkflowMixStagesAPITest.completeStages() on instance tests.WorkflowMixStagesAPITest@db57326 depends on not successfully finished methods 
+[tests.WorkflowMixStagesAPITest.addAttachments() on instance tests.WorkflowMixStagesAPITest@db57326]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:156)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>tests.WorkflowMixStagesAPITest@db57326</td></tr>
 <tr>
-<td title='tests.WorkflowOpenAPITest.verifyCompletion()'><b>verifyCompletion</b><br>Test class: tests.WorkflowOpenAPITest</td>
-<td></td>
-<td>3</td>
-<td>tests.WorkflowOpenAPITest@4b14918a</td></tr>
-<tr>
-<td title='tests.WorkflowOpenStagesTest.workflowOpenForAllStages()'><b>workflowOpenForAllStages</b><br>Test class: tests.WorkflowOpenStagesTest</td>
-<td></td>
-<td>94</td>
-<td>tests.WorkflowOpenStagesTest@1f3f02ee</td></tr>
-<tr>
-<td title='tests.WorkflowOpenAPITest.createOrder()'><b>createOrder</b><br>Test class: tests.WorkflowOpenAPITest</td>
-<td></td>
-<td>4</td>
-<td>tests.WorkflowOpenAPITest@4b14918a</td></tr>
+<td title='tests.WorkflowMixStagesAPITest.addRemarks()'><b>addRemarks</b><br>Test class: tests.WorkflowMixStagesAPITest</td>
+<td><div><pre>java.lang.Throwable: Method tests.WorkflowMixStagesAPITest.addRemarks() on instance tests.WorkflowMixStagesAPITest@db57326 depends on not successfully finished methods 
+[tests.WorkflowMixStagesAPITest.addAndAssignUsers() on instance tests.WorkflowMixStagesAPITest@db57326]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace108760389", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace108760389'><pre>java.lang.Throwable: Method tests.WorkflowMixStagesAPITest.addRemarks() on instance tests.WorkflowMixStagesAPITest@db57326 depends on not successfully finished methods 
+[tests.WorkflowMixStagesAPITest.addAndAssignUsers() on instance tests.WorkflowMixStagesAPITest@db57326]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:156)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>tests.WorkflowMixStagesAPITest@db57326</td></tr>
 </table><p>
 </body>
 </html>

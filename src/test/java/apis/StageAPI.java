@@ -1,6 +1,7 @@
 package apis;
 
 import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import utils.Config;
 
@@ -91,5 +92,20 @@ public class StageAPI {
         Response response = getStagesQA(orderId);
         return response.jsonPath().getList("items");
     }
+    
+    public static Response getOrderStagesQA(int orderId) {
+	    return RestAssured.given()
+	            .baseUri(Config.BASE_URI_QA)
+	            .header("Authorization", "Bearer " + Config.getSessionToken())
+	            .queryParam("orderId", orderId)
+	            .queryParam("isAssignee", true)
+	            .queryParam("sortKey", "sequence")
+	            .queryParam("sortValue", "ASC")
+	            .queryParam("limit", 10)
+	            .queryParam("offset", 0)
+	            .queryParam("searchKey", "name")
+	            .queryParam("searchValue", "")
+	            .get("/api/v1/stage/order/list");
+	}
  
 }

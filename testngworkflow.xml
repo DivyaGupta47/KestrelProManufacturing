@@ -23,9 +23,9 @@
 	</test>
 
 	
-	<test name="Active and Inactive user via API">
+	<test name="Active and Inactive user via API and UI">
 		<classes>
-			<class name="tests.ActiveInactiveUserTest"/>
+			<class name="tests.ActiveInactiveUserHybridTest"/>
 		</classes>
 	</test>
 	

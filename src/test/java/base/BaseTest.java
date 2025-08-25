@@ -11,14 +11,16 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
 public class BaseTest {
 
     protected WebDriver driver;
 
-    @BeforeMethod
+    @BeforeClass
     public void setUp() {
         // Read system property (default: false)
         boolean isHeadless = Boolean.parseBoolean(System.getProperty("headless", "false"));
@@ -40,7 +42,7 @@ public class BaseTest {
         driver.get("https://freetrial-mf.kestrelpro.ai/");
     }
 
-    @AfterMethod
+    @AfterClass
     public void tearDown() {
         if (driver != null) {
             driver.quit();

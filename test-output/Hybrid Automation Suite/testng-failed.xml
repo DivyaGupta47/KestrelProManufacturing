@@ -1,15 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Hybrid Automation Suite]">
-  <test thread-count="5" name="UI - Dashboard After(failed)">
+  <test thread-count="5" name="Admin Order Flow - Workflow Open Stages(failed)">
     <classes>
-      <class name="tests.DashboardTest">
+      <class name="tests.WorkflowOpenStagesTest">
         <methods>
-          <include name="setUp"/>
+          <include name="workflowOpenForAllStages"/>
           <include name="tearDown"/>
-          <include name="testDashboardCountsAfter"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- tests.DashboardTest -->
+      </class> <!-- tests.WorkflowOpenStagesTest -->
+      <class name="tests.WorkflowOpenAPITest">
+        <methods>
+          <include name="verifyCompletion"/>
+          <include name="setupSession"/>
+          <include name="splitOrder"/>
+          <include name="addRemarks"/>
+          <include name="completeStages"/>
+          <include name="addAndAssignUsers"/>
+          <include name="updateTAT"/>
+          <include name="addAttachments"/>
+          <include name="createOrder"/>
+        </methods>
+      </class> <!-- tests.WorkflowOpenAPITest -->
     </classes>
-  </test> <!-- UI - Dashboard After(failed) -->
+  </test> <!-- Admin Order Flow - Workflow Open Stages(failed) -->
 </suite> <!-- Failed suite [Hybrid Automation Suite] -->

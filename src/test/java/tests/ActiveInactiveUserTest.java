@@ -49,7 +49,7 @@ public class ActiveInactiveUserTest {
 	public void setupSession() {
 
 		System.out.println("\n=========================================================");
-		System.out.println("Starting Flow: WORKFLOW CLOSE TEST API");
+		System.out.println("Starting Flow: ACTIVE AND INACTIVE USER TEST API");
 		System.out.println("=========================================================\n");
 		String token = LoginUtil.performLogin_QA(adminEmail, adminPassword);
 		Config.setSessionToken(token);
@@ -197,6 +197,24 @@ public class ActiveInactiveUserTest {
 	}
 	
 	@Test(dependsOnMethods = "deactivateUser")
+	public void verifyDeactivatedUserIsInInactiveList() {
+	    String userIdToCheck = "c9450ec0-91ae-45a3-ba36-4c2b7c89b2da"; // fixed userId
+
+	    Response response = UserAPI.getInactiveUsersQA();
+
+	    Assert.assertEquals(response.getStatusCode(), 200, "Inactive user search API failed");
+
+	    List<String> inactiveIds = response.jsonPath().getList("item.identity_id");
+
+	    Assert.assertTrue(
+	        inactiveIds.contains(userIdToCheck),
+	        "User " + userIdToCheck + " not found in inactive list."
+	    );
+
+	    System.out.println("TEST PASSED: User " + userIdToCheck + " is present in inactive list.");
+	}
+
+	@Test(dependsOnMethods = "verifyDeactivatedUserIsInInactiveList")
 	public void switchToAssigneeDeactivated() {
 		ExtentTest test = ExtentTestNGListener.getTest();
 		String userToken = LoginUtil.performLogin_DeactivatedUser_QA(assigneeEmail, assigneePassword);

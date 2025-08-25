@@ -157,4 +157,35 @@ public class ProductFlowOnTimePage extends BasePage {
 		Thread.sleep(3000);
 		
 	}
+	
+	public boolean searchOrderinOnTime(String customerName) throws InterruptedException {
+	    Thread.sleep(500);
+	    clickElement(product);      // Click product section
+	    Thread.sleep(500);
+	    clickElement(onTime);       // Click queued orders
+	    Thread.sleep(9000);
+
+	 // Dynamic XPath using String.format
+	    String xpath = String.format("//td[h5[text()='%s'] and span[text()='Kestrel Industries Pvt. Ltd.']]", customerName);
+
+	    try {
+	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(25));
+	        WebElement customerElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+
+	        String recentCustomerName = customerElement.getText().split("\n")[0]; // Take first line only
+
+	       // System.out.println("Recent customer found: " + recentCustomerName);
+
+	        if (recentCustomerName.equals(customerName)) {
+	        	System.out.println("TEST PASSED: Recent customer matches in On Time list_UI: " + customerName);
+	            return true;
+	        } else {
+	            System.out.println("TEST FAILED: Expected customer: " + customerName + " but found: " + recentCustomerName);
+	            return false;
+	        }
+	    } catch (Exception e) {
+	        System.out.println("TEST FAILED: Customer not found in UI: " + customerName);
+	        return false;
+	    }
+	}
 }
