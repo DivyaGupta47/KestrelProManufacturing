@@ -115,7 +115,7 @@ public class ProductFlowCompletePage extends BasePage {
 			// System.out.println("Recent customer found: " + recentCustomerName);
 
 			if (recentCustomerName.equals(customerName)) {
-				System.out.println("TEST PASSED: Recent customer matches in Completed list_UI: " + customerName);
+				//System.out.println("TEST PASSED: Recent customer matches in Completed list_UI: " + customerName);
 				return true;
 			} else {
 				System.out.println(
@@ -144,7 +144,7 @@ public class ProductFlowCompletePage extends BasePage {
 		customerElement.click();
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(detailsButton)).click();
-		System.out.println("Details button clicked");
+		
 		Thread.sleep(1000);
 
 		String completed2 = completedButtonStage2.getText();

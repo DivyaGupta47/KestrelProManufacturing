@@ -218,7 +218,7 @@ public class ProductFlowQueuedPage extends BasePage {
 	        //System.out.println("Recent customer found: " + recentCustomerName);
 
 	        if (recentCustomerName.equals(customerName)) {
-	            System.out.println("TEST PASSED: Recent customer matches in Queued List_UI: " + customerName);
+	            //System.out.println("TEST PASSED: Recent customer matches in Queued List_UI: " + customerName);
 	            return true;
 	        } else {
 	            System.out.println("TEST FAILED: Expected customer: " + customerName + " but found: " + recentCustomerName);

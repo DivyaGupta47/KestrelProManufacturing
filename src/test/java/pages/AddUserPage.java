@@ -117,7 +117,7 @@ public class AddUserPage extends BasePage{
 	      //  System.out.println("Recent customer found: " + customerEmail);
 
 	        if (inactiveCustomerEmail.equals(inactiveCustomerEmail)) {
-	            System.out.println("TEST PASSED: Recent customer matches: " + inactiveCustomerEmail);
+	            //System.out.println("TEST PASSED: Recent customer matches: " + inactiveCustomerEmail);
 	            return true;
 	        } else {
 	            System.out.println("TEST FAILED: Expected customer: " + inactiveCustomerEmail + " but found: " + customerEmail);

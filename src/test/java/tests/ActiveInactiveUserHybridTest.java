@@ -61,7 +61,7 @@ public class ActiveInactiveUserHybridTest extends BaseTestWorkflow{
 	        // --- Step 1: API login to get session token ---
 	        String token = LoginUtil.performLogin_QA(adminEmail, adminPassword);
 	        Config.setSessionToken(token);
-	        System.out.println("TEST PASSED: API Login done");
+	        System.out.println("TEST PASSED: API Admin logged in successfully with email: " +adminEmail);
 
 	       // driver = new ChromeDriver();
 	        //driver.manage().window().maximize();
@@ -70,7 +70,7 @@ public class ActiveInactiveUserHybridTest extends BaseTestWorkflow{
 	        loginPage.enterUsername(userName);
 	        loginPage.enterPassword(password);
 	        loginPage.clickSignIn();
-	        System.out.println("TEST PASSED: UI Login done: " + userName);
+	        System.out.println("TEST PASSED: UI Admin logged in successfully with email: " + userName);
 	    }
 
 	
@@ -91,7 +91,7 @@ public class ActiveInactiveUserHybridTest extends BaseTestWorkflow{
 	    Assert.assertEquals(createResponse.getStatusCode(), 201);
 	    orderId = OrderVerificationAPI.getOrderIdByCustomerNameQA106(customerName);
 	    Assert.assertNotNull(orderId);
-	    System.out.println("Order created via API: " + orderId);
+	    System.out.println("TEST PASSED: API Order created and verified in 'Queued' status for customer: " +customerName);
 	}
 
 	@Test(dependsOnMethods = "createOrderAPI")
@@ -100,7 +100,7 @@ public class ActiveInactiveUserHybridTest extends BaseTestWorkflow{
 		driver.navigate().refresh(); // or click the “Queued” tab again
 		Thread.sleep(1000); // small pause
 		Assert.assertTrue(productFlowQueuedPage.searchOrderinQueued(customerName), "Customer name does not match in UI!");
-	    System.out.println("TEST PASSED: Order verified in UI for Queued");
+	    System.out.println("TEST PASSED: UI Order verified for Queued");
 	}
 	@Test(dependsOnMethods = "verifyOrderInUI")
 	public void splitOrder() {
@@ -108,7 +108,7 @@ public class ActiveInactiveUserHybridTest extends BaseTestWorkflow{
 		Response splitOrderResponse = SplitAPI.splitOrderQA(orderId, false);
 		int statusCode = splitOrderResponse.getStatusCode();
 		Assert.assertTrue(statusCode == 200 || statusCode == 201, "Split failed!");
-		System.out.println("TEST PASSED: Split status is 'NO' for the order");
+		System.out.println("TEST PASSED: API Split status is 'NO' for the order");
 	}
 
 	@Test(dependsOnMethods = "splitOrder")
@@ -131,7 +131,7 @@ public class ActiveInactiveUserHybridTest extends BaseTestWorkflow{
 			Assert.assertEquals(updateResponse.getStatusCode(), 200,
 					"Failed to update TAT for stage with sequence " + sequence);
 
-			System.out.println("TEST PASSED: TAT updated successfully for stage sequence " + sequence);
+			System.out.println("TEST PASSED: API TAT updated successfully for stage sequence " + sequence);
 			Thread.sleep(1000); // small pause between updates
 		}
 	}
@@ -161,7 +161,7 @@ public class ActiveInactiveUserHybridTest extends BaseTestWorkflow{
 			assigneeNumber++;
 		}
 
-		System.out.println("TEST PASSED: Static user assigned successfully to all required stages");
+		System.out.println("TEST PASSED: API Static user assigned successfully to all required stages");
 	}
 
 	@Test(dependsOnMethods = "addAndAssignUsers")
@@ -169,7 +169,7 @@ public class ActiveInactiveUserHybridTest extends BaseTestWorkflow{
 		ExtentTest test = ExtentTestNGListener.getTest();
 		String userToken = LoginUtil.performLogin_QA(assigneeEmail, assigneePassword);
 		Config.setSessionToken(userToken);
-		System.out.println("TEST PASSED: Switched session successfully for the assigned user." + assigneeEmail);
+		System.out.println("TEST PASSED: API Switched session successfully for the assigned user." + assigneeEmail);
 	}
 
 	@Test(dependsOnMethods = "switchToAssignedUser")
@@ -192,7 +192,7 @@ public class ActiveInactiveUserHybridTest extends BaseTestWorkflow{
 	        Thread.sleep(1000);
 	    }
 
-	    System.out.println("TEST PASSED: Stages 2 to 7 is completed by assignee");
+	    System.out.println("TEST PASSED: API Stages 2 to 7 is completed by assignee");
 	    
 	 	Thread.sleep(1000); // Optional wait after final completion
 	}
@@ -202,7 +202,7 @@ public class ActiveInactiveUserHybridTest extends BaseTestWorkflow{
 		ExtentTest test = ExtentTestNGListener.getTest();
 		String userToken = LoginUtil.performLogin_QA(adminEmail, adminPassword);
 		Config.setSessionToken(userToken);
-		System.out.println("TEST PASSED: Switched session successfully for the Admin." + adminEmail);
+		System.out.println("TEST PASSED: API Switched session successfully for the Admin." + adminEmail);
 	} 
 	
 	@Test(dependsOnMethods = "switchToAdmin")
@@ -211,7 +211,7 @@ public class ActiveInactiveUserHybridTest extends BaseTestWorkflow{
 		driver.navigate().refresh(); // or click the “Queued” tab again
 		Thread.sleep(1000); // small pause
 		Assert.assertTrue(productFlowCompletePage.searchOrderinCompleted(customerName), "Customer name does not match in UI!");
-	    System.out.println("TEST PASSED: Order verified in UI for completed");
+	    System.out.println("TEST PASSED: UI Order verified for completed");
 	}
 	
 
@@ -219,7 +219,7 @@ public class ActiveInactiveUserHybridTest extends BaseTestWorkflow{
 	public void deactivateUser()	
 	{
 		Response response = UserAPI.deactivateSpecificUserQA(); 
-		System.out.println("TEST PASSED: User deactivated successfully");
+		System.out.println("TEST PASSED: API User deactivated successfully");
 	}
 	
 	@Test(dependsOnMethods = "deactivateUser")
@@ -237,7 +237,7 @@ public class ActiveInactiveUserHybridTest extends BaseTestWorkflow{
 	        "User " + userIdToCheck + " not found in inactive list."
 	    );
 
-	    System.out.println("TEST PASSED: User " + userIdToCheck + " is present in inactive list.");
+	    System.out.println("TEST PASSED: API User " + userIdToCheck + " is present in inactive list.");
 	}
 
 	@Test(dependsOnMethods = "verifyDeactivatedUserIsInInactiveList")
@@ -247,7 +247,7 @@ public class ActiveInactiveUserHybridTest extends BaseTestWorkflow{
 		driver.navigate().refresh(); // or click the “Queued” tab again
 		Thread.sleep(1000); // small pause
 		Assert.assertTrue(addUserPage.searchOrderinCompleted(inactiveEmail), "Customer email does not match in UI!");
-	    System.out.println("TEST PASSED: Inactive Email verified in UI" +inactiveEmail);
+	    System.out.println("TEST PASSED: UI Inactive Email verified in UI" +inactiveEmail);
 	}
 	
 	
@@ -257,7 +257,7 @@ public class ActiveInactiveUserHybridTest extends BaseTestWorkflow{
 		ExtentTest test = ExtentTestNGListener.getTest();
 		String userToken = LoginUtil.performLogin_DeactivatedUser_QA(assigneeEmail, assigneePassword);
 		Config.setSessionToken(userToken);
-		System.out.println("TEST PASSED: Deactivated user not able to login");
+		System.out.println("TEST PASSED: API Deactivated user not able to login");
 	} 
 	
 	@Test(dependsOnMethods = "switchToAssigneeDeactivated")
@@ -265,7 +265,7 @@ public class ActiveInactiveUserHybridTest extends BaseTestWorkflow{
 		ExtentTest test = ExtentTestNGListener.getTest();
 		String userToken = LoginUtil.performLogin_QA(adminEmail, adminPassword);
 		Config.setSessionToken(userToken);
-		System.out.println("TEST PASSED: Switched session successfully for the Admin." + adminEmail);
+		System.out.println("TEST PASSED: API Switched session successfully for the Admin." + adminEmail);
 	} 
 	
 	
@@ -273,16 +273,7 @@ public class ActiveInactiveUserHybridTest extends BaseTestWorkflow{
 	public void activateUser()	
 	{
 		Response response = UserAPI.activateSpecificUserQA();
-		System.out.println("TEST PASSED: User activated successfully");
+		System.out.println("TEST PASSED: API User activated successfully");
 	}
-		
-
-	
-	 @AfterClass
-	    public void tearDown() {
-	        if (driver != null) {
-	            driver.quit();
-	        }
-	    }
 		
 }
