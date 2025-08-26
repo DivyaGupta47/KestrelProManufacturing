@@ -212,7 +212,7 @@ public class AdminOrderRejectFlowTest extends BaseTest {
 			driver.navigate().refresh(); // or click the “Queued” tab again
 			Thread.sleep(1000); // small pause
 			Assert.assertTrue(productFlowOnTimePage.searchOrderinOnTime(customerName), "Customer name does not match in UI!");
-		    System.out.println("TEST PASSED: Order verified in UI for completed");
+		    System.out.println("TEST PASSED: Order verified in UI for rejected");
 		}
 
 }

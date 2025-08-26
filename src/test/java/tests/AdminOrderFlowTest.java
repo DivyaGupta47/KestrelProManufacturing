@@ -275,7 +275,18 @@ public class AdminOrderFlowTest extends BaseTest {
 	    System.out.println("TEST PASSED: Order verified in UI for completed");
 	}
 	
-	@Test(dependsOnMethods = {"addAndAssignUsers", "verifyOrderInUICompleted"})
+    @Test(dependsOnMethods = "verifyOrderInUICompleted")
+    public void verifyStatusCompletedViaUI() throws InterruptedException
+    {
+    	ProductFlowCompletePage productFlowCompletePage = new ProductFlowCompletePage(driver);
+		driver.navigate().refresh(); // or click the “Queued” tab again
+		Thread.sleep(1000); // small pause
+		productFlowCompletePage.statusIsCompleted(customerName);
+		System.out.println("TEST PASSED: Order status completed verified in UI");
+    }
+    
+    
+	@Test(dependsOnMethods = {"addAndAssignUsers", "verifyStatusCompletedViaUI"})
 	public void updateUser() {
 		ExtentTest test = ExtentTestNGListener.getTest();
 	    String identityId = userId; // Or get it from user creation

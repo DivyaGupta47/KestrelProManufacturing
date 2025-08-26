@@ -72,7 +72,6 @@ public class ProductFlowOnTimePage extends BasePage {
 	@FindBy(xpath = "//a[@title='Dashboard']//span[text()='Dashboard']")
 	WebElement dashboardLink;
 	
-	
 	@FindBy(css = "div.Toastify__toast--success")
 	private WebElement success;
 	
@@ -188,4 +187,5 @@ public class ProductFlowOnTimePage extends BasePage {
 	        return false;
 	    }
 	}
+	
 }
