@@ -1,10 +1,10 @@
 <suite name="Hybrid Automation Suite" parallel="false">
-	
+
 	<test name="UI - Dashboard Before">
 		<classes>
 			<class name="tests.DashboardTest">
 				<methods>
-					<include name="testDashboardCountsBefore"/>
+					<include name="testDashboardCountsBefore" />
 				</methods>
 			</class>
 		</classes>
@@ -12,60 +12,60 @@
 
 	<test name="API - Admin Flow">
 		<classes>
-			<class name="tests.AdminOrderFlowTest"/>
+			<class name="tests.AdminOrderFlowTest" />
 		</classes>
 	</test>
 
 	<test name="API - Admin Order with Split Flow">
 		<classes>
-			<class name="tests.AdminSplitOrderFlowTest"/>
+			<class name="tests.AdminSplitOrderFlowTest" />
 		</classes>
 	</test>
 
 	<test name="API - Admin Assignee Flow">
 		<classes>
-			<class name="tests.AdminAssigneeOrderFlowTest"/>
+			<class name="tests.AdminAssigneeOrderFlowTest" />
 		</classes>
 	</test>
 
 	<test name="API - Admin Multiple Assignee Flow">
 		<classes>
-			<class name="tests.AdminMultipleAssigneeOrderFlowTest"/>
+			<class name="tests.AdminMultipleAssigneeOrderFlowTest" />
 		</classes>
 	</test>
 
 	<test name="API - Admin Reject Flow">
 		<classes>
-			<class name="tests.AdminOrderRejectFlowTest"/>
+			<class name="tests.AdminOrderRejectFlowTest" />
 		</classes>
 	</test>
 
 	<test name="UI - Report Validation">
 		<classes>
-			<class name="tests.ReportWithExcel"/>
+			<class name="tests.ReportWithExcel" />
 		</classes>
 	</test>
 
 	<test name="UI - Add User via UI">
 		<classes>
-			<class name="tests.AddUserTest"/>
+			<class name="tests.AddUserTest" />
 		</classes>
 	</test>
-	
-<test name="Admin Order Flow - Workflow Open Stages">
+
+	<test name="Admin Order Flow - Workflow Open Stages">
 		<classes>
-			<class name="tests.WorkflowOpenStagesTest"/>
-			<class name="tests.WorkflowOpenAPITest"/>
+			<class name="tests.WorkflowOpenStagesTest" />
+			<class name="tests.WorkflowOpenAPITest" />
 		</classes>
 	</test>
-	
+
 	<test name="Admin Order Flow - Workflow Mix Stages">
 		<classes>
-			<class name="tests.WorkflowMixStagesTest"/>
-			<class name="tests.WorkflowMixStagesAPITest"/>
+			<class name="tests.WorkflowMixStagesTest" />
+			<class name="tests.WorkflowMixStagesAPITest" />
 		</classes>
 	</test>
-	
+
 	<test name="Admin Order Flow with Workflow Open">
 		<classes>
 			<class name="tests.WorkflowCloseStagesTest" />
@@ -73,18 +73,24 @@
 		</classes>
 	</test>
 
-	
-	<test name="Active and Inactive user via API and UI">
+	<test name="Active and Inactive user for On-Time via API and UI">
 		<classes>
-			<class name="tests.ActiveInactiveUserHybridTest"/>
+			<class name="tests.ActiveInactiveUserOnTimeHybridTest" />
 		</classes>
 	</test>
-	
+
+
+	<test name="Active and Inactive user for Completed via API and UI">
+		<classes>
+			<class name="tests.ActiveInactiveUserHybridTest" />
+		</classes>
+	</test>
+
 	<test name="UI - Dashboard After">
 		<classes>
 			<class name="tests.DashboardTest">
 				<methods>
-					<include name="testDashboardCountsAfter"/>
+					<include name="testDashboardCountsAfter" />
 				</methods>
 			</class>
 		</classes>

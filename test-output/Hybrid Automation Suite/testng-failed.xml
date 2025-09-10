@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Hybrid Automation Suite]">
-  <test thread-count="5" name="Admin Order Flow - Workflow Open Stages(failed)">
+  <test thread-count="5" name="Admin Order Flow - Workflow Mix Stages(failed)">
     <classes>
-      <class name="tests.WorkflowOpenStagesTest">
+      <class name="tests.WorkflowMixStagesTest">
         <methods>
           <include name="workflowOpenForAllStages"/>
           <include name="tearDown"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- tests.WorkflowOpenStagesTest -->
-      <class name="tests.WorkflowOpenAPITest">
+      </class> <!-- tests.WorkflowMixStagesTest -->
+      <class name="tests.WorkflowMixStagesAPITest">
         <methods>
-          <include name="verifyCompletion"/>
-          <include name="setupSession"/>
-          <include name="splitOrder"/>
-          <include name="addRemarks"/>
           <include name="completeStages"/>
-          <include name="addAndAssignUsers"/>
           <include name="updateTAT"/>
           <include name="addAttachments"/>
+          <include name="splitOrder"/>
+          <include name="addRemarks"/>
+          <include name="setupSession"/>
+          <include name="verifyCompletion"/>
+          <include name="addAndAssignUsers"/>
           <include name="createOrder"/>
         </methods>
-      </class> <!-- tests.WorkflowOpenAPITest -->
+      </class> <!-- tests.WorkflowMixStagesAPITest -->
     </classes>
-  </test> <!-- Admin Order Flow - Workflow Open Stages(failed) -->
+  </test> <!-- Admin Order Flow - Workflow Mix Stages(failed) -->
 </suite> <!-- Failed suite [Hybrid Automation Suite] -->

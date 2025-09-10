@@ -1,33 +1,37 @@
 <suite name="Workflow Automation Suite" parallel="false">
-	
-	
+
+
 	<test name="Admin Order Flow - Workflow Open Stages">
 		<classes>
-			<class name="tests.WorkflowOpenStagesTest"/>
-			<class name="tests.WorkflowOpenAPITest"/>
+			<class name="tests.WorkflowOpenStagesTest" />
+			<class name="tests.WorkflowOpenAPITest" />
 		</classes>
 	</test>
-	
+
 	<test name="Admin Order Flow - Workflow Mix Stages">
 		<classes>
-			<class name="tests.WorkflowMixStagesTest"/>
-			<class name="tests.WorkflowMixStagesAPITest"/>
+			<class name="tests.WorkflowMixStagesTest" />
+			<class name="tests.WorkflowMixStagesAPITest" />
 		</classes>
 	</test>
-	
+
 	<test name="Admin Order Flow with Workflow Open">
 		<classes>
 			<class name="tests.WorkflowCloseStagesTest" />
 			<class name="tests.WorkflowCloseStagesAPITest" />
 		</classes>
 	</test>
-
-	
-	<test name="Active and Inactive user via API and UI">
+	<test name="Active and Inactive user for On-Time via API and UI">
 		<classes>
-			<class name="tests.ActiveInactiveUserHybridTest"/>
+			<class name="tests.ActiveInactiveUserOnTimeHybridTest" />
 		</classes>
 	</test>
-	
+
+	<test name="Active and Inactive user via API and UI">
+		<classes>
+			<class name="tests.ActiveInactiveUserHybridTest" />
+		</classes>
+	</test>
+
 
 </suite>
